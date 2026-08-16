@@ -6,7 +6,7 @@ An unofficial, community-sourced knowledge base for **[Thronewake](https://thron
 
 - **Hugo** (extended, ≥ 0.132):
 - **Tailwind CSS — [standalone CLI](https://tailwindcss.com/blog/standalone-cli)**, a self-contained binary with no Node/npm dependency. Download the asset for your platform from the [latest release](https://github.com/tailwindlabs/tailwindcss/releases), `chmod +x`, and put it on `PATH` as `tailwindcss`. `scripts/build.sh` checks for it and exits with these instructions if it's missing — the script itself never fetches or installs it.
-- **Pagefind** — for the search index, https://pagefind.app/docs/installation/.
+- **Pagefind**, for the search index — either the [standalone CLI](https://pagefind.app/docs/installation/) (`pagefind` on `PATH`, no Node needed) or Node.js (`scripts/build.sh` falls back to `npx pagefind@1` if the standalone binary isn't found).
 - **Python 3** — only for the link verifier (standard library).
 
 ## Build

@@ -1,8 +1,10 @@
-.PHONY: help build dev serve verify clean
+.PHONY: help build ci dev serve verify clean
 
 help:
 	@echo "Thronewake Compendium — available targets:"
 	@echo "  make build   - full build: hugo + tailwind + pagefind + verify -> public/"
+	@echo "  make ci      - install tailwind/pagefind CLIs into ./.bin, then build"
+	@echo "                 (for CI/hosted build environments, e.g. Cloudflare Pages)"
 	@echo "  make dev     - hugo's live-reload server (content/template iteration only;"
 	@echo "                 no tailwind rebuild, no search index)"
 	@echo "  make serve   - serve the last full build (public/) over HTTP, so search works"
@@ -11,6 +13,10 @@ help:
 
 build:
 	./scripts/build.sh
+
+ci:
+	./scripts/ci-install.sh
+	PATH="$(CURDIR)/.bin:$$PATH" ./scripts/build.sh
 
 dev:
 	hugo server

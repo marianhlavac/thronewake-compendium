@@ -45,7 +45,7 @@
             class="inline-flex items-center gap-2 rounded-md border border-gold/50 bg-gold/10 px-5 py-2.5 text-sm font-medium text-gold transition-colors hover:bg-gold/15">
             {{ partial "icon.html" (dict "name" "crown" "class" "size-4") }}Read the overview
           </a>
-          <a href="{{ $factions }}"
+          <a href="#all-pages"
             class="inline-flex items-center gap-2 rounded-md border border-border bg-background/60 px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-accent">
             {{ partial "icon.html" (dict "name" "book-open" "class" "size-4") }}All pages
           </a>
@@ -161,6 +161,31 @@
         </ul>
       </div>
 
+    </div>
+  </section>
+
+  <section id="all-pages" class="mx-auto max-w-7xl scroll-mt-8 px-4 pb-16 sm:px-6 sm:pb-20">
+    <div class="mb-8 flex items-center gap-3">
+      <h2 class="font-display text-3xl text-gold font-semibold text-foreground">All pages</h2>
+    </div>
+    <div class="grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+      {{- $currentCategory := "" }}
+      {{- range site.RegularPages.ByWeight }}
+        {{- $category := .Params.category }}
+        {{- if $category }}
+          {{- if ne $category $currentCategory }}
+            {{- if ne $currentCategory "" }}</ul></div>{{ end }}
+            <div>
+              <p class="mb-3 border-b border-border pb-2 font-display text-xs font-semibold tracking-[0.18em] text-gold uppercase">{{ $category }}</p>
+              <ul class="list-disc space-y-1.5 pl-4 marker:text-gold-soft">
+            {{- $currentCategory = $category }}
+          {{- end }}
+          <li>
+            <a href="{{ .RelPermalink }}" class="text-sm text-muted-foreground transition-colors hover:text-gold">{{ .LinkTitle }}</a>
+          </li>
+        {{- end }}
+      {{- end }}
+      {{- if ne $currentCategory "" }}</ul></div>{{ end }}
     </div>
   </section>
 

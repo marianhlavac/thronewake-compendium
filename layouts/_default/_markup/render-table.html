@@ -1,0 +1,24 @@
+{{- /* table-scroll.tsx: horizontal-scroll wrapper around a .wiki-table.
+       Cells (.Text) are already rendered, including links from the link hook. */ -}}
+<figure class="my-6">
+<div class="-mx-4 overflow-x-auto sm:mx-0 sm:rounded-md sm:border sm:border-border">
+<div class="min-w-[34rem] px-4 sm:px-0">
+<table class="wiki-table">
+{{- with .THead }}
+<thead>
+{{- range . }}
+<tr>{{ range . }}<th{{ with .Alignment }} style="text-align: {{ . }}"{{ end }}>{{ .Text }}</th>{{ end }}</tr>
+{{- end }}
+</thead>
+{{- end }}
+{{- with .TBody }}
+<tbody>
+{{- range . }}
+<tr>{{ range . }}<td{{ with .Alignment }} style="text-align: {{ . }}"{{ end }}>{{ .Text }}</td>{{ end }}</tr>
+{{- end }}
+</tbody>
+{{- end }}
+</table>
+</div>
+</div>
+</figure>

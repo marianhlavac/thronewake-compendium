@@ -1,0 +1,28 @@
+baseURL = "/"
+title = "Thronewake Compendium"
+uglyURLs = true
+relativeURLs = true
+disableKinds = ["taxonomy", "term"]
+
+# Quiet the "raw HTML omitted" info: we deliberately allow it (see below).
+ignoreLogs = ["warning-goldmark-raw-html"]
+
+[markup.goldmark.renderer]
+  # Pass raw/inline HTML through untouched — required so the explicit
+  # <a id="..."></a> anchors in Buildings.md survive verbatim. Those anchor
+  # bullet-list items rather than headings, so Goldmark's autoHeadingID below
+  # can't generate ids for them.
+  unsafe = true
+
+[markup.goldmark.parser]
+  # Compute heading ids with GitHub's exact slug algorithm, including
+  # NON-collapsed consecutive hyphens (e.g. "Residence / Palace" -> residence--palace).
+  autoHeadingID = true
+  autoHeadingIDType = "github"
+
+[build.buildStats]
+  # Dumps every class/id Hugo actually rendered to hugo_stats.json, including
+  # ones built at template-render time (e.g. printf "text-%s" .color in
+  # index.html) that a plain source-text scan of layouts/ would miss. Tailwind
+  # scans this file (see tailwind/main.css) instead of the templates.
+  enable = true

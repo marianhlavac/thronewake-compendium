@@ -1,0 +1,163 @@
+{{ define "main" }}
+
+{{- $overview := "#" }}{{ with site.GetPage "Thronewake.md" }}{{ $overview = .RelPermalink }}{{ end -}}
+{{- $factions := "#" }}{{ with site.GetPage "Tribes.md" }}{{ $factions = .RelPermalink }}{{ end -}}
+{{- $glossary := "#" }}{{ with site.GetPage "Glossary.md" }}{{ $glossary = .RelPermalink }}{{ end -}}
+{{- $firstHours := "#" }}{{ with site.GetPage "Beginner-Protection.md" }}{{ $firstHours = .RelPermalink }}{{ end -}}
+{{- $warfare := "#" }}{{ with site.GetPage "Combat.md" }}{{ $warfare = .RelPermalink }}{{ end -}}
+
+{{- $banners := slice
+(dict "name" "Embermark Dominion" "color" "ember" "icon" "flame" "md" "Embermark-Dominion.md")
+(dict "name" "Verdant Wardens" "color" "verdant" "icon" "leaf" "md" "Verdant-Wardens.md")
+(dict "name" "Stormfang Clans" "color" "stormfang" "icon" "wind" "md" "Stormfang-Clans.md")
+(dict "name" "The Ancients" "color" "ancients" "icon" "mountain" "md" "The-Ancients.md") -}}
+
+<main>
+
+  <section class="relative overflow-hidden border-b border-border">
+    <div
+      class="absolute inset-0 bg-[radial-gradient(120%_60%_at_50%_0%,color-mix(in_oklab,var(--gold)_10%,transparent),transparent_70%)]">
+    </div>
+    <div class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
+      <div class="mx-auto max-w-3xl text-center">
+        <p class="font-display text-xs tracking-[0.22em] text-muted-foreground uppercase">Unofficial Community Wiki</p>
+        <h1 class="mt-3 text-4xl leading-tight font-semibold text-gold sm:text-5xl lg:text-6xl">Thronewake Compendium
+        </h1>
+        <p class="mx-auto mt-5 max-w-2xl text-lg text-muted-foreground">
+          Community-sourced knowledge base for <a href="https://thronewake.com" class="underline">Thronewake</a> — a free-to-play, persistent browser strategy game inspired by Travian.
+        </p>
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+          {{- range $banners }}
+            {{- $t := "#" }}{{ with site.GetPage .md }}{{ $t = .RelPermalink }}{{ end }}
+            <a href="{{ $t }}" title="{{ .name }}"
+              class="grid size-11 place-items-center rounded-full border border-border/70 bg-{{ .color }}/10 transition-transform hover:-translate-y-0.5">
+              {{ partial "icon.html" (dict "name" .icon "class" (printf "size-5 text-%s" .color)) }}
+            </a>
+          {{- end }}
+        </div>
+        <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-12">
+          <div class="mx-auto max-w-2xl text-center">
+            <div id="home-search" class="pf-search pf-search--large mx-auto max-w-xl text-left"></div>
+          </div>
+        </div>
+        <div class="mt-4 flex flex-wrap justify-center gap-3">
+          <a href="{{ $overview }}"
+            class="inline-flex items-center gap-2 rounded-md border border-gold/50 bg-gold/10 px-5 py-2.5 text-sm font-medium text-gold transition-colors hover:bg-gold/15">
+            {{ partial "icon.html" (dict "name" "crown" "class" "size-4") }}Read the overview
+          </a>
+          <a href="{{ $factions }}"
+            class="inline-flex items-center gap-2 rounded-md border border-border bg-background/60 px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-accent">
+            {{ partial "icon.html" (dict "name" "book-open" "class" "size-4") }}All pages
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-12">
+    <div class="mx-auto max-w-3xl">
+      <aside class="callout callout-warning" role="note">
+        <p class="callout-title">{{ partial "icon.html" (dict "name" "flame" "class" "size-4 shrink-0")
+          }}Community-sourced &amp; unofficial</p>
+        <div class="callout-body">
+          <p>The Thronewake Compendium is a <strong>fan-run, unofficial wiki</strong>. It is not affiliated with,
+            endorsed by, or reviewed by the developers of Thronewake.</p>
+          <p>Entries are reconstructed from community sources — the game's official Discord, changelog posts and player
+            Q&amp;A. The game is in active development, so numbers, timings and mechanics may be outdated or incomplete.
+            Verify anything that matters in-game before you commit resources to it.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 pb-16 sm:px-6 sm:pb-20">
+    <div class="grid gap-8 lg:grid-cols-2">
+
+      <div class="rounded-lg border border-border bg-panel/50 p-6 shadow-panel sm:p-8">
+        <div class="mb-5 flex items-center gap-3">
+          <span class="grid size-10 place-items-center rounded-md border border-gold/40 bg-gold/10 text-gold">{{ partial
+            "icon.html" (dict "name" "book-open" "class" "size-5") }}</span>
+          <h2 class="font-display text-2xl font-semibold text-foreground">Start here</h2>
+        </div>
+        <p class="mb-5 text-muted-foreground">New to the game? Pages that explain the game fastest, from the basics to the
+          factions.</p>
+        <ul class="space-y-3">
+          {{- range slice
+          (dict "title" "Overview" "icon" "crown" "href" $overview "desc" `What Thronewake is, how worlds work, and why territory matters.`)
+          (dict "title" "Beginner Protection" "icon" "book-open" "href" $firstHours "desc" `Your opening build order, truce timings, and how not to starve early.`)
+          (dict "title" "The Four Banners" "icon" "flame" "href" $factions "desc" `Embermark, Verdant, Stormfang and the Ancients — strengths, peaks and creeds.`)
+          (dict "title" "Combat & Sieges" "icon" "shield-alert" "href" $warfare "desc" `Casualties, refunds, counters and the real cost of holding a wall.`)
+          (dict "title" "Glossary" "icon" "file-text" "href" $glossary "desc" `Travian-to-Thronewake terms and the rest of the jargon.`) }}
+          <li>
+            <a href="{{ .href }}"
+              class="group flex items-start gap-3 rounded-md border border-transparent p-3 transition-colors hover:border-border hover:bg-accent/50">
+              <span
+                class="mt-0.5 grid size-8 shrink-0 place-items-center rounded-md border border-border bg-background text-gold">{{
+                partial "icon.html" (dict "name" .icon "class" "size-4") }}</span>
+              <div>
+                <p class="font-medium text-foreground group-hover:text-gold">{{ .title }}</p>
+                <p class="text-sm text-muted-foreground">{{ .desc }}</p>
+              </div>
+            </a>
+          </li>
+          {{- end }}
+        </ul>
+      </div>
+
+      <div class="rounded-lg border border-border bg-panel/50 p-6 shadow-panel sm:p-8">
+        <div class="mb-5 flex items-center gap-3">
+          <span class="grid size-10 place-items-center rounded-md border border-gold/40 bg-gold/10 text-gold">{{ partial
+            "icon.html" (dict "name" "github" "class" "size-5") }}</span>
+          <h2 class="font-display text-2xl font-semibold text-foreground">Contribute</h2>
+        </div>
+        <p class="mb-5 text-muted-foreground">This site stays accurate because players correct it. Add sources, fix
+          numbers, or expand a guide.</p>
+        <ul class="space-y-3">
+          <li>
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer"
+              class="group flex items-start gap-3 rounded-md border border-transparent p-3 transition-colors hover:border-border hover:bg-accent/50">
+              <span
+                class="mt-0.5 grid size-8 shrink-0 place-items-center rounded-md border border-border bg-background text-gold">{{
+                partial "icon.html" (dict "name" "github" "class" "size-4") }}</span>
+              <div class="flex-1">
+                <p class="flex items-center gap-1.5 font-medium text-foreground group-hover:text-gold">GitHub
+                  repository{{ partial "icon.html" (dict "name" "external-link" "class" `size-3.5 text-muted-foreground`) }}</p>
+                <p class="text-sm text-muted-foreground">Open-source wiki files, issue tracker and contribution
+                  guidelines.</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="{{ $overview }}"
+              class="group flex items-start gap-3 rounded-md border border-transparent p-3 transition-colors hover:border-border hover:bg-accent/50">
+              <span
+                class="mt-0.5 grid size-8 shrink-0 place-items-center rounded-md border border-border bg-background text-gold">{{
+                partial "icon.html" (dict "name" "shield-alert" "class" "size-4") }}</span>
+              <div>
+                <p class="font-medium text-foreground group-hover:text-gold">How we source facts</p>
+                <p class="text-sm text-muted-foreground">What counts as proof, how numbers are verified, and where to
+                  send corrections.</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="{{ $overview }}"
+              class="group flex items-start gap-3 rounded-md border border-transparent p-3 transition-colors hover:border-border hover:bg-accent/50">
+              <span
+                class="mt-0.5 grid size-8 shrink-0 place-items-center rounded-md border border-border bg-background text-gold">{{
+                partial "icon.html" (dict "name" "file-text" "class" "size-4") }}</span>
+              <div>
+                <p class="font-medium text-foreground group-hover:text-gold">Edit the overview</p>
+                <p class="text-sm text-muted-foreground">The main wiki page is the best place to start improving
+                  existing content.</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+{{ end }}

@@ -1,0 +1,32 @@
+{{ define "main" }}
+{{- /* Title + slug from Hugo's own heading parse (matches the github slugs). */ -}}
+{{- $h1text := .Title -}}
+{{- $h1id := "" -}}
+{{- with .Fragments.Headings }}{{ with index . 0 }}{{ $h1text = .Title }}{{ $h1id = .ID }}{{ end }}{{ end -}}
+{{- /* Article body with its leading H1 removed (rendered above the banner). */ -}}
+{{- $body := .Content | string -}}
+{{- $body = replaceRE `(?s)^\s*<h1[^>]*>.*?</h1>` "" $body -}}
+<div class="mx-auto flex max-w-7xl gap-10 px-4 sm:px-6">
+  <aside id="wiki-sidebar" class="hidden w-60 shrink-0 lg:block">
+    <div class="drawer-head flex items-center justify-between border-b border-border px-5 py-3.5 lg:hidden">
+      <span class="font-display text-xl font-semibold text-gold">Contents</span>
+      <label for="nav-toggle" class="grid size-9 cursor-pointer place-items-center rounded-md border border-border text-muted-foreground hover:border-gold/50 hover:text-gold" aria-label="Close navigation">
+        {{ partial "icon.html" (dict "name" "x" "class" "size-4") }}
+      </label>
+    </div>
+    <div class="wiki-nav-scroll sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto py-10 pr-2">
+      {{ partial "sidebar.html" . }}
+    </div>
+  </aside>
+  <main class="min-w-0 flex-1 py-8 lg:py-10">
+    <article class="mx-auto max-w-[820px]" data-pagefind-body>
+      <p class="font-display text-xs tracking-[0.22em] text-muted-foreground uppercase" data-pagefind-ignore>Compendium · Fourth Awakening</p>
+      <h1{{ with $h1id }} id="{{ . }}"{{ end }} class="mt-2 scroll-mt-24 text-4xl leading-tight font-semibold text-gold sm:text-5xl">{{ $h1text }}</h1>
+      <div class="mt-6 mb-8 h-px rule-gold"></div>
+      <div class="wiki-prose mt-8">
+        {{ $body | safeHTML }}
+      </div>
+    </article>
+  </main>
+</div>
+{{ end }}

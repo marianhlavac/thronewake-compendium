@@ -1,0 +1,15 @@
+{{- /* GitHub alerts (> [!NOTE] etc.) -> callout.tsx-style callouts.
+       Plain blockquotes fall through to wiki-prose blockquote styling. */ -}}
+{{- if .AlertType -}}
+  {{- $t := .AlertType -}}
+  {{- $icons := dict "note" "info" "important" "shield-alert" "warning" "triangle-alert" "tip" "info" "caution" "triangle-alert" -}}
+  {{- $labels := dict "note" "Note" "important" "Important" "warning" "Warning" "tip" "Tip" "caution" "Caution" -}}
+  {{- $icon := index $icons $t | default "info" -}}
+  {{- $label := or .AlertTitle (index $labels $t) (title $t) -}}
+<aside class="callout callout-{{ $t }}" role="note">
+<p class="callout-title">{{ partial "icon.html" (dict "name" $icon "class" "size-4 shrink-0") }}{{ $label }}</p>
+<div class="callout-body">{{ .Text }}</div>
+</aside>
+{{- else -}}
+<blockquote>{{ .Text }}</blockquote>
+{{- end -}}

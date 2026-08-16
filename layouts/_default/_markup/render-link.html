@@ -1,0 +1,31 @@
+{{- /* Link render hook:
+       - internal  [text](Page.md#frag)  -> resolved Page URL + #frag
+                   [text](Home.md)       -> the home page (index.html)
+       - external  http(s)://…           -> opens in a new tab
+       - same-page #anchor / anything else -> passed through unchanged */ -}}
+{{- $u := urls.Parse .Destination -}}
+{{- if $u.IsAbs -}}
+  {{- /* Goldmark's autolinker can swallow a trailing sentence ')' from a bare
+         URL (e.g. "…/simulator) —" -> "…/simulator%29"). Strip an unbalanced
+         trailing paren, but leave URLs that legitimately contain one. */ -}}
+  {{- $ext := .Destination -}}
+  {{- if not (or (strings.Contains $ext "(") (strings.Contains $ext "%28")) -}}
+    {{- $ext = $ext | strings.TrimSuffix "%29" | strings.TrimSuffix ")" -}}
+  {{- end -}}
+<a href="{{ $ext | safeURL }}" target="_blank" rel="noopener noreferrer"{{ with .Title }} title="{{ . }}"{{ end }}>{{ .Text | safeHTML }}</a>
+{{- else if strings.HasSuffix $u.Path ".md" -}}
+  {{- $target := "" -}}
+  {{- if eq $u.Path "Home.md" -}}
+    {{- $target = site.Home.RelPermalink -}}
+  {{- else -}}
+    {{- with site.GetPage $u.Path -}}
+      {{- $target = .RelPermalink -}}
+    {{- else -}}
+      {{- $target = printf "%s.html" (lower (strings.TrimSuffix ".md" $u.Path)) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- with $u.Fragment }}{{ $target = printf "%s#%s" $target . }}{{ end -}}
+<a href="{{ $target | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}>{{ .Text | safeHTML }}</a>
+{{- else -}}
+<a href="{{ .Destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}>{{ .Text | safeHTML }}</a>
+{{- end -}}

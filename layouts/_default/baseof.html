@@ -1,0 +1,90 @@
+{{- /* Page <title> = the page's first H1 (falls back to Hugo's title). */ -}}
+{{- $raw := .RawContent -}}
+{{- $h1 := "" -}}
+{{- $mm := findRESubmatch `(?m)^#\s+(.+?)\s*$` $raw -}}
+{{- if $mm }}{{ $h1 = index (index $mm 0) 1 }}{{ end -}}
+{{- $h1 = $h1 | replaceRE `<[^>]+>` "" -}}
+{{- $title := cond (ne $h1 "") $h1 .Title -}}
+{{- $favicon := "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Ctext%20x='50'%20y='52'%20font-size='84'%20text-anchor='middle'%20dominant-baseline='central'%3E%F0%9F%91%91%3C/text%3E%3C/svg%3E" -}}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ if .IsHome }}{{ site.Title }}{{ else if in $title "Thronewake" }}{{ $title }}{{ else }}{{ $title }} · {{ site.Title }}{{ end }}</title>
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}Unofficial community compendium for the browser strategy game Thronewake.{{ end }}">
+<link rel="icon" href="{{ $favicon | safeURL }}">
+<link rel="stylesheet" href="{{ "pagefind/pagefind-ui.css" | relURL }}">
+<link rel="stylesheet" href="{{ "app.css" | relURL }}">
+<link rel="stylesheet" href="{{ "theme.css" | relURL }}">
+</head>
+<body>
+{{- if not .IsHome }}
+<input type="checkbox" id="nav-toggle" class="nav-toggle" hidden>
+{{- end }}
+<div class="app min-h-screen bg-vellum">
+
+  <header class="sticky top-0 z-40 border-b border-border bg-background/92 backdrop-blur-md">
+    <div class="mx-auto flex max-w-7xl items-center gap-3 px-4 py-2.5 sm:px-6">
+      {{- if not .IsHome }}
+      <label for="nav-toggle" class="inline-flex size-9 shrink-0 cursor-pointer items-center justify-center rounded-md border border-border text-muted-foreground hover:border-gold/50 hover:text-gold lg:hidden" aria-label="Open wiki contents">
+        {{ partial "icon.html" (dict "name" "menu" "class" "size-4") }}
+      </label>
+      {{- end }}
+      <a href="{{ site.Home.RelPermalink }}" class="flex shrink-0 items-center gap-2.5">
+        <span class="grid size-8 place-items-center rounded-sm border border-gold/40 bg-gold/12 text-gold">
+          {{ partial "icon.html" (dict "name" "crown" "class" "size-4") }}
+        </span>
+        <span class="hidden font-display text-base leading-none font-semibold tracking-wide text-gold sm:inline">Thronewake<span class="ml-1.5 text-xs font-normal tracking-[0.2em] text-muted-foreground uppercase">Compendium</span></span>
+      </a>
+      <div class="ml-auto flex min-w-0 flex-1 items-center justify-end gap-2 sm:max-w-sm">
+        <div id="site-search" class="pf-search pf-search--compact"></div>
+      </div>
+    </div>
+    <div class="h-px rule-gold"></div>
+  </header>
+
+  {{- if not .IsHome }}
+  <label class="nav-scrim" for="nav-toggle" aria-hidden="true"></label>
+  {{- end }}
+
+  {{ block "main" . }}{{ end }}
+
+  <footer class="mt-16 border-t border-border bg-panel/60">
+    <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+      <aside class="callout callout-warning">
+        <p class="callout-title">{{ partial "icon.html" (dict "name" "flame" "class" "size-4") }}Unofficial &amp; community-sourced</p>
+        <div class="callout-body">
+          <p>The Thronewake Compendium is a <strong>fan-run, unofficial wiki</strong>, not affiliated with or endorsed by the developers of Thronewake. The game is in active development and mechanics change often — the current world (Fourth Awakening) began 29&nbsp;July&nbsp;2026. Verify anything that matters in-game before you commit resources to it.</p>
+        </div>
+      </aside>
+      <div class="mt-8 border-t border-border pt-5 flex flex-col gap-4 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p class="font-display text-base text-gold">Thronewake Compendium</p>
+          <p class="mt-1 text-xs">Community-sourced knowledge base for <a href="https://thronewake.com" class="underline">Thronewake</a></p>
+        </div>
+        <ul class="flex flex-wrap gap-x-5 gap-y-2">
+          <li><a href="{{ site.Home.RelPermalink }}" class="hover:text-gold">Home</a></li>
+          {{- with site.GetPage "About-the-Compendium.md" }}<li><a href="{{ .RelPermalink }}" class="hover:text-gold">About this Compendium</a></li>{{ end }}
+          <li><a href="https://github.com" class="hover:text-gold">Github</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+{{- /* Pagefind static search. The bundle under /pagefind/ is generated after
+       Hugo runs; it fetches its index over HTTP, so search only works when the
+       site is served (not from file://). The guard keeps file:// browsing clean. */ -}}
+<script src="{{ "pagefind/pagefind-ui.js" | relURL }}"></script>
+<script>
+  window.addEventListener("DOMContentLoaded", function () {
+    if (typeof PagefindUI === "undefined") return;
+    var opts = { showImages: false, showSubResults: true, pageSize: 6, translations: { placeholder: "Search the Compendium…" } };
+    if (document.querySelector("#site-search")) new PagefindUI(Object.assign({ element: "#site-search" }, opts));
+    if (document.querySelector("#home-search")) new PagefindUI(Object.assign({ element: "#home-search" }, opts));
+  });
+</script>
+</body>
+</html>

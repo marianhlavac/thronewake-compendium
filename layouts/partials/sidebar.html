@@ -1,0 +1,35 @@
+{{- /* wiki-nav: sidebar sections parsed from Home.md's "## Category" + bullet
+       structure, so it mirrors the index. Matches components/wiki/wiki-nav.tsx. */ -}}
+{{- $cur := . -}}
+<nav aria-label="Wiki contents" class="space-y-6 text-sm">
+{{- $chunks := split site.Home.RawContent "\n## " -}}
+{{- range after 1 $chunks -}}
+  {{- $title := index (split . "\n") 0 -}}
+  {{- $items := findRESubmatch `(?m)^-\s+\[(.+?)\]\(([^)#]+\.md)(#[^)]*)?\)` . -}}
+  {{- if $items }}
+  <div>
+    <p class="mb-2 font-display text-xs font-semibold tracking-[0.18em] text-muted-foreground uppercase">{{ $title }}</p>
+    <ul class="space-y-0.5 border-l border-border">
+    {{- range $items -}}
+      {{- $text := index . 1 -}}
+      {{- $md := index . 2 -}}
+      {{- $target := printf "%s.html" (lower (strings.TrimSuffix ".md" $md)) -}}
+      {{- $active := false -}}
+      {{- if eq $md "Home.md" -}}
+        {{- $target = site.Home.RelPermalink -}}
+        {{- if $cur.IsHome }}{{ $active = true }}{{ end -}}
+      {{- else -}}
+        {{- with site.GetPage $md -}}
+          {{- $target = .RelPermalink -}}
+          {{- if eq .RelPermalink $cur.RelPermalink }}{{ $active = true }}{{ end -}}
+        {{- end -}}
+      {{- end -}}
+      <li>
+        <a href="{{ $target }}"{{ if $active }} aria-current="page"{{ end }} class="-ml-px block border-l-2 py-1.5 pl-3 transition-colors {{ if $active }}border-l-gold font-semibold text-gold{{ else }}border-l-transparent text-muted-foreground hover:border-l-gold/40 hover:text-foreground{{ end }}">{{ $text }}</a>
+      </li>
+    {{- end }}
+    </ul>
+  </div>
+  {{- end -}}
+{{- end }}
+</nav>

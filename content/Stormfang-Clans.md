@@ -1,3 +1,9 @@
+---
+category: "Factions & tribes"
+weight: 240
+linkTitle: "Stormfang Clans 🐺"
+---
+
 # Stormfang Clans 🐺
 
 One of the three playable [tribes](Tribes.md). The Stormfang Clans are the **cheap, aggressive, high-volume** tribe — very strong for aggressive play, fast rebuilding, and frequent [raiding](Combat.md).

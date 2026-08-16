@@ -1,3 +1,9 @@
+---
+category: "Mid- and end-game"
+weight: 630
+linkTitle: "Watchfires (event)"
+---
+
 # Watchfires 🔥
 
 **Watchfires** are temporary map objectives that appear during special events. [Alliances](Alliances-and-Diplomacy.md) claim them, reinforce them, and fight other alliances for control. The longer your alliance holds Watchfires, the more progress you make toward **Watchfire Blessings**. Watchfires were added in update 24/07 and reworked on 10/08.

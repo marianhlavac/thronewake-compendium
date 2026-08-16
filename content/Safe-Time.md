@@ -1,3 +1,9 @@
+---
+category: "Military"
+weight: 430
+linkTitle: "Safe Time"
+---
+
 # Safe Time
 
 **Safe Time** is a personal daily protection window of **up to 6 hours per day**. During your Safe Time you are protected from most hostile actions — but you also **cannot launch** most actions against others. It is one of Thronewake's signature departures from Travian (a substitute for the lack of a hero/night-truce), and its exact rules have been iterated on many times.

@@ -1,3 +1,9 @@
+---
+category: "World & interaction"
+weight: 540
+linkTitle: "Wilder Sites (oases)"
+---
+
 # Wilder Sites
 
 **Wilder Sites** (called **oases** by many players) are special map locations, guarded by **[the Ancients](The-Ancients.md)**. They can be **raided** for resources, **conquered** to give a production bonus to one of your [villages](Villages-Cities-and-Expansion.md), and are a major early-game economy source. On the map they appear as wilderness tiles with a **resource icon**.

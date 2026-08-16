@@ -1,3 +1,9 @@
+---
+category: "Your empire"
+weight: 330
+linkTitle: "Resources & Economy"
+---
+
 # Resources & Economy
 
 Thronewake has **four resources**, produced by resource fields in each [village](Villages-Cities-and-Expansion.md):

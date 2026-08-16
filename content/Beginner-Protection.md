@@ -1,3 +1,9 @@
+---
+category: "Military"
+weight: 440
+linkTitle: "Beginner Protection"
+---
+
 # Beginner Protection
 
 **Beginner Protection (BP)** shields new players from hostile actions for a period at the start of a [world](Worlds-and-Server-Speed.md), giving time to establish an economy before PvP begins.

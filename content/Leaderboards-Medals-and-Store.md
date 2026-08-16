@@ -1,3 +1,9 @@
+---
+category: "Mid- and end-game"
+weight: 640
+linkTitle: "Leaderboards, Medals & Store"
+---
+
 # Leaderboards, Medals & Store
 
 ## Leaderboards

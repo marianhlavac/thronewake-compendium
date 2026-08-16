@@ -1,3 +1,9 @@
+---
+category: "Factions & tribes"
+weight: 230
+linkTitle: "Verdant Wardens 🌿"
+---
+
 # Verdant Wardens 🌿
 
 One of the three playable [tribes](Tribes.md). The Verdant Wardens are the **fast, mobile, defensive/utility** tribe — excellent for quick [raids](Combat.md), fast support, and map control.

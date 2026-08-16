@@ -1,3 +1,9 @@
+---
+category: "Start here"
+weight: 130
+linkTitle: "Glossary (Travian terms → Thronewake)"
+---
+
 # Glossary
 
 Thronewake is inspired by **Travian** and its community uses a lot of Travian/Tribal-Wars jargon. This glossary maps common terms to Thronewake equivalents. Where a mapping is a player analogy rather than an official equivalence, it's marked *(analogy)*.

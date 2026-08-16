@@ -1,3 +1,9 @@
+---
+category: "Mid- and end-game"
+weight: 620
+linkTitle: "Endgame: the Ancient Monument"
+---
+
 # Endgame: the Ancient Monument
 
 To **win the world**, your [alliance](Alliances-and-Diplomacy.md) must be the **first to upgrade an Ancient Monument to level 100**. This is Thronewake's endgame, analogous to the Travian World Wonder (players call it the "WW" or "Wonder"). On a **3× world**, the [Construction Plans](#construction-plans) needed to raise it release on **day 60** ([artefacts](Artefacts.md) release earlier, day 30). See [Worlds & Server Speed](Worlds-and-Server-Speed.md#endgame-timing-per-world-speed).

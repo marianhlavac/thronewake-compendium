@@ -1,3 +1,9 @@
+---
+category: "Start here"
+weight: 120
+linkTitle: "Worlds & Server Speed"
+---
+
 # Worlds & Server Speed
 
 A **world** (also called a **server** or an **"Awakening"**) is a single game round. Each world runs until it is **won** (see [Endgame](Endgame-Ancient-Monument.md)), then a new one opens. Only **one active world runs at a time** so far; the developer prefers one full world over two half-empty ones, though multiple simultaneous worlds are a future possibility. New worlds open roughly **monthly**.

@@ -1,3 +1,9 @@
+---
+category: "Start here"
+weight: 110
+linkTitle: "Thronewake — game overview"
+---
+
 # Thronewake
 
 **Thronewake** is a free-to-play, persistent, browser-based massively-multiplayer strategy game, openly inspired by **Travian**. Players build villages, gather [resources](Resources.md), raise armies, form [alliances](Alliances-and-Diplomacy.md), fight over the map, and race to the [endgame](Endgame-Ancient-Monument.md). Its tagline is *"A forgotten throne. A realm awakens."*

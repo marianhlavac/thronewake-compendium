@@ -1,3 +1,9 @@
+---
+category: "Military"
+weight: 420
+linkTitle: "Combat"
+---
+
 # Combat
 
 Combat in Thronewake is "basically the same as Travian" (the developer's words), adjusted for the lack of a hero. Defense is deliberately **strong**, because the win condition — building the [Ancient Monument](Endgame-Ancient-Monument.md) — requires enormous defense.

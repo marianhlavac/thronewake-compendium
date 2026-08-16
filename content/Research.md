@@ -1,3 +1,9 @@
+---
+category: "Your empire"
+weight: 350
+linkTitle: "Research"
+---
+
 # Research
 
 The **Research** system (added 19/07) lets each [village](Villages-Cities-and-Expansion.md) unlock bonuses and special mechanics using **Research Points (RP)**. It is one of Thronewake's biggest departures from Travian and is managed via the **[Academy](Buildings.md#academy)**.

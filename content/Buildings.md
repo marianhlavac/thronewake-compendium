@@ -1,3 +1,9 @@
+---
+category: "Your empire"
+weight: 340
+linkTitle: "Buildings"
+---
+
 # Buildings
 
 Buildings occupy plots in a [village](Villages-Cities-and-Expansion.md). This is an index of the buildings named in the source, grouped by role. Some have their own dedicated articles; complex ones are detailed inline here.

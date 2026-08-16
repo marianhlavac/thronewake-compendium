@@ -1,3 +1,9 @@
+---
+category: "World & interaction"
+weight: 510
+linkTitle: "The Map, Reports & UI"
+---
+
 # The Map, Reports & UI
 
 This article collects map, report, and interface features referenced in the source.

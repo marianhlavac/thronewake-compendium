@@ -1,3 +1,9 @@
+---
+category: "Your empire"
+weight: 310
+linkTitle: "Villages, Cities & Expansion"
+---
+
 # Villages, Cities & Expansion
 
 Your empire is a set of **villages**. This article covers founding villages, the [capital](#capital), upgrading villages to **[cities](#cities)**, **[loyalty](#loyalty--conquering)** and conquering, and the **[Tasks](#tasks)** system. Growth is gated by **[Culture Points](Culture-Points.md)** and expansion slots.

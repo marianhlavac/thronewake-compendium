@@ -1,3 +1,9 @@
+---
+category: "Factions & tribes"
+weight: 250
+linkTitle: "The Ancients 🗿 (NPC faction)"
+---
+
 # The Ancients 🗿
 
 The **Ancients** are Thronewake's non-playable NPC faction — analogous to Travian's **Natars/Nataris**. They guard the map, hold special villages, defend [Wilder Sites](Wilder-Sites.md), take over abandoned player villages, and drive the [endgame](Endgame-Ancient-Monument.md).

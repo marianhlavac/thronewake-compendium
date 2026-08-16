@@ -1,3 +1,9 @@
+---
+category: "Military"
+weight: 410
+linkTitle: "Units / Troops"
+---
+
 # Units / Troops
 
 Units are trained in the **[Barracks](Buildings.md)** (infantry), **[Stable](Buildings.md)** (cavalry), **[Workshop](Buildings.md)** (siege), and **[Residence/Palace](Villages-Cities-and-Expansion.md#residence--palace)** (settlers & leaders). Unit stats and costs are based on **Travian 4.6** *(player-reported)*, adjusted for the absence of a hero.

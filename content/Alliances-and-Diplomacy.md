@@ -1,3 +1,9 @@
+---
+category: "World & interaction"
+weight: 530
+linkTitle: "Alliances & Diplomacy"
+---
+
 # Alliances & Diplomacy
 
 Alliances are groups of players who share defense, chat, [reports](Reports-and-Map.md), and bonuses, and who coordinate toward the [endgame](Endgame-Ancient-Monument.md). Alliances are managed from the alliance page (the "handshake" icon in the top bar) and joined via the **[Embassy](Buildings.md#embassy)**.

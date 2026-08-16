@@ -1,3 +1,9 @@
+---
+category: "Mid- and end-game"
+weight: 610
+linkTitle: "Artefacts"
+---
+
 # Artefacts
 
 **Artefacts** are powerful **[Ancient](The-Ancients.md)** relics that can change the direction of a world. They are rare, heavily contested, and usually matter once alliances fight over larger goals. On a **3× world** they release on **day 30** (the [Ancient Monument Construction Plans](Endgame-Ancient-Monument.md#construction-plans) are separate and release later, on day 60).

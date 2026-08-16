@@ -1,3 +1,9 @@
+---
+category: "Your empire"
+weight: 320
+linkTitle: "Culture Points"
+---
+
 # Culture Points (CP)
 
 **Culture Points** are the resource that lets you **expand** — you need them to found or conquer new [villages](Villages-Cities-and-Expansion.md) and to upgrade a village into a **[City](Villages-Cities-and-Expansion.md#cities)**.

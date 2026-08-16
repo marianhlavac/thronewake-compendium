@@ -1,3 +1,9 @@
+---
+category: "Start here"
+weight: 140
+linkTitle: "About the Compendium"
+---
+
 # About the Compendium
 
 An unofficial, community-sourced knowledge base for **[Thronewake](https://thronewake.com)** — a free-to-play, persistent browser strategy game inspired by Travian.

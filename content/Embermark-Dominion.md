@@ -1,3 +1,9 @@
+---
+category: "Factions & tribes"
+weight: 220
+linkTitle: "Embermark Dominion 🔥"
+---
+
 # Embermark Dominion 🔥
 
 One of the three playable [tribes](Tribes.md). The Embermark Dominion is the **balanced, heavy-hitting** tribe: it has the **strongest individual units** in the game, but they are more expensive and **train slowly** (especially infantry). (Note the distinction — stronger *units*, not necessarily a stronger *army* overall, since the higher cost and slow training mean you field fewer of them.) It has the best **attack-per-crop** efficiency of the three tribes, and in practice **most of its attack comes from cavalry** rather than infantry.

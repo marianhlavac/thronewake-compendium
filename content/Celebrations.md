@@ -1,3 +1,9 @@
+---
+category: "Your empire"
+weight: 360
+linkTitle: "Celebrations & the Festival Grounds"
+---
+
 # Celebrations & the Festival Grounds
 
 **Celebrations** (players call them "parties") are hosted in the **Festival Grounds** building to generate **[Culture Points](Culture-Points.md)** — the main active way to fuel [expansion](Villages-Cities-and-Expansion.md). The Festival Grounds was added in update 22/05.

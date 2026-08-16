@@ -1,3 +1,9 @@
+---
+category: "Factions & tribes"
+weight: 210
+linkTitle: "Tribes overview & comparison"
+---
+
 # Tribes
 
 At the start of a [world](Worlds-and-Server-Speed.md) you choose one of three playable tribes. Each has its own strengths, weaknesses, [units](Units.md), a **unique building**, and different **[merchant](Marketplace-and-Trade.md)** and **[Watch Tower](Buildings.md#watch-tower)** stats. The choice matters, but all three are meant to be viable; the developer describes them as "very recognizable" to Travian players.

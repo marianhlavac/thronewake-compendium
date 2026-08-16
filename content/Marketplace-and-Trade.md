@@ -1,3 +1,9 @@
+---
+category: "World & interaction"
+weight: 520
+linkTitle: "Marketplace & Trade"
+---
+
 # Marketplace & Trade
 
 The **Marketplace** building lets you send resources, exchange them at the NPC **Quartermaster**, and set up **trade routes**. **Merchants** carry the resources.

@@ -1,3 +1,9 @@
+---
+category: "World & interaction"
+weight: 550
+linkTitle: "Vacation Mode"
+---
+
 # Vacation Mode
 
 **Vacation Mode** lets you take a break from the game. Activate it in **Settings** for **1 to 15 days** (added 25/06).

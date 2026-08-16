@@ -21,7 +21,7 @@ aiStatus: "ai-slop"
 - You can manage your **profile** (description, medals) and, on your own profile / with the right alliance permission, see per-village incoming attacks.
 
 ## Store & Gold
-Thronewake has a **Store** where you can buy **Gold** (added 20/06). Consistent with the game's [no-pay-to-win](Thronewake.md#no-pay-to-win) philosophy, Gold gives **no gameplay/resource advantage** — only cosmetic and support items:
+Thronewake has a **Store** where you can buy **Gold** (added 20/06). Consistent with the game's [no-pay-to-win](Overview.md#no-pay-to-win) philosophy, Gold gives **no gameplay/resource advantage** — only cosmetic and support items:
 - Become a **"Patron of the Throne"** — a support badge.
 - **Building skins** (e.g. Town Hall skins, [Rally Point](Buildings.md#rally-point) skins).
 - **Tribe icons** shown next to your name (leaderboard, chat, alliance member list) instead of the default leader icon.
@@ -30,4 +30,4 @@ Thronewake has a **Store** where you can buy **Gold** (added 20/06). Consistent 
 There is **no** Gold-bought instant-build, resources, production bonus, or troop-merging — a deliberate contrast with Travian.
 
 ## See also
-- [Endgame: the Ancient Monument](Endgame-Ancient-Monument.md) · [Thronewake overview](Thronewake.md) · [Watchfires](Watchfires.md)
+- [Endgame: the Ancient Monument](Endgame-Ancient-Monument.md) · [Thronewake overview](Overview.md) · [Watchfires](Watchfires.md)

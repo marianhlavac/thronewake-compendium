@@ -43,4 +43,4 @@ Thronewake is inspired by **Travian** and its community uses a lot of Travian/Tr
 | **Roman / Gaul / Teuton** | Direct equivalents of [Embermark](Embermark-Dominion.md) (balanced/strong), [Verdant](Verdant-Wardens.md) (fast/defensive), and [Stormfang](Stormfang-Clans.md) (cheap/aggressive) respectively — the stats are essentially identical to the Travian tribes. |
 
 ## See also
-- [Home](Home.md) · [Thronewake overview](Thronewake.md) · [Tribes](Tribes.md)
+- [Home](Home.md) · [Thronewake overview](Overview.md) · [Tribes](Tribes.md)

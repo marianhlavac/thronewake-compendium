@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-{{- $overview := "#" }}{{ with site.GetPage "Thronewake.md" }}{{ $overview = .RelPermalink }}{{ end -}}
+{{- $overview := "#" }}{{ with site.GetPage "Overview.md" }}{{ $overview = .RelPermalink }}{{ end -}}
 {{- $factions := "#" }}{{ with site.GetPage "Tribes.md" }}{{ $factions = .RelPermalink }}{{ end -}}
 {{- $glossary := "#" }}{{ with site.GetPage "Glossary.md" }}{{ $glossary = .RelPermalink }}{{ end -}}
 {{- $firstHours := "#" }}{{ with site.GetPage "Beginner-Protection.md" }}{{ $firstHours = .RelPermalink }}{{ end -}}

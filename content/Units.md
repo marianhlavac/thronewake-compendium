@@ -15,6 +15,7 @@ Units are trained in the **[Barracks](Buildings.md)** (infantry), **[Stable](Bui
 ## Where to find unit stats
 - **[Combat Simulator](Combat.md#combat-simulator)** (via the [Rally Point](Buildings.md#rally-point), or https://www.thronewake.com/simulator) — hover over unit icons to see their attributes; also shows speed and carry capacity.
 - **[Smithy](Buildings.md#smithy)** — shows your **own tribe's researched units'** stats per level. There is **no** in-game overview of all units at all levels.
+- **[Thronewake Tools (drdoughnut.github.io)](https://drdoughnut.github.io/thronewake-tools)** - community tools to compare unit attributes, calculate armies, plan hammer operations, etc.
 
 ## Unit classes
 - **Infantry** — trained in the Barracks. Both offensive and defensive infantry exist per tribe.

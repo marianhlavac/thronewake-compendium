@@ -2,6 +2,7 @@
 category: "World & interaction"
 weight: 540
 linkTitle: "Wilder Sites (oases)"
+aiStatus: "ai-slop"
 ---
 
 # Wilder Sites

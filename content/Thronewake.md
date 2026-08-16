@@ -2,6 +2,7 @@
 category: "Start here"
 weight: 110
 linkTitle: "Thronewake — game overview"
+aiStatus: "human-fixed"
 ---
 
 # Thronewake

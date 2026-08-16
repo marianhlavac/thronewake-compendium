@@ -2,6 +2,7 @@
 category: "Your empire"
 weight: 350
 linkTitle: "Research"
+aiStatus: "ai-slop"
 ---
 
 # Research

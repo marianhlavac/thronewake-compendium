@@ -2,6 +2,7 @@
 category: "Your empire"
 weight: 340
 linkTitle: "Buildings"
+aiStatus: "ai-slop"
 ---
 
 # Buildings

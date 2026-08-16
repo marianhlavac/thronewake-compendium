@@ -2,6 +2,7 @@
 category: "Factions & tribes"
 weight: 230
 linkTitle: "Verdant Wardens 🌿"
+aiStatus: "ai-slop"
 ---
 
 # Verdant Wardens 🌿

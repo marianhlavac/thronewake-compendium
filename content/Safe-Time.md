@@ -2,6 +2,7 @@
 category: "Military"
 weight: 430
 linkTitle: "Safe Time"
+aiStatus: "ai-slop"
 ---
 
 # Safe Time

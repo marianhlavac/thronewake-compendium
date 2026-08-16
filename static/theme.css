@@ -54,11 +54,27 @@
   border-radius: 0 calc(var(--radius) - 2px) calc(var(--radius) - 2px) 0;
   background-color: color-mix(in oklab, var(--callout) 10%, transparent);
 }
-.callout-note      { --callout: var(--stormfang); }
-.callout-important { --callout: var(--gold); }
-.callout-warning   { --callout: var(--ember); }
-.callout-tip       { --callout: var(--verdant); }
-.callout-caution   { --callout: var(--destructive); }
+
+.callout-note {
+  --callout: var(--stormfang);
+}
+
+.callout-important {
+  --callout: var(--gold);
+}
+
+.callout-warning {
+  --callout: var(--ember);
+}
+
+.callout-tip {
+  --callout: var(--verdant);
+}
+
+.callout-caution {
+  --callout: var(--destructive);
+}
+
 .callout-title {
   display: flex;
   align-items: center;
@@ -71,16 +87,37 @@
   text-transform: uppercase;
   color: var(--callout);
 }
-.callout-title svg { flex: none; }
-.callout-body > * + * { margin-top: 0.5rem; }
-.callout-body > :first-child { margin-top: 0; }
-.callout-body > :last-child { margin-bottom: 0; }
-.callout-body a { color: var(--gold); text-decoration: underline; text-underline-offset: 2px; }
+
+.callout-title svg {
+  flex: none;
+}
+
+.callout-body>*+* {
+  margin-top: 0.5rem;
+}
+
+.callout-body> :first-child {
+  margin-top: 0;
+}
+
+.callout-body> :last-child {
+  margin-bottom: 0;
+}
+
+.callout-body a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
 
 /* 2b. Pagefind search — size ONLY via --pagefind-ui-scale. Pagefind ties both
        the input height (64px*scale) and the search-icon position (top 23px*
        scale) to the same scale, so overriding the height decentres the icon. */
-.pf-search { position: relative; width: 100%; }
+.pf-search {
+  position: relative;
+  width: 100%;
+}
+
 .pf-search .pagefind-ui {
   --pagefind-ui-primary: var(--gold);
   --pagefind-ui-text: var(--foreground);
@@ -92,23 +129,50 @@
   --pagefind-ui-font: var(--font-sans);
   margin: 0;
 }
-.pf-search .pagefind-ui__form { margin: 0; }
+
+.pf-search .pagefind-ui__form {
+  margin: 0;
+}
+
 /* text: not bold (Pagefind defaults to 700); readable placeholder (default .2) */
 .pf-search .pagefind-ui__search-input {
   font-weight: 400;
   color: var(--foreground);
   background: color-mix(in oklab, var(--background) 60%, transparent);
 }
-.pf-search .pagefind-ui__search-input::placeholder { opacity: 1; color: var(--muted-foreground); }
-/* header search ≈ h-9 (compact); home search band stays large ≈ h-12 */
-.pf-search--compact .pagefind-ui { --pagefind-ui-scale: 0.6; }
-.pf-search--large .pagefind-ui { --pagefind-ui-scale: 0.75; }
-.pf-search--large .pagefind-ui__search-input { box-shadow: var(--shadow-panel); }
 
-.pf-search mark { background: color-mix(in oklab, var(--gold) 30%, transparent); color: inherit; }
-.pf-search .pagefind-ui__result-title a { color: var(--foreground); }
+.pf-search .pagefind-ui__search-input::placeholder {
+  opacity: 1;
+  color: var(--muted-foreground);
+}
+
+/* header search ≈ h-9 (compact); home search band stays large ≈ h-12 */
+.pf-search--compact .pagefind-ui {
+  --pagefind-ui-scale: 0.6;
+}
+
+.pf-search--large .pagefind-ui {
+  --pagefind-ui-scale: 0.75;
+}
+
+.pf-search--large .pagefind-ui__search-input {
+  box-shadow: var(--shadow-panel);
+}
+
+.pf-search mark {
+  background: color-mix(in oklab, var(--gold) 30%, transparent);
+  color: inherit;
+}
+
+.pf-search .pagefind-ui__result-title a {
+  color: var(--foreground);
+}
+
 .pf-search .pagefind-ui__result-title a:hover,
-.pf-search .pagefind-ui__result-link:hover { color: var(--gold); }
+.pf-search .pagefind-ui__result-link:hover {
+  color: var(--gold);
+}
+
 /* header search: results as a dropdown panel anchored under the input */
 .pf-search--compact .pagefind-ui__drawer:not(.pagefind-ui__hidden) {
   position: absolute;
@@ -125,22 +189,133 @@
   box-shadow: var(--shadow-panel);
 }
 
+/* 2c-i. AI-content status badge (per-page front matter `aiStatus`) — a pill
+       showing how the page was written, plus a hoverable/focusable info icon
+       with a tooltip explaining the state in full. Colour comes from an
+       inline custom property set by the partial, so this works for any of
+       the four states without per-state CSS. */
+.ai-status {
+  --as: var(--ancients);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  flex: none;
+}
+
+.ai-status[data-color="destructive"] {
+  --as: var(--destructive);
+}
+
+.ai-status[data-color="gold"] {
+  --as: var(--gold);
+}
+
+.ai-status[data-color="verdant"] {
+  --as: var(--verdant);
+}
+
+.ai-status[data-color="ancients"] {
+  --as: var(--ancients);
+}
+
+.ai-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.062rem 0.625rem;
+  border: 1px solid color-mix(in oklab, var(--as) 35%, transparent);
+  border-radius: 999px;
+  background-color: color-mix(in oklab, var(--as) 12%, transparent);
+  color: var(--as);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.ai-status-trigger {
+  display: inline-flex;
+  color: var(--as);
+  cursor: help;
+  opacity: 0.7;
+  transition: opacity 0.15s ease;
+}
+
+.ai-status-trigger:hover,
+.ai-status-trigger:focus-visible {
+  opacity: 1;
+}
+
+.ai-status-tooltip {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  z-index: 60;
+  width: 17rem;
+  max-width: 80vw;
+  padding: 0.8rem 0.95rem;
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) - 2px);
+  background: var(--panel);
+  box-shadow: var(--shadow-panel);
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  text-align: left;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-2px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.ai-status-tooltip strong {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: var(--as);
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+}
+
+.ai-status-tooltip p {
+  margin: 0;
+  color: var(--muted-foreground);
+}
+
+.ai-status:hover .ai-status-tooltip,
+.ai-status-trigger:focus-visible~.ai-status-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
 /* 2c. Hide scrollbars on the scrolling nav areas — Safari renders a styled
        webkit scrollbar as an always-on chunky bar that looks worse than none.
        Content still scrolls by wheel / trackpad / drag. */
 .wiki-nav-scroll,
 #wiki-sidebar,
-.pf-search--compact .pagefind-ui__drawer { scrollbar-width: none; }
+.pf-search--compact .pagefind-ui__drawer {
+  scrollbar-width: none;
+}
+
 .wiki-nav-scroll::-webkit-scrollbar,
 #wiki-sidebar::-webkit-scrollbar,
-.pf-search--compact .pagefind-ui__drawer::-webkit-scrollbar { display: none; }
+.pf-search--compact .pagefind-ui__drawer::-webkit-scrollbar {
+  display: none;
+}
 
 /* 2d. Mobile nav drawer. app.css ships a JS dialog we don't include, so the
        <aside id="wiki-sidebar"> becomes a checkbox-driven off-canvas drawer:
        a full-height left panel over a dimmed backdrop, matching the design's
        "Contents" dialog. The .drawer-head (title + × close) is mobile-only. */
-.nav-toggle { position: absolute; opacity: 0; pointer-events: none; }
-.nav-scrim { display: none; }
+.nav-toggle {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nav-scrim {
+  display: none;
+}
 
 @media (max-width: 1023px) {
   #wiki-sidebar {
@@ -152,15 +327,21 @@
     bottom: 0;
     width: min(330px, 86vw);
     margin: 0;
-    overflow: hidden;                 /* head stays put, the nav list scrolls */
+    overflow: hidden;
+    /* head stays put, the nav list scrolls */
     background-color: var(--panel);
     border-right: 1px solid var(--border);
     box-shadow: var(--shadow-panel);
     transform: translateX(-102%);
     transition: transform 0.22s ease;
-    z-index: 50;                      /* above the header, like the design dialog */
+    z-index: 50;
+    /* above the header, like the design dialog */
   }
-  #wiki-sidebar .drawer-head { flex: none; }
+
+  #wiki-sidebar .drawer-head {
+    flex: none;
+  }
+
   #wiki-sidebar .wiki-nav-scroll {
     position: static;
     max-height: none;
@@ -168,21 +349,33 @@
     overflow-y: auto;
     padding: 1.25rem;
   }
-  #nav-toggle:checked ~ .app #wiki-sidebar { transform: none; }
+
+  #nav-toggle:checked~.app #wiki-sidebar {
+    transform: none;
+  }
 
   .nav-scrim {
     display: block;
     position: fixed;
     inset: 0;
-    z-index: 45;                      /* dims everything, including the navbar */
+    z-index: 45;
+    /* dims everything, including the navbar */
     background: oklch(0% 0 0 / .5);
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.2s ease;
   }
-  #nav-toggle:checked ~ .app .nav-scrim { opacity: 1; pointer-events: auto; }
+
+  #nav-toggle:checked~.app .nav-scrim {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  #wiki-sidebar, .nav-scrim { transition: none; }
+
+  #wiki-sidebar,
+  .nav-scrim {
+    transition: none;
+  }
 }

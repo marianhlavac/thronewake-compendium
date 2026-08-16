@@ -2,6 +2,7 @@
 category: "Your empire"
 weight: 360
 linkTitle: "Celebrations & the Festival Grounds"
+aiStatus: "ai-slop"
 ---
 
 # Celebrations & the Festival Grounds

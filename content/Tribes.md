@@ -2,6 +2,7 @@
 category: "Factions & tribes"
 weight: 210
 linkTitle: "Tribes overview & comparison"
+aiStatus: "ai-slop"
 ---
 
 # Tribes

@@ -2,6 +2,7 @@
 category: "Your empire"
 weight: 310
 linkTitle: "Villages, Cities & Expansion"
+aiStatus: "ai-slop"
 ---
 
 # Villages, Cities & Expansion

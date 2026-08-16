@@ -2,6 +2,7 @@
 category: "Mid- and end-game"
 weight: 640
 linkTitle: "Leaderboards, Medals & Store"
+aiStatus: "ai-slop"
 ---
 
 # Leaderboards, Medals & Store

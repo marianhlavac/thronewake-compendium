@@ -2,6 +2,7 @@
 category: "Factions & tribes"
 weight: 240
 linkTitle: "Stormfang Clans 🐺"
+aiStatus: "ai-slop"
 ---
 
 # Stormfang Clans 🐺

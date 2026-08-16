@@ -2,6 +2,7 @@
 category: "Mid- and end-game"
 weight: 610
 linkTitle: "Artefacts"
+aiStatus: "ai-slop"
 ---
 
 # Artefacts

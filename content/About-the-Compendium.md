@@ -2,6 +2,7 @@
 category: "Start here"
 weight: 140
 linkTitle: "About the Compendium"
+aiStatus: "human-written"
 ---
 
 # About the Compendium

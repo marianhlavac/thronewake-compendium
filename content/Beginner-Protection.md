@@ -2,6 +2,7 @@
 category: "Military"
 weight: 440
 linkTitle: "Beginner Protection"
+aiStatus: "ai-slop"
 ---
 
 # Beginner Protection

@@ -2,6 +2,7 @@
 category: "Factions & tribes"
 weight: 220
 linkTitle: "Embermark Dominion 🔥"
+aiStatus: "ai-slop"
 ---
 
 # Embermark Dominion 🔥

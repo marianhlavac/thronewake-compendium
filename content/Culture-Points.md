@@ -2,6 +2,7 @@
 category: "Your empire"
 weight: 320
 linkTitle: "Culture Points"
+aiStatus: "ai-slop"
 ---
 
 # Culture Points (CP)

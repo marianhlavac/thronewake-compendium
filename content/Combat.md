@@ -2,6 +2,7 @@
 category: "Military"
 weight: 420
 linkTitle: "Combat"
+aiStatus: "ai-slop"
 ---
 
 # Combat

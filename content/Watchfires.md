@@ -2,6 +2,7 @@
 category: "Mid- and end-game"
 weight: 630
 linkTitle: "Watchfires (event)"
+aiStatus: "ai-slop"
 ---
 
 # Watchfires 🔥

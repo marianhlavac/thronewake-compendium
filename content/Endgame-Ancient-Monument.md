@@ -2,6 +2,7 @@
 category: "Mid- and end-game"
 weight: 620
 linkTitle: "Endgame: the Ancient Monument"
+aiStatus: "ai-slop"
 ---
 
 # Endgame: the Ancient Monument

@@ -1,0 +1,41 @@
+{{- /* ai-status: badge showing a page's front-matter `aiStatus` field, with a
+       hoverable/focusable info icon explaining what the state means.
+       Usage: {{ partial "ai-status.html" . }} where `.` is a Page. */ -}}
+{{- $status := .Params.aiStatus | default "unknown" -}}
+{{- $meta := dict
+  "ai-slop" (dict
+    "label" "AI-Generated"
+    "icon" "bot"
+    "color" "destructive"
+    "desc" `This content is fully written by AI and not yet checked by a human editor. Numbers, mechanics and wording may be inaccurate or fabricated outright — verify anything that matters in-game before relying on it.`)
+  "human-fixed" (dict
+    "label" "Human-Reviewed"
+    "icon" "shield-check"
+    "color" "gold"
+    "desc" `This content started as AI-generated, then reviewed and corrected by a human editor against real sources. More reliable than AI-Generated, though not necessarily checked line by line.`)
+  "human-written" (dict
+    "label" "Human-Written"
+    "icon" "pen-line"
+    "color" "verdant"
+    "desc" `This content was written by a human editor from primary sources, without AI drafting. The highest confidence level on the Compendium.`)
+  "unknown" (dict
+    "label" "Unverified"
+    "icon" "circle-help"
+    "color" "ancients"
+    "desc" `This content is not yet labelled. Whether this page is AI-drafted or human-written, and how accurate it is, hasn't been recorded — treat it with the same caution as AI-Generated content until someone reviews it.`)
+-}}
+{{- $entry := index $meta $status -}}
+{{- if not $entry }}{{ $entry = index $meta "unknown" }}{{ end -}}
+<div class="ai-status" data-color="{{ $entry.color }}">
+  <span class="ai-status-pill">
+    {{ partial "icon.html" (dict "name" $entry.icon "class" "size-3.5") }}
+    <span>{{ $entry.label }}</span>
+  </span>
+  <button type="button" class="ai-status-trigger" aria-label="What does “{{ $entry.label }}” mean?" aria-describedby="ai-status-tooltip">
+    {{ partial "icon.html" (dict "name" "circle-help" "class" "size-3.5") }}
+  </button>
+  <div class="ai-status-tooltip" id="ai-status-tooltip" role="tooltip">
+    <strong>{{ $entry.label }}</strong>
+    <p>{{ $entry.desc }}</p>
+  </div>
+</div>

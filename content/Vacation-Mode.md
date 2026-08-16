@@ -2,6 +2,7 @@
 category: "World & interaction"
 weight: 550
 linkTitle: "Vacation Mode"
+aiStatus: "ai-slop"
 ---
 
 # Vacation Mode

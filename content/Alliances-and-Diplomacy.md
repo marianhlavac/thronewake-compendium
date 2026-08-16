@@ -2,6 +2,7 @@
 category: "World & interaction"
 weight: 530
 linkTitle: "Alliances & Diplomacy"
+aiStatus: "ai-slop"
 ---
 
 # Alliances & Diplomacy

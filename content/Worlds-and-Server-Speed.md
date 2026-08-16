@@ -2,6 +2,7 @@
 category: "Start here"
 weight: 120
 linkTitle: "Worlds & Server Speed"
+aiStatus: "ai-slop"
 ---
 
 # Worlds & Server Speed

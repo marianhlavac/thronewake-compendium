@@ -2,6 +2,7 @@
 category: "Your empire"
 weight: 330
 linkTitle: "Resources & Economy"
+aiStatus: "ai-slop"
 ---
 
 # Resources & Economy

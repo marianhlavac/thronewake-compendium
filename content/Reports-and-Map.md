@@ -2,6 +2,7 @@
 category: "World & interaction"
 weight: 510
 linkTitle: "The Map, Reports & UI"
+aiStatus: "ai-slop"
 ---
 
 # The Map, Reports & UI

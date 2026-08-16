@@ -2,6 +2,7 @@
 category: "Military"
 weight: 410
 linkTitle: "Units / Troops"
+aiStatus: "ai-slop"
 ---
 
 # Units / Troops

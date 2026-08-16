@@ -2,6 +2,7 @@
 category: "World & interaction"
 weight: 520
 linkTitle: "Marketplace & Trade"
+aiStatus: "ai-slop"
 ---
 
 # Marketplace & Trade

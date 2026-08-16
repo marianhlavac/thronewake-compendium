@@ -1,7 +1,7 @@
 ---
 category: "Factions & tribes"
 weight: 250
-linkTitle: "The Ancients 🗿 (NPC faction)"
+linkTitle: "The Ancients 🗿 (NPC)"
 aiStatus: "ai-slop"
 ---
 

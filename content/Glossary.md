@@ -1,7 +1,7 @@
 ---
 category: "Start here"
 weight: 130
-linkTitle: "Glossary (Travian terms → Thronewake)"
+linkTitle: "Glossary"
 aiStatus: "ai-slop"
 ---
 

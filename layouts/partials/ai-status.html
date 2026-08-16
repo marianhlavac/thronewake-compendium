@@ -1,5 +1,9 @@
 {{- /* ai-status: badge showing a page's front-matter `aiStatus` field, with a
-       hoverable/focusable info icon explaining what the state means.
+       hoverable/focusable info icon explaining what the state means. If the
+       page also sets `authors` (a list of GitHub handles, e.g. "@handle"),
+       they're listed in the tooltip with their GitHub avatars. Not linked —
+       the tooltip only stays open on hover/focus, so a click would land on
+       nothing before the tooltip closes.
        Usage: {{ partial "ai-status.html" . }} where `.` is a Page. */ -}}
 {{- $status := .Params.aiStatus | default "unknown" -}}
 {{- $meta := dict
@@ -26,6 +30,7 @@
 -}}
 {{- $entry := index $meta $status -}}
 {{- if not $entry }}{{ $entry = index $meta "unknown" }}{{ end -}}
+{{- $authors := .Params.authors -}}
 <div class="ai-status" data-color="{{ $entry.color }}">
   <span class="ai-status-pill">
     {{ partial "icon.html" (dict "name" $entry.icon "class" "size-3.5") }}
@@ -37,5 +42,17 @@
   <div class="ai-status-tooltip" id="ai-status-tooltip" role="tooltip">
     <strong>{{ $entry.label }}</strong>
     <p>{{ $entry.desc }}</p>
+    {{- if $authors }}
+    <hr class="ai-status-divider">
+    <p class="ai-status-authors">
+      {{- range $authors }}
+        {{- $handle := strings.TrimPrefix "@" . -}}
+        <span class="ai-status-author">
+          <img src="https://github.com/{{ $handle }}.png" alt="" width="16" height="16" loading="lazy">
+          <span>{{ . }}</span>
+        </span>
+      {{- end }}
+    </p>
+    {{- end }}
   </div>
 </div>

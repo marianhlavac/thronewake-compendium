@@ -281,6 +281,30 @@
   color: var(--muted-foreground);
 }
 
+.ai-status-divider {
+  margin: 0.55rem 0;
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+.ai-status-tooltip .ai-status-authors {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.ai-status-author {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--foreground);
+}
+
+.ai-status-author img {
+  border-radius: 999px;
+}
+
 .ai-status:hover .ai-status-tooltip,
 .ai-status-trigger:focus-visible~.ai-status-tooltip {
   opacity: 1;

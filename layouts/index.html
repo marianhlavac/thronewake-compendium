@@ -74,9 +74,8 @@
         <ul class="space-y-3">
           {{- range slice
           (dict "title" "Overview" "icon" "crown" "href" $overview "desc" `What Thronewake is, how worlds work, and why territory matters.`)
-          (dict "title" "Beginner Protection" "icon" "book-open" "href" $firstHours "desc" `Your opening build order, truce timings, and how not to starve early.`)
-          (dict "title" "The Four Banners" "icon" "flame" "href" $factions "desc" `Embermark, Verdant, Stormfang and the Ancients — strengths, peaks and creeds.`)
-          (dict "title" "Combat & Sieges" "icon" "shield-alert" "href" $warfare "desc" `Casualties, refunds, counters and the real cost of holding a wall.`)
+          (dict "title" "Beginner Protection" "icon" "book-open" "href" $firstHours "desc" `Read more about how you’re protected in your first days.`)
+          (dict "title" "Tribes" "icon" "flame" "href" $factions "desc" `Embermark, Verdant, Stormfang — strengths, peaks and creeds.`)
           (dict "title" "Glossary" "icon" "file-text" "href" $glossary "desc" `Travian-to-Thronewake terms and the rest of the jargon.`) }}
           <li>
             <a href="{{ .href }}"
@@ -128,33 +127,7 @@
                 <p class="flex items-center gap-1.5 font-medium text-foreground group-hover:text-gold">Contributing
                   guide{{ partial "icon.html" (dict "name" "external-link" "class" `size-3.5 text-muted-foreground`) }}</p>
                 <p class="text-sm text-muted-foreground">How to propose an edit — including a walkthrough for
-                  first-time GitHub users using just the web editor.</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="{{ $overview }}"
-              class="group flex items-start gap-3 rounded-md border border-transparent p-3 transition-colors hover:border-border hover:bg-accent/50">
-              <span
-                class="mt-0.5 grid size-8 shrink-0 place-items-center rounded-md border border-border bg-background text-gold">{{
-                partial "icon.html" (dict "name" "shield-alert" "class" "size-4") }}</span>
-              <div>
-                <p class="font-medium text-foreground group-hover:text-gold">How we source facts</p>
-                <p class="text-sm text-muted-foreground">What counts as proof, how numbers are verified, and where to
-                  send corrections.</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="{{ $overview }}"
-              class="group flex items-start gap-3 rounded-md border border-transparent p-3 transition-colors hover:border-border hover:bg-accent/50">
-              <span
-                class="mt-0.5 grid size-8 shrink-0 place-items-center rounded-md border border-border bg-background text-gold">{{
-                partial "icon.html" (dict "name" "file-text" "class" "size-4") }}</span>
-              <div>
-                <p class="font-medium text-foreground group-hover:text-gold">Edit the overview</p>
-                <p class="text-sm text-muted-foreground">The main wiki page is the best place to start improving
-                  existing content.</p>
+                  non-developers.</p>
               </div>
             </a>
           </li>

@@ -52,12 +52,8 @@
 
   <footer class="mt-16 border-t border-border bg-panel/60">
     <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6">
-      <aside class="callout callout-warning">
-        <p class="callout-title">{{ partial "icon.html" (dict "name" "flame" "class" "size-4") }}Unofficial &amp; community-sourced</p>
-        <div class="callout-body">
-          <p>The Thronewake Compendium is a <strong>fan-run, unofficial wiki</strong>, not affiliated with or endorsed by the developers of Thronewake. The game is in active development and mechanics change often — the current world (Fourth Awakening) began 29&nbsp;July&nbsp;2026. Verify anything that matters in-game before you commit resources to it.</p>
-        </div>
-      </aside>
+      {{ partial "disclaimer-callout.html" . }}
+
       <div class="mt-8 border-t border-border pt-5 flex flex-col gap-4 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
         <div>
           <p class="font-display text-base text-gold">Thronewake Compendium</p>

@@ -288,6 +288,31 @@
   transform: translateY(0);
 }
 
+/* 2c-ii. Homepage AI-slopiness gauge (layouts/partials/slop-meter.html) —
+       same data-color -> custom-property trick as .ai-status above, plus
+       "ember" for the mid-warning band the badge doesn't need. data-color
+       sits on an inner wrapper (not .slop-meter itself), so these target it
+       as a descendant; --gauge still inherits down to the svg/text inside. */
+.slop-meter [data-color] {
+  --gauge: var(--destructive);
+}
+
+.slop-meter [data-color="ember"] {
+  --gauge: var(--ember);
+}
+
+.slop-meter [data-color="gold"] {
+  --gauge: var(--gold);
+}
+
+.slop-meter [data-color="verdant"] {
+  --gauge: var(--verdant);
+}
+
+.slop-meter [data-color="destructive"] {
+  --gauge: var(--destructive);
+}
+
 /* 2c. Hide scrollbars on the scrolling nav areas — Safari renders a styled
        webkit scrollbar as an always-on chunky bar that looks worse than none.
        Content still scrolls by wheel / trackpad / drag. */

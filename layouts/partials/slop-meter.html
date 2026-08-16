@@ -1,0 +1,38 @@
+{{- $pages := site.RegularPages -}}
+{{- $total := len $pages -}}
+{{- $reviewed := 0 -}}
+{{- range $pages -}}
+  {{- $st := .Params.aiStatus -}}
+  {{- if or (eq $st "human-fixed") (eq $st "human-written") -}}
+    {{- $reviewed = add $reviewed 1 -}}
+  {{- end -}}
+{{- end -}}
+{{- $slop := sub $total $reviewed -}}
+{{- $pct := 0.0 -}}
+{{- if gt $total 0 }}{{ $pct = math.Round (div (mul $slop 100.0) $total) }}{{ end -}}
+{{- $color := "verdant" -}}
+{{- if ge $pct 70.0 }}{{ $color = "destructive" }}
+{{- else if ge $pct 40.0 }}{{ $color = "ember" }}
+{{- else if ge $pct 15.0 }}{{ $color = "gold" }}
+{{- end -}}
+{{- $circ := 251.33 -}}
+{{- $offset := mul $circ (div (sub 100.0 $pct) 100.0) -}}
+<div class="slop-meter my-6 py-2 min-w-xs">
+  <div class="flex items-center gap-1.5 font-display text-xs font-semibold tracking-[0.18em] text-muted-foreground uppercase">
+    {{ partial "icon.html" (dict "name" "bot" "class" "size-3.5") }}AI-Slopiness Meter
+  </div>
+  <div class="flex items-center gap-4 my-4" data-color="{{ $color }}">
+    <svg viewBox="0 0 200 120" class="block w-24 shrink-0 sm:w-28" role="img" aria-label="{{ printf `%.0f` $pct }} percent of wiki pages are still unreviewed AI drafts">
+      <path d="M20,100 A80,80 0 0 1 180,100" fill="none" stroke="var(--border)" stroke-width="16" stroke-linecap="round" />
+      <path d="M20,100 A80,80 0 0 1 180,100" fill="none" stroke="var(--gauge)" stroke-width="16" stroke-linecap="round"
+        stroke-dasharray="{{ $circ }}" stroke-dashoffset="{{ $offset }}" />
+      <text x="100" y="90" text-anchor="middle" style="fill: var(--gauge); font-family: var(--font-display); font-weight: 700; font-size: 34px;">{{ printf `%.0f` $pct }}%</text>
+    </svg>
+    <div class="min-w-0">
+      <p class="mt-1.5 text-xs text-muted-foreground">
+        <strong style="color: var(--gauge);">{{ printf `%.0f` $pct }}%</strong> of wiki pages are still unreviewed AI drafts. <br />
+        <a href="https://github.com/marianhlavac/thronewake-compendium/blob/master/CONTRIBUTING.md#the-ai-status-tag" target="_blank" rel="noopener noreferrer" class="underline hover:text-gold">Help review one</a>?
+      </p>
+    </div>
+  </div>
+</div>

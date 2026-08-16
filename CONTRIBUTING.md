@@ -15,7 +15,33 @@ There are two guides below. Pick whichever matches you:
 - Clarity fixes: better wording, missing context, broken links.
 - New pages for mechanics that aren't covered yet.
 
-Follow the sourcing conventions already used throughout the wiki (see [About the Compendium](content/About-the-Compendium.md)): mark developer statements as authoritative, and tag anything else *(player-reported)* or *(unconfirmed)* if it isn't dev-confirmed. If you're adding a claim, say where it came from (Discord channel, changelog date, etc.) in your PR description even if it doesn't make it into the page text.
+Follow the sourcing conventions below (also summarized in [About the Compendium](content/About-the-Compendium.md)) so claims stay honest about how well they're corroborated. If you're adding a claim, say where it came from (Discord channel, changelog date, etc.) in your PR description even if it doesn't make it into the page text.
+
+## Sourcing conventions
+
+Developer statements are the only thing treated as authoritative by default — everything else needs a tag. Use exactly one of these three, in italics, right after the sentence or bullet it covers:
+
+| Tag | Use for |
+|---|---|
+| *(player-reported)* | A claim from players that isn't independently confirmed but is widely corroborated / not disputed. |
+| *(unconfirmed)* | A single-source, disputed, or otherwise shaky claim — including "this may have changed" caveats. |
+| *(player note)* | A player's own interpretation or opinion, not a factual report. |
+
+```markdown
+- The **member limit** is 6 on the current world *(player-reported)*.
+```
+
+### Linking to a source
+
+When you have an actual link — a Discord message, a changelog entry, a screenshot — attach it as a **footnote** rather than inlining the URL.
+
+```markdown
+The member limit is 6 on the current world *(player-reported)*.[^1]
+
+[^1]: [#general channel, Discord, 24 Jul 2026](https://discord.com/channels/…)
+```
+
+Put the footnote *after* the reliability tag, not instead of it — the tag says how much to trust the claim, the footnote says where to check it yourself. Number footnotes sequentially per page starting at `[^1]`; collect the definitions at the bottom of the page (or the end of the section, for long pages) rather than scattering them inline. A dev statement doesn't need a `(player-reported)`/`(unconfirmed)` tag, but still gets a footnote if you have a link to it.
 
 ## The AI-status tag
 

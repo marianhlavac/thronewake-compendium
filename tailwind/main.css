@@ -280,6 +280,56 @@
     font-size: 0.8125rem;
     color: var(--muted-foreground);
   }
+
+  /* Footnotes (Goldmark's [^1] syntax) — used to cite a source link without
+     an inline URL breaking up the sentence. */
+  & .footnote-ref {
+    font-size: 0.7em;
+    font-weight: 650;
+    text-decoration: none;
+    padding-left: 0.1em;
+  }
+
+  & .footnote-ref:hover {
+    text-decoration: underline;
+  }
+
+  & .footnotes {
+    margin-top: 3em;
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+  }
+
+  & .footnotes hr {
+    margin-block: 0 1.75em;
+  }
+
+  & .footnotes ol {
+    padding-left: 1.1rem;
+  }
+
+  & .footnotes li {
+    margin-top: 0.5em;
+  }
+
+  & .footnotes li::marker {
+    color: var(--muted-foreground);
+  }
+
+  & .footnotes a:not(.footnote-backref) {
+    color: var(--gold-soft);
+    text-decoration-color: color-mix(in oklab, var(--gold-soft) 45%, transparent);
+  }
+
+  & .footnote-backref {
+    margin-left: 0.35em;
+    text-decoration: none;
+    opacity: 0.55;
+  }
+
+  & .footnote-backref:hover {
+    opacity: 1;
+  }
 }
 
 @utility wiki-table {

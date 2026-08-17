@@ -25,7 +25,7 @@
 <div class="app min-h-screen bg-vellum">
 
   <header class="sticky top-0 z-40 border-b border-border bg-background/92 backdrop-blur-md">
-    <div class="mx-auto flex max-w-7xl items-center gap-3 px-4 py-2.5 sm:px-6">
+    <div class="mx-auto flex 2xl:max-w-350 max-w-300 items-center gap-3 px-4 py-2.5 sm:px-6">
       {{- if not .IsHome }}
       <label for="nav-toggle" class="inline-flex size-9 shrink-0 cursor-pointer items-center justify-center rounded-md border border-border text-muted-foreground hover:border-gold/50 hover:text-gold lg:hidden" aria-label="Open wiki contents">
         {{ partial "icon.html" (dict "name" "menu" "class" "size-4") }}

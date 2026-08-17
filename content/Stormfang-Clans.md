@@ -29,11 +29,12 @@ The **Stormbrew Works** can only be built by the Stormfang Clans.
 
 ## Units *(reported names — see the caveat on [Units](Units.md))*
 Stormfang unit names that appear in the source:
-- **Raider** — cheap, fast attacking cavalry; extremely cost-effective for looting (a core early-game farming unit; low cost, ~250 res *(player-reported)*).
-- **Axeman** ("axes") — infantry.
+- **Raider** — cheap infantry; extremely cost-effective for looting (a core early-game farming unit).
+- **Axeborn** ("axes") — infantry made for defense against cavalry.
+- **War Brute** — offensive infantry; has higher food-to-attack efficiency than Raiders.
+- **Pathstalker** — scouting infantry; the slowest scout in the game, but low cost.
+- **Fang Rider** — defensive cavalry; high looting capacity.
 - **Blood Charger** — attacking cavalry (high attack).
-- **Slave Militia** — an extremely cheap, spammable unit; a weak defender ("best troop in the game" as a joke because you get so many for the resources).
-- **Club** ("clubby") — cheap infantry (clubswinger-type).
 
 > [!NOTE]
 > No tribe ignores a percentage of a defender's [Shelter](Buildings.md#shelter). The developer explicitly corrected a claim that Stormfang bypasses shelter — in Travian only a *hero* does that, and Thronewake has no hero. See [Tribes → shared correction](Tribes.md#important-shared-correction).

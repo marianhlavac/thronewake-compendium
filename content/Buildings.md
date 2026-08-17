@@ -14,8 +14,8 @@ Buildings occupy plots in a [village](Villages-Cities-and-Expansion.md). This is
 
 ## Resource buildings
 The mandatory resource fields and their boosters — see [Resources](Resources.md):
-- **Woodcutter** (Lumber), **Quarry** (Stone), **metal mine** (Metal), **Farm** (Food/crop).
-- **Sawmill** — boosts Lumber. **Mill** and **Bakery** — boost Food/crop. (Crop fields, Mill, and Bakery can always be upgraded even under [crop lock](Resources.md#crop-locking-authoritative).)
+- **Woodcutter** (Lumber), **Quarry** (Stone), **metal mine** (Metal), **Farm** (Food).
+- **Sawmill** — boosts Lumber. **Mill** and **Bakery** — boost Food. (Food fields, Mill, and Bakery can always be upgraded even under [food lock](Resources.md#food-locking-authoritative).)
 
 ## Core / storage
 ### Town Hall

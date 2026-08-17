@@ -11,7 +11,7 @@ This article collects map, report, and interface features referenced in the sour
 
 ## The Map
 - **Size** differs per [world](Worlds-and-Server-Speed.md): the current **Fourth Awakening** is **100×100**; the Third Awakening was 75×75. The map center is **0|0**; the central region around it is the **grey zone**, and the outer ring is the map edge.
-- **Tiles:** roughly **40%** of tiles are the standard **4-4-4-6** ([resource-field](Resources.md) layout: 4 each Lumber/Stone/Metal, 6 Food). Cropper tiles have more crop fields (**9c**, **15c**). If no 4-4-4-6 tiles remain (given [Wilder-Site](Wilder-Sites.md) placement needs), an "xxx7" tile is converted to 4-4-4-6.
+- **Tiles:** roughly **40%** of tiles are the standard **4-4-4-6** ([resource-field](Resources.md) layout: 4 each Lumber/Stone/Metal, 6 Food). Cropper tiles have more Food fields (**9c**, **15c**). If no 4-4-4-6 tiles remain (given [Wilder-Site](Wilder-Sites.md) placement needs), an "xxx7" tile is converted to 4-4-4-6.
 - **Distances** use straight-line (Euclidean) distance for travel time, but the **[Wilder-Site conquer range](Wilder-Sites.md#conquering-wilder-sites)** is a **7×7 square** (King/Chebyshev distance 3).
 - **Coordinates** written as **x|y** in chat become clickable map links.
 - **Movement lines:** your active combat and trade movements are drawn as **lines across the map**; you can toggle them on/off per type (e.g. hide raids). Villages show icons when you are attacking/defending/scouting them, or when troops are returning.

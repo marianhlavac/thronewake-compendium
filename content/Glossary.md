@@ -21,7 +21,7 @@ Thronewake is inspired by **Travian** and its community uses a lot of Travian/Tr
 | **Anvil** | A large **defensive** army. |
 | **Sim / simming** | Growing economically ("city builder" style) rather than raiding. |
 | **Feeder** | A small support village that funnels resources/troops. |
-| **Cropper / 9c / 15c** | A [village tile](Reports-and-Map.md#the-map) with extra crop fields (9 or 15). |
+| **Cropper / 9c / 15c** | A [village tile](Reports-and-Map.md#the-map) with extra Food fields (9 or 15). |
 | **4-4-4-6** | The standard resource-field tile layout (4 Lumber, 4 Stone, 4 Metal, 6 Food). |
 | **Grey zone / GZ** | The **central region** of the [map](Reports-and-Map.md#the-map), around **0\|0**. |
 | **BP** | [Beginner Protection](Beginner-Protection.md). |

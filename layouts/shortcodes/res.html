@@ -1,0 +1,20 @@
+{{- /* res.html — a Lumber/Stone/Metal/Food cost line with resource icons.
+       Usage: {{< res lumber=120 stone=100 metal=150 food=30 >}}
+       Any resource can be omitted (treated as 0 and skipped). */ -}}
+{{- $lumber := .Get "lumber" -}}
+{{- $stone := .Get "stone" -}}
+{{- $metal := .Get "metal" -}}
+{{- $food := .Get "food" -}}
+{{- $items := slice
+  (dict "name" "lumber" "val" $lumber)
+  (dict "name" "stone"  "val" $stone)
+  (dict "name" "metal"  "val" $metal)
+  (dict "name" "food"   "val" $food)
+-}}
+<span class="resource-cost">
+  {{- range $item := $items }}
+    {{- with $item.val }}
+  <span class="resource-cost-item">{{ partial "game-icon.html" (dict "file" (printf "res_%s" $item.name) "alt" (title $item.name)) }}{{ . }}</span>
+    {{- end }}
+  {{- end }}
+</span>

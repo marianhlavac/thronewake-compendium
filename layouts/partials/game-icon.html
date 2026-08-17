@@ -1,0 +1,9 @@
+{{- /* game-icon.html: renders one inline game-asset icon from static/images/.
+       dict params: file (filename without extension, required), set ("icons"
+       default | "units"), alt (default ""), size (CSS length, default "1.1em").
+       Usage: {{ partial "game-icon.html" (dict "file" "res_lumber" "alt" "Lumber") }} */ -}}
+{{- $set := .set | default "icons" -}}
+{{- $file := .file -}}
+{{- $alt := .alt | default "" -}}
+{{- $size := .size | default "1.1em" -}}
+<img src="{{ printf "images/%s/%s.png" $set $file }}" alt="{{ $alt }}" class="inline-icon" style="width:{{ $size }};height:{{ $size }}">

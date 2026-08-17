@@ -362,4 +362,49 @@
   & tbody tr:hover {
     background: color-mix(in oklab, var(--gold) 10%, transparent);
   }
+
+  /* Unit-icon column (Units.md stat tables): fixed narrow column, no
+     left padding so the icon sits flush against the table edge. */
+  & th:first-child,
+  & td:first-child:has(.unit-icon) {
+    width: 2.5rem;
+    padding-right: 0.4rem;
+  }
+}
+
+.unit-icon {
+  display: block;
+  width: 1.75rem;
+  height: 1.75rem;
+  max-width: none; /* Preflight's `img{max-width:100%}` is a percentage, which
+    Chromium can resolve to 0 inside an auto-layout table cell's column-width
+    pass (percentage vs. an as-yet-undetermined column width) — pin it to a
+    definite value so it never enters that circular resolution. */
+  object-fit: contain;
+}
+
+/* Inline game-asset icons (gameicon.html/res.html shortcodes) — sized in `em` so
+   they scale with surrounding text, safe to use inline in prose or table
+   cells. `max-width: none` for the same reason as .unit-icon above. */
+.inline-icon {
+  display: inline-block;
+  width: 1.1em;
+  height: 1.1em;
+  max-width: none;
+  object-fit: contain;
+  vertical-align: -0.2em;
+}
+
+.resource-cost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7em;
+  white-space: nowrap;
+}
+
+.resource-cost-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  white-space: nowrap;
 }

@@ -1,0 +1,29 @@
+{{- /* gameicon.html — one inline game-asset icon (resource/stat icons from
+       static/images/icons, or a unit icon from static/images/units). Named
+       "gameicon" rather than "icon" so it doesn't get confused with
+       partials/icon.html, the site's separate lucide UI-icon system.
+       Usage:
+         {{< gameicon "lumber" >}}                    resource/stat icon, by alias or filename
+         {{< gameicon "emberblade" set="units" >}}    a unit icon
+         {{< gameicon "hourglass" alt="Training time" size="1.4em" >}}
+       Params: name (positional or named), set ("icons" default | "units"),
+       alt (default ""), size (CSS length, default "1.1em").
+       Resource names are the game's own UI names — Lumber, Stone, Metal,
+       Food — not Travian's Wood/Clay/Iron/Crop; see Resources.md. */ -}}
+{{- $name := .Get "name" | default (.Get 0) -}}
+{{- $set := .Get "set" | default "icons" -}}
+{{- $alt := .Get "alt" | default "" -}}
+{{- $size := .Get "size" | default "1.1em" -}}
+{{- $aliases := dict
+  "lumber" "res_lumber"
+  "stone" "res_stone"
+  "metal" "res_metal"
+  "food" "res_food"
+  "atk" "attack" "off" "attack"
+  "def" "defense" "def-inf" "defense"
+  "def-cav" "defense_cavalry" "defcav" "defense_cavalry"
+  "time" "hourglass" "training-time" "hourglass"
+  "smithy" "anvil"
+-}}
+{{- $file := index $aliases $name | default $name -}}
+{{- partial "game-icon.html" (dict "file" $file "set" $set "alt" $alt "size" $size) -}}

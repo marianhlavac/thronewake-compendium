@@ -40,7 +40,7 @@ Stormfang unit names that appear in the source:
 > No tribe ignores a percentage of a defender's [Shelter](Buildings.md#shelter). The developer explicitly corrected a claim that Stormfang bypasses shelter — in Travian only a *hero* does that, and Thronewake has no hero. See [Tribes → shared correction](Tribes.md#important-shared-correction).
 
 > [!WARNING]
-> Exact unit stats/costs are *player-reported* and Travian-4.6-based; find real in-game stats via the [Combat Simulator / Smithy](Units.md#where-to-find-unit-stats). See [Units](Units.md).
+> Exact unit stats/costs are *player-reported* and Travian-4.6-based; find real in-game stats via the [Combat Simulator / Smithy](Units.md#where-to-further-find-unit-stats). See [Units](Units.md).
 
 ## See also
 - [Tribes overview & comparison](Tribes.md) · [Embermark Dominion](Embermark-Dominion.md) · [Verdant Wardens](Verdant-Wardens.md)

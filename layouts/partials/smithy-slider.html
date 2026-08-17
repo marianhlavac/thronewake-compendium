@@ -1,0 +1,10 @@
+{{- /* smithy-slider.html: a compact Smithy-level slider for the unit-stat
+       table immediately above it. Invoke via the `smithy-slider` shortcode
+       right after a table in Markdown — it controls whichever table is
+       nearest above it. */ -}}
+<script src="{{ "smithy-slider.js" | relURL }}" defer></script>
+<div class="smithy-slider">
+  <img class="smithy-slider-icon" src="images/icons/anvil.png" alt="" width="14" height="14">
+  <span class="smithy-slider-label">Smithy Lv <output class="smithy-slider-level">0</output></span>
+  <input type="range" class="smithy-slider-input" min="0" max="23" step="1" value="0" aria-label="Smithy level">
+</div>

@@ -370,6 +370,19 @@
     width: 2.5rem;
     padding-right: 0.4rem;
   }
+
+  /* Reserve enough width for Atk / Def (Inf) / Def (Cav) (columns 4-6) to
+     fit the longest value the Smithy slider (Units.md) can ever produce
+     ("121.7" etc. — 5 characters). Without this, a slider update can widen
+     these cells, which widens the table, which can shift page layout below
+     it — observed as a jump on interaction in some browsers even though the
+     table itself scrolls horizontally and shouldn't affect anything outside
+     it. */
+  & tbody td:nth-child(4),
+  & tbody td:nth-child(5),
+  & tbody td:nth-child(6) {
+    min-width: 3.5rem;
+  }
 }
 
 .unit-icon {
@@ -407,4 +420,47 @@
   align-items: center;
   gap: 0.3em;
   white-space: nowrap;
+}
+
+/* Smithy-level slider (smithy-slider shortcode), placed right after a
+   unit-stat table's Markdown. Small and right-aligned, no panel/background —
+   a light-touch control, not another callout box. */
+.smithy-slider {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.4rem;
+  margin: 0.35rem 0 1.5rem;
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+}
+
+.smithy-slider-icon {
+  display: block;
+  width: 0.85rem;
+  height: 0.85rem;
+  max-width: none;
+  object-fit: contain;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.smithy-slider-label {
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  white-space: nowrap;
+}
+
+.smithy-slider-level {
+  display: inline-block;
+  min-width: 1.3em;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.smithy-slider-input {
+  width: 6.5rem;
+  height: 0.9rem;
+  accent-color: var(--gold);
 }

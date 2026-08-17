@@ -30,16 +30,8 @@ The **Thornsnare Grove** can only be built by the Verdant Wardens. It builds **t
 - **New buff (update 24/07):** reinforcements sent *from* the Thornsnare Grove village travel faster, based on the **total units ever trapped** there. On a 3× world: 300 trapped → +5%, 600 → +10%, 1200 → +15%, 2400 → +20% reinforcement travel speed. This is a permanent, per-village bonus.
 - You **cannot demolish** the Thornsnare Grove while it has active traps.
 
-## Units *(reported names — see the caveat on [Units](Units.md))*
-Verdant unit names that appear in the source:
-- **Woodblade** — infantry.
-- **Stag Riders** ("stags") — the tribe's fast raiding cavalry; described as the **fastest looters in the game** (~speed 19 *(player-reported)*).
-- **Green Lancer** — cavalry; in-game described as "effective in attack and defense" but actually a **weak attacker used for defense** *(player note)*. Base speed **16**.
-- **Oak Cavalier** — heavily armored cavalry: strong **defensive cavalry** and (per one player) the strongest horse offense for the tribe.
-- **Briars** ("briar guards") — phalanx-type **defensive infantry**.
-
-> [!WARNING]
-> Some in-game unit **descriptions are known to be inaccurate/swapped** (players called out the Green Lancer and Oak Cavalier descriptions). Names are reliable; stats/roles are *player-reported*. See [Units](Units.md).
+## Units
+See [Units → Verdant Wardens](Units.md#verdant-wardens) for the full roster with verified stats, costs, and training times.
 
 ## See also
 - [Tribes overview & comparison](Tribes.md) · [Embermark Dominion](Embermark-Dominion.md) · [Stormfang Clans](Stormfang-Clans.md)

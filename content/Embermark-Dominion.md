@@ -33,15 +33,8 @@ The **Rider's Wells** can only be built by the Embermark Dominion.
 - The food-reduction applies to that village's cavalry even while they are **out in combat** (this was fixed in an update).
 - Also reduces cavalry heal time at the [Herbalist](Buildings.md#herbalist) in the same village.
 
-## Units *(reported names — see the caveat on [Units](Units.md))*
-Embermark unit names that appear in the source:
-- **Emberblade** — sword infantry; the tribe's cheapest/versatile infantry (an offensive unit). *(This is the one confirmed Embermark unit name; it appears in an official [map-preset](Reports-and-Map.md) example.)*
-- **Iron Spear** — spear infantry; commonly the defensive infantry.
-- **Crimson Lancer** — heavy, high-attack cavalry (expensive).
-- **Sunrider** — cavalry.
-
-> [!WARNING]
-> Exact unit stats, costs, and even some in-game **descriptions are known to be swapped/inaccurate** (players noted the Emberblade and Iron Spear descriptions appear flipped). Treat unit names as reliable but roles/stats as *player-reported*. See [Units](Units.md) for details and where to find real stats in-game.
+## Units
+See [Units → Embermark Dominion](Units.md#embermark-dominion) for the full roster with verified stats, costs, and training times.
 
 ## See also
 - [Tribes overview & comparison](Tribes.md) · [Verdant Wardens](Verdant-Wardens.md) · [Stormfang Clans](Stormfang-Clans.md)

@@ -57,7 +57,7 @@ A **fake** is an attack sent with few (or cheap) units to bait the defender into
 
 ## Traps (Thornsnare Grove)
 The **[Verdant Wardens](Verdant-Wardens.md#unique-building-thornsnare-grove)** tribe building. Traps **capture** incoming enemy attackers up to the Grove's total trap **capacity** (which scouts can't see).
-- Traps trigger only on **enemy** units (valid hostile/at war), never allies; **scouts cannot be trapped**.
+- Traps trigger only on **enemy** units (valid hostile/at war), never allies; **scouts are not trapped if scouting**. *(player-reported)*
 - Freeing trapped troops: their owner attacks (a successful attack frees them, but ~**25%** die when freed) or the trap's owner releases them (no deaths). Otherwise they die only by **starvation**.
 - Units killed in traps count toward the defender's PvP score (update 10/08). See the [Verdant Wardens](Verdant-Wardens.md#unique-building-thornsnare-grove) page for the full trap ruleset and the reinforcement-speed buff.
 

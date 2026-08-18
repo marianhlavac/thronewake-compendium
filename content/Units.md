@@ -15,7 +15,7 @@ Units are trained in the **[Barracks](Buildings.md)** (infantry), **[Stable](Bui
 ## Unit classes
 - **Infantry** — trained in the Barracks. Both offensive and defensive infantry exist per tribe.
 - **Cavalry** — trained in the Stable; faster, higher food upkeep. Includes the fast **raiding cavalry** each tribe uses for looting.
-- **Scouts** — reconnaissance. **[Stormfang](Stormfang-Clans.md) can build scouts in the Barracks**; other tribes use the Stable. Scouts **cannot be trapped** by a [Thornsnare Grove](Verdant-Wardens.md#unique-building-thornsnare-grove). See [scouting](#scouting).
+- **Scouts** — reconnaissance. **[Stormfang](Stormfang-Clans.md) can build scouts in the Barracks**; other tribes use the Stable. Scouts **cannot be trapped** by a [Thornsnare Grove](Verdant-Wardens.md#unique-building-thornsnare-grove) (if scouting, not attacking, *player-reported*).
 - **[Rams](Combat.md#rams)** and **[Catapults](Combat.md#catapults)** — siege, built in the Workshop; upgraded in the Smithy (which increases their damage to buildings).
 - **[Settlers](#settlers)** and **[Leaders/Chiefs](#leaders-chiefs)** — expansion units.
 - **[Merchants](Marketplace-and-Trade.md)** — carry resources, not a combat unit.
@@ -121,6 +121,8 @@ Each **[Smithy](Buildings.md#smithy)** level (max 20, or 23 via research) raises
 > *improved* = *base* + (*base* + 300 × *upkeep* ÷ 7) × (1.007<sup>*level*</sup> − 1)
 
 Because the upkeep term is added before scaling, a low base stat with relatively high upkeep gains a much bigger percentage than a high base stat with low upkeep — at level 20, this ranges from roughly **+24%** (e.g. the Iron Spear's 70 offense) to well over **+100%** for the lowest base stats (e.g. the Raider's 5 cavalry-defense). A mid-range case like the Emberblade's 40 offense becomes ~52 (**+31%**) at the same level. [Alliance](Alliances-and-Diplomacy.md) troop-strength bonuses apply **on top of** Smithy upgrades.
+
+**[Settlers](#settlers)** and **[Leaders/Chiefs](#leaders-chiefs)** cannot be upgraded via the Smithy.
 
 ## Settlers
 - Trained in the **[Residence/Palace](Villages-Cities-and-Expansion.md#residence--palace)**; you need **3** to found a village, and a free **expansion slot** in the training village.

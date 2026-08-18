@@ -2,9 +2,10 @@
  * Each `.smithy-slider` element walks backward to the nearest preceding
  * table and treats that as the one it controls (placement in the Markdown
  * decides which table gets a slider, not any table-content sniffing).
- * Within that one table, Atk / Def (Inf) / Def (Cav) / Upkeep columns are
- * found by matching header text — if a header's wording changes, update the
- * strings below.
+ * Within that one table, Atk / Def (Inf) / Def (Cav) / Upkeep / Role columns
+ * are found by matching header text — if a header's wording changes, update
+ * the strings below. Settler and Leader rows are skipped: those units can't
+ * be upgraded via the Smithy in-game.
  *
  * Formula (see Units.md#smithy-upgrades):
  *     improved = base + (base + 300 * upkeep / 7) * (1.007^level - 1)
@@ -55,12 +56,23 @@
       defInf: columnIndex(table, "def (inf)"),
       defCav: columnIndex(table, "def (cav)"),
       upkeep: columnIndex(table, "upkeep"),
+      role: columnIndex(table, "role"),
     };
     if (cols.atk < 0 || cols.defInf < 0 || cols.defCav < 0 || cols.upkeep < 0)
       return;
     var statCols = [cols.atk, cols.defInf, cols.defCav];
+    var UNUPGRADABLE_ROLES = ["settler", "leader"];
+
+    function isUnupgradable(row) {
+      if (cols.role < 0) return false;
+      var cell = row.children[cols.role];
+      if (!cell) return false;
+      var role = cell.textContent.trim().toLowerCase();
+      return UNUPGRADABLE_ROLES.indexOf(role) !== -1;
+    }
 
     table.querySelectorAll("tbody tr").forEach(function (row) {
+      if (isUnupgradable(row)) return;
       statCols.forEach(function (idx) {
         var cell = row.children[idx];
         if (cell && cell.dataset.base === undefined)
@@ -74,6 +86,7 @@
       var level = parseInt(input.value, 10);
       output.textContent = level;
       table.querySelectorAll("tbody tr").forEach(function (row) {
+        if (isUnupgradable(row)) return;
         var upkeep = parseFloat(row.children[cols.upkeep].textContent.trim());
         if (isNaN(upkeep)) upkeep = 0;
         statCols.forEach(function (idx) {

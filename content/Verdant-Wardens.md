@@ -23,7 +23,7 @@ One of the three playable [tribes](Tribes.md). The Verdant Wardens are the **fas
 ## Unique building: Thornsnare Grove
 The **Thornsnare Grove** can only be built by the Verdant Wardens. It builds **traps** that capture incoming attacking units. See [Combat → Traps](Combat.md#traps-thornsnare-grove) for the full mechanics; in summary:
 - Each trap has a **capacity**; incoming attackers up to the total trap capacity are captured (attack with 50 vs 50 capacity → the whole attack is trapped). The Grove's trap capacity **cannot be seen by scouting**.
-- **Scouts cannot be trapped.** Traps only trigger on **enemy** units (a valid hostile target / at war), never allies.
+- **Scouts cannot be trapped (if scouting, not attacking).** (*player-reported*)[^1] A scout sent as part of an attack can still be trapped. Traps only trigger on **enemy** units (a valid hostile target / at war), never allies. 
 - **Trapped troops** are freed either when their **owner attacks** (a successful attack frees them, but ~**25%** die when freed — Travian-style) or when the **trap's owner releases** them (released troops do not die). Otherwise trapped troops die only by **starvation** (if the owner stops feeding them).
 - Triggered traps must be **rebuilt** (the building remains); they rebuild automatically for free but take the normal build time.
 - **Trap count scales with world speed.**
@@ -36,3 +36,5 @@ See [Units → Verdant Wardens](Units.md#verdant-wardens) for the full roster wi
 ## See also
 - [Tribes overview & comparison](Tribes.md) · [Embermark Dominion](Embermark-Dominion.md) · [Stormfang Clans](Stormfang-Clans.md)
 - [Combat → Traps](Combat.md#traps-thornsnare-grove) · [Units](Units.md) · [Buildings](Buildings.md)
+
+[^1]: [Discord, 18 Aug 2026](https://discord.com/channels/1495741450439102534/1495742085737877514/1539059388994818068)

@@ -16,7 +16,7 @@ Units are trained in the **[Barracks](Buildings.md)** (infantry), **[Stable](Bui
 - **Infantry** — trained in the Barracks. Both offensive and defensive infantry exist per tribe.
 - **Cavalry** — trained in the Stable; faster, higher food upkeep. Includes the fast **raiding cavalry** each tribe uses for looting.
 - **Scouts** — reconnaissance. **[Stormfang](Stormfang-Clans.md) can build scouts in the Barracks**; other tribes use the Stable. Scouts **cannot be trapped** by a [Thornsnare Grove](Verdant-Wardens.md#unique-building-thornsnare-grove) (if scouting, not attacking, *player-reported*).
-- **[Rams](Combat.md#rams)** and **[Catapults](Combat.md#catapults)** — siege, built in the Workshop; upgraded in the Smithy (which increases their damage to buildings).
+- **[Rams](Combat.md#rams-and-watch-towers)** and **[Catapults](Combat.md#catapults)** — siege, built in the Workshop; upgraded in the Smithy (which increases their damage to buildings).
 - **[Settlers](#settlers)** and **[Leaders/Chiefs](#leaders-chiefs)** — expansion units.
 - **[Merchants](Marketplace-and-Trade.md)** — carry resources, not a combat unit.
 
@@ -129,19 +129,20 @@ Because the upkeep term is added before scaling, a low base stat with relatively
 - Cost depends on [tribe](Tribes.md) ([Verdant](Verdant-Wardens.md) settlers are cheaper).
 
 ## Leaders (chiefs)
-Leaders (called **"chiefs"**) reduce a target village's **[loyalty](Villages-Cities-and-Expansion.md#loyalty--conquering)**; when loyalty hits 0 you conquer the village.
+Leaders (called **"chiefs"**) reduce a target village's **[loyalty](Villages-Cities-and-Expansion.md#loyalty-and-conquest)**; when loyalty hits 0 you conquer the village.
 - To build a leader you need **[Residence/Palace](Villages-Cities-and-Expansion.md#residence--palace) and [Academy](Buildings.md#academy) at level 20**, the relevant research, plus a free expansion slot and **[Culture Point](Culture-Points.md) slots** (2 to conquer a City).
 - Leaders **cannot be healed** at the [Herbalist](Buildings.md#herbalist).
 - The **[Stormbrew Works](Stormfang-Clans.md#unique-building-stormbrew-works)** effect makes leaders **50% less effective** while active.
 
 ## Scouting
 - Stationed troops (including **scouts** from anyone in the village) provide scouting there. Players build large **"scout hammers"** (thousands of scouts) to reveal enemy armies.
-- The game **does not publish per-unit scouting/counter-scouting numbers** — attack, defense-vs-infantry, defense-vs-cavalry, speed and carry capacity are the only attributes it exposes. Any specific scouting-strength figure you see for a unit is an outside estimate, not a confirmed in-game stat; scout rankings are driven mainly by cost, speed and upkeep instead, which *are* real.
-- A defender **only** learns the count/type of an incoming attack if the **number of incoming attacks is ≤ their [Rally Point](Buildings.md#rally-point) level** (the modern [fake](Combat.md#fakes) system). In the older system you saw incoming troops if you had **more scouts than incoming troops** — that was replaced to make faking viable.
+- Sentinel, Pathstalker, and Wind Scout each have dedicated base scouting attributes of **35 attack** and **20 defense**. Scout battles use these values, not the ordinary attack and infantry/cavalry defense columns in the roster tables. Smithy levels and other bonuses modify them.
+- Incoming attack and raid visibility compares the **incoming troop count** with the target village's [Rally Point](Buildings.md#rally-point) threshold. Signal Fires raises that threshold; the attacker's Masking Drills lowers it. Scout missions have additional detection rules described under [Combat](Combat.md#incoming-visibility-and-fakes).
 - To see the troops inside a [Wilder Site](Wilder-Sites.md) you must **scout** it (or learn from attacking/raiding it).
 
 ## Moving/merging troops
-- Early on, you **could not transfer or swap troops between villages**. A later **[research](Research.md)** allows **merging** troops from another village (they keep their origin village), and merged troops take the **[Smithy](Buildings.md#smithy) level of the village they merge into**. A separate research allows **forwarding** trained troops. This works to your **own villages** and, more recently, **to allies too** — but forwarding to allies is capped at a **limited number of times per day**.
+- **Consolidated Legions** lets reinforcements from one of your villages merge permanently into another village you own after arrival. The research must be unlocked in the origin village, and the receiving village pays **twice the units' original training cost**. The merged troops become part of the receiving village's own army.
+- **Transfer Orders** can redirect reinforcements sent from the researched village while they are stationed elsewhere, without returning to their origin first. Its ranks allow **1, 2, or 3 transfers per rolling 24 hours**. The new target must be one of your villages or an eligible defensive/personal-pact village.
 
 ## See also
 - [Combat](Combat.md) · [Tribes](Tribes.md) · [Buildings](Buildings.md) · [Research](Research.md)

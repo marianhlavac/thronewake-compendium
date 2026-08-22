@@ -2,32 +2,63 @@
 category: "Mid- and end-game"
 weight: 640
 linkTitle: "Leaderboards, Medals & Store"
-aiStatus: "ai-slop"
+aiStatus: "code-verified"
 ---
 
 # Leaderboards, Medals & Store
 
 ## Leaderboards
-- Leaderboards track **population, loot, attack, and defense**. Separate **PvP** and **PvE** scores are tracked, with a visual distinction between PvP and PvE attack/defense on the leaderboard.
-- The **weekly top 10** is shown; if you're outside it, your own position is shown as an "11th row" so you can see how close you are (the same can apply to overall leaderboards).
-- **Population** is one visible metric of size but not a direct measure of military strength (see [population](Villages-Cities-and-Expansion.md#population)). Attacking/raiding an alliance member or a **same-IP** account gives **no loot and no leaderboard score**.
 
-## Medals & honors
-- At the **end of each week**, the top 3 players and alliances on the weekly leaderboards get an in-game honorable mention; **weekly top-10** results are saved (and can be used for medals/badges).
-- **End-of-world medals** are awarded based on the rankings **at the moment the [Ancient Monument](Endgame-Ancient-Monument.md) reaches level 100** (best attack, defense, loot, population — PvP & PvE). Medal stats **freeze** at that moment.
-- **Medal types:**
-  - **World-specific medals** (weekly top-10, etc.) can only be shown on that world's profile.
-  - **Non-world-specific medals** — awarded to the player and alliance that win the world, and the top 3 overall players at world's end — can be shown on **any** world profile.
-- You can manage your **profile** (description, medals) and, on your own profile / with the right alliance permission, see per-village incoming attacks.
+Leaderboards support two entity types—**players** and **alliances**—two periods—**overall** and **weekly**—and four categories:
 
-## Store & Gold
-Thronewake has a **Store** where you can buy **Gold** (added 20/06). Consistent with the game's [no-pay-to-win](Overview.md#no-pay-to-win) philosophy, Gold gives **no gameplay/resource advantage** — only cosmetic and support items:
-- Become a **"Patron of the Throne"** — a support badge.
-- **Building skins** (e.g. Town Hall skins, [Rally Point](Buildings.md#rally-point) skins).
-- **Tribe icons** shown next to your name (leaderboard, chat, alliance member list) instead of the default leader icon.
-- A small starter option existed (e.g. €0.99 for 100 Gold).
+- population;
+- attack;
+- defense; and
+- resources looted.
 
-There is **no** Gold-bought instant-build, resources, production bonus, or troop-merging — a deliberate contrast with Travian.
+Attack and defense rows retain PvP and PvE components as well as combined totals. The current profile or alliance rank is queried separately, so players can see their own position outside the visible leading rows. Weekly leaderboards retain the top 10 for recap and rewards.
+
+A world's weekly boundary is stored on the server. Where no explicit boundary is supplied, the helper falls back to Monday at 00:00 UTC.
+
+Combat against restricted score-farming relationships, including the same alliance and unresolved linked-account cases, does not grant normal leaderboard score or loot.
+
+## Rewards
+
+The reward catalog includes:
+
+- weekly ranks 1–10 for each of the four leaderboard categories;
+- final overall ranks 1–3 for each category;
+- World Victor for the winning Monument profile;
+- Victorious Alliance for members of the winning alliance; and
+- Victory Pact for eligible members of a defensive-pact alliance at the win.
+
+Weekly rewards are world-profile rewards. World-victory and final reward ownership is resolved through the reward workflow so the correct account or server profile can display it.
+
+## Gold packs
+
+The implemented EUR packs are:
+
+| Price | Gold |
+|---:|---:|
+| €0.99 | 100 |
+| €4.99 | 500 |
+| €9.99 | 1,100 |
+| €19.99 | 2,400 |
+| €49.99 | 6,500 |
+
+Checkout pricing and tax validation are handled by the store backend; the table is the base pack catalog.
+
+## Patron of the Throne
+
+Supporter time costs **500 Gold per 30 days**. The store offers 1-, 3-, and 6-month self-purchase options, and supporter time can also be gifted to another human player profile.
+
+Badge tiers unlock after **1, 3, 6, 12, and 24 earned months**. Badge visibility can be changed while the entitlement is valid, and optional renewal spends 500 Gold per additional month.
+
+## Cosmetic purchases
+
+Gold is used for supporter status and account cosmetics such as building skins and tribe-unit profile icons. These entitlements affect presentation, not resources, production, construction, troop strength, or combat resolution.
 
 ## See also
-- [Endgame: the Ancient Monument](Endgame-Ancient-Monument.md) · [Thronewake overview](Overview.md) · [Watchfires](Watchfires.md)
+
+- [Endgame: the Ancient Monument](Endgame-Ancient-Monument.md) · [Overview](Overview.md)
+- [Combat](Combat.md) · [Watchfires](Watchfires.md)

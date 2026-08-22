@@ -15,15 +15,15 @@ An unofficial, community-sourced knowledge base for **[Thronewake](https://thron
 
 Statements attributed to the developer are treated as authoritative. Player-supplied details are marked *(player-reported)*, *(unconfirmed)*, or *(player note)* depending on how well-corroborated they are — see "Sourcing conventions" in [CONTRIBUTING.md](https://github.com/marianhlavac/thronewake-compendium/blob/master/CONTRIBUTING.md) for the full rules.
 
-**1× values** are the base game numbers; on a speed world, *movement/travel speed, production per hour, and queue/build/train times* scale with the world speed, but **capacities do not** (see [Worlds & Server Speed](Worlds-and-Server-Speed.md)).
+**1× values** are the base game numbers, but speed scaling is mechanic-specific. Production and many timers use raw speed, movement uses a 1×/2×/4× bracket, and some capacities scale while ordinary storage and merchant carts do not. See [Worlds & Server Speed](Worlds-and-Server-Speed.md).
 
 ## AI-generated content
 
-Currently, most of the content still comes from the Discord chat extraction. A lot of it can be misleading or hallucinated by AI. We track the number of pages that no human has touched yet:
+Much of the Compendium originated in Discord chat extraction or AI-assisted drafting. Pages marked **Code-Verified** have since been checked systematically against the current game source code and corrected to match the implementation. The meter tracks pages that remain unverified AI drafts:
 
 {{< slop-meter >}}
 
-Ideally, all AI-generated content should eventually be replaced and/or verified by humans.
+Code verification is substantially stronger than an unchecked AI draft, but it is not the same as independent human editorial review and can become outdated when the implementation changes. The badge on each article states which kind of verification it has received.
 
 ## Future of this wiki
 
@@ -33,7 +33,7 @@ That doesn't mean this wiki isn't worth working on, though. Its end goal could b
 
 ## How can you help
 
-- **Review AI-generated content.** Check a page's claims against a real source, fix what's wrong, and mark it reviewed. This is currently the single most valuable thing you can do for this wiki.
+- **Review AI-generated content.** Check a page's claims against a primary source, fix what's wrong, and record whether the review was code-assisted or performed independently by a human.
 - **Correct** numbers, timings, or mechanics that are wrong or out of date.
 - **Add new sourced information** — dev posts, changelog entries, or well-corroborated player reports.
 - **Fix clarity issues** — better wording, missing context, broken links.

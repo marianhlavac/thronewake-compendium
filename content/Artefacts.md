@@ -2,56 +2,91 @@
 category: "Mid- and end-game"
 weight: 610
 linkTitle: "Artefacts"
-aiStatus: "ai-slop"
+aiStatus: "code-verified"
 ---
 
 # Artefacts
 
-**Artefacts** are powerful **[Ancient](The-Ancients.md)** relics that can change the direction of a world. They are rare, heavily contested, and usually matter once alliances fight over larger goals. On a **3× world** they release on **day 30** (the [Ancient Monument Construction Plans](Endgame-Ancient-Monument.md#construction-plans) are separate and release later, on day 60).
+When a world's Ancient endgame is enabled, regular artefacts are released from Ancient artefact villages at a server-configured milestone. With the default configuration that milestone is server day 90, or real day 30 on a 3× world. Construction plans are a later, separate release.
 
-Artefacts have the **same effects as their Travian counterparts** *(dev-confirmed)*.
+## Sizes, scope, and Treasury requirements
 
-## Sizes
-Most artefacts come in three sizes:
-- **Small** — affects one village. Requires a **level-10 [Treasury](Buildings.md#treasury)**.
-- **Large** — affects **all** of your villages. Requires a **level-20 Treasury**.
-- **Unique** — affects all your villages with the **strongest** version of the effect. Requires a level-20 Treasury.
+| Size | Default scope | Required Treasury |
+|---|---|---:|
+| Small | Holding village | Level 10 |
+| Large | Entire profile | Level 15 |
+| Unique | Entire profile | Level 20 |
 
-## Holding & activating
-- To hold an artefact you need an **empty [Treasury](Buildings.md#treasury)** of the required level. A village can hold **exactly one** artefact.
-- After being claimed, an artefact needs some **activation time** before it becomes active (depends on world speed).
-- Only **three artefacts across your villages can be active at once**. There is **no per-alliance limit** — the only limit is **3 active per player**. (Players estimated ~23 artefacts may spawn on a world.)
-- You can no longer **manually deactivate** artefacts (24/06). In your Treasury you can see whether each artefact is Active or Inactive.
+The Ancient Monument Plan is special: it requires Treasury level 10 and participates in the same activation system. A village holds at most one artefact.
 
-## Claiming an artefact
-Two ways:
-1. **Conquer** the village that holds the artefact (you inherit it), or
-2. From a village with an **empty Treasury**, **destroy the Treasury** of the village holding the artefact and win an attack with **at least one surviving unit** — then it transfers to you.
+Activation is delayed after capture or transfer:
 
-## Moving an artefact you own
-- **'Move' button:** send it to another of **your** villages or to an **[alliance](Alliances-and-Diplomacy.md) member's** village. Only allowed if you have **no incoming attack** (or during your [Safe Time](Safe-Time.md)). While travelling it can **still be stolen from the origin village**. It travels at **8 tiles/hour** (16 on 3×) — half a [Green Lancer](Units.md)'s speed, much faster than [catapults](Combat.md#catapults).
-- **'Traditional' way:** let an ally **destroy your Treasury** and take it — this works **even while under attack**.
-- If an artefact is en route to a village whose owner enters **[Vacation Mode](Vacation-Mode.md)** at the moment of arrival, it **returns** to its origin (01/07).
+| Raw server speed | Activation delay |
+|---:|---:|
+| 1× | 24 hours |
+| 2× | 16 hours |
+| 3× | 12 hours |
+| 5× | 8 hours |
+| 10× | 4 hours |
 
-## Artefacts and your Ancient / Monument villages (authoritative, Nimo)
-Artefacts **do** affect [Ancient Stronghold/Wonder/Monument villages](Endgame-Ancient-Monument.md) that you own — with a few exceptions:
-- **Shadow Veil** — even with it, enemies **can still target the [Ancient Monument](Endgame-Ancient-Monument.md)** (its random-targeting effect does not protect the Monument).
-- **Stone Shield** — has **no effect on the Ancient Monument** itself.
-- **Great Storage Plan** — you can already build the **[Great Warehouse/Granary](Buildings.md#great-buildings)** in an Ancient Wonder/Stronghold village **without** the artefact, so you don't need it there.
-- Others (e.g. **Harvest Horn** for troop upkeep) work normally in those villages.
+## Active limits
 
-## Artefact types
-| Artefact | Effect |
-|---|---|
-| **Ancient Monument Plan** (Construction Plan) | Required to raise the [Ancient Monument](Endgame-Ancient-Monument.md) in a conquered Ancient Stronghold/Wonder village. See the Endgame page for the two-plan rule. |
-| **Stone Shield** | Makes buildings much harder to destroy with [rams and catapults](Combat.md). Does **not** protect the Ancient Monument itself. |
-| **Wind Boots** | Increases troop movement speed. |
-| **Seer's Eye** | Makes scouts stronger and reveals incoming **troop types** at the [Rally Point](Buildings.md#rally-point). |
-| **Harvest Horn** | Reduces food upkeep for stationed troops. |
-| **War Anvil** | Speeds up troop training. |
-| **Great Storage Plan** | Allows the village to build the **[Great Warehouse and Great Granary](Buildings.md#great-buildings)** (needed for the endgame). Must be held for **every level**, or upgrades stop / are cancelled. |
-| **Shadow Veil** | Greatly increases [Shelter](Buildings.md#shelter) capacity and makes enemy **[catapult](Combat.md#catapults) targets random** (players call this "confusion"). |
-| **Trickster's Mirror** ("the Fool") | Chaotic: its **effect, value, and scope change** when captured and **every 24 hours**. Rolls are random and can be **detrimental** (e.g. 0.5× troop movement speed). The reroll timer rounds up to the next full hour. |
+A profile can have either:
+
+- one account-scope artefact and two village-scope artefacts active; or
+- three village-scope artefacts active when no account-scope artefact is active.
+
+Ready artefacts are selected automatically in obtained-time order. Later eligible artefacts remain disabled by the limit until a slot becomes available.
+
+## Default world distribution
+
+The default server configuration creates **23 regular artefacts**:
+
+- one Small, one Large, and one Unique Stone Shield, Wind Boots, Seer's Eye, Harvest Horn, and War Anvil;
+- one Small and one Large Great Storage Plan;
+- one Small, one Large, and one Unique Shadow Veil; and
+- two Small and one Unique Trickster's Mirror.
+
+Servers can override both release timing and counts.
+
+## Effects
+
+| Artefact | Small | Large | Unique |
+|---|---:|---:|---:|
+| **Stone Shield** | 4× building durability | 3× | 5× |
+| **Wind Boots** | 2× troop speed | 1.5× | 2× |
+| **Seer's Eye** | 5× scout strength | 3× | 10× |
+| **Harvest Horn** | 0.5× troop Food upkeep | 0.75× | 0.5× |
+| **War Anvil** | 0.5× training time | 0.75× | 0.5× |
+| **Shadow Veil** | 200× Shelter capacity | 100× | 500× |
+
+Seer's Eye also reveals incoming troop types. Shadow Veil randomizes enemy catapult targets; its Small and Large forms allow the Treasury to be targeted directly, while every size allows the Ancient Monument to be targeted directly. Stone Shield never changes Ancient Monument durability.
+
+The Great Storage Plan exists only in Small and Large sizes and enables Great Warehouse and Great Granary construction for its effective scope. Ancient Stronghold and Ancient Wonder villages already have access without this artefact.
+
+Trickster's Mirror rerolls its effect kind, value, and scope on capture and every 24 hours. Small Mirrors may roll a positive or negative polarity. The Unique Mirror always uses positive polarity.
+
+## Capturing
+
+An artefact can transfer as part of a successful village conquest. It can also be stolen without conquering: an eligible attack from a village with enough empty Treasury capacity destroys or bypasses the holder's Treasury and finishes with a surviving attacker. Shadow Veil's targeting rules affect whether the protected Treasury can be selected directly.
+
+## Moving an owned artefact
+
+The holder can move an artefact at base speed **8 tiles per hour**, modified by the world's movement-speed bracket. The target must have sufficient empty Treasury capacity and may belong to the holder, an alliance member, a defensive-pact alliance member, or a personal-pact partner. Neither profile may be in Vacation Mode.
+
+An incoming attack on the origin normally blocks the move. The exception is when the holder is currently inside their own Safe Time. Only one transfer may target a village at a time.
+
+## Ancient Monument villages
+
+Artefact effects can apply to a player-owned Ancient Stronghold or Ancient Wonder, with explicit exceptions:
+
+- Stone Shield excludes the Ancient Monument itself.
+- Shadow Veil cannot prevent direct Monument targeting.
+- Great Storage Plan is unnecessary because these villages have built-in Great Storage access.
+
+Other applicable effects, including troop upkeep, training, movement, and scouting, work according to their scope.
 
 ## See also
-- [Endgame: the Ancient Monument](Endgame-Ancient-Monument.md) · [Buildings → Treasury](Buildings.md#treasury) · [The Ancients](The-Ancients.md)
+
+- [Endgame: the Ancient Monument](Endgame-Ancient-Monument.md) · [Buildings → Treasury](Buildings.md#treasury)
+- [The Ancients](The-Ancients.md) · [Combat](Combat.md)

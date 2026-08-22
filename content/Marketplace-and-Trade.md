@@ -2,44 +2,59 @@
 category: "World & interaction"
 weight: 520
 linkTitle: "Marketplace & Trade"
-aiStatus: "ai-slop"
+aiStatus: "code-verified"
 ---
 
 # Marketplace & Trade
 
-The **Marketplace** building lets you send resources, exchange them at the NPC **Quartermaster**, and set up **trade routes**. **Merchants** carry the resources.
+The Marketplace supplies one merchant per building level, accepts player offers, sends resources, performs Quartermaster exchanges, and manages trade routes.
 
 ## Merchants
-- Each [tribe](Tribes.md) has different merchant stats (**carry capacity does not scale with [world speed](Worlds-and-Server-Speed.md)**; movement speed effectively does):
 
-  | Tribe | Carry | Speed | Trade Office bonus |
-  |---|---|---|---|
-  | [Embermark](Embermark-Dominion.md) | 500 | 16 | **doubled** |
-  | [Verdant](Verdant-Wardens.md) | 750 | 24 | normal |
-  | [Stormfang](Stormfang-Clans.md) | 1000 | 12 | normal |
+| Tribe | Base carry | Base speed | Trade Office at level 20 |
+|---|---:|---:|---:|
+| [Embermark](Embermark-Dominion.md) | 500 | 16 | 9× carry multiplier |
+| [Verdant](Verdant-Wardens.md) | 750 | 24 | 5× carry multiplier |
+| [Stormfang](Stormfang-Clans.md) | 1,000 | 12 | 5× carry multiplier |
 
-- The **Trade Office** building increases merchant carry capacity (percentage-based); Embermark's bonus is doubled to offset its small base merchants. The [alliance](Alliances-and-Diplomacy.md) "merchant capacity" bonus and the **[Pack Discipline](Research.md)** research add more. Early-game merchants feel small until a Trade Office is up.
-- You can send up to **5 repeat deliveries** at once. You can pick your own villages from a dropdown as origin/destination.
+Carry capacity does not automatically scale with server speed. It is multiplied by the Trade Office, the alliance Trade Network bonus, and **Loaded Caravans** research. **Merchant Requests** adds 2 / 4 / 6 merchants, and **Swift Caravans** makes merchants 5% / 10% / 15% faster.
 
-## The Quartermaster (NPC exchange)
-Building a Marketplace unlocks the **Quartermaster**, an NPC that exchanges resources **on demand at a 3:1 rate** (give 3, receive 1 of another type). There is **no 1:1 NPC trade** — a deliberate difference from Travian that keeps the economy tighter and encourages player trading.
-- A **[research](Research.md)** improves the rate toward **2.5:1**.
-- You can reverse "Give" and "Receive" inputs, and instantly fill the max receive amount.
+Travel uses the server's movement-speed bracket: 1× movement on a 1× server, 2× on 2× through 5×, and 4× on 10×. A direct send may repeat up to **5 deliveries**.
+
+## Quartermaster
+
+The default NPC exchange rate is **3:1**. Quartermaster Bargaining changes it to 2.85:1 / 2.65:1 / 2.5:1. A Watchfire Quartermaster's Token provides 2 / 4 / 6 one-for-one exchanges.
+
+## Player offers
+
+Offers may range from 1:2 through 2:1 by unweighted resource amount. Marketplace offers lock the seller's required merchants until accepted or cancelled. Market Safekeeping can protect 15% / 30% / 50% of offered resources from village loot.
+
+Trade Agreements, Treaties, Defensive Pacts, and same-alliance membership permit alliance-scope offers. War blocks trade.
 
 ## Trade routes
-Create repeating **trade routes** between your villages or eligible [alliance](Alliances-and-Diplomacy.md) villages (found in the Rally Point's "Routes" tab). Trade routes **do not** bypass the push limits below. There is a trade-route limit (added 19/07).
 
-## Send (push) limits
-To prevent resource-funneling and multi-account abuse, how much you can send another player is capped by your **relationship** (same alliance / defensive pact / trade agreement / personal pact / none) and your **[population](Villages-Cities-and-Expansion.md#population)** — daily and weekly limits are shown when sending (10/06).
-- To an **ally**, per day per player, you may send the **higher of** 2 hours of your **total** resource production (all villages combined) **or 60,000**.
-- **Food is weighted 0.5** for these limits.
-- **Same-IP** players can only trade at **1:1**, max **1000 resources** per trade, no multi-delivery, and cannot **gift**. Attacking/raiding a same-IP account gives no loot or score.
-  - *Same IP* means connecting from the same public internet address — which can legitimately happen for **different** real players (shared school/work networks, VPNs/proxies, and especially mobile 4G/5G providers that route many users through one address, particularly in the same region). Running multiple accounts for advantage is **against the rules** (the developer can detect second accounts via saved IPs across worlds), but genuine friends can still play together — the same-IP flag **mostly just affects Marketplace restrictions**.
-- During **[Beginner Protection](Beginner-Protection.md)**, the free "gift" feature and any trade better than 1:1 are disabled; sending to your **own** villages is allowed.
-- Food sent to Ancient Wonder/Stronghold villages and artefact-holding villages doesn't count toward the market support limit (09/07).
+The base limit is **3 routes per village**. Trade Route Permits raises it by 2 / 4 / 6. Merchant Charter unlocks Smart Trade Routes, minimum source stocks, and routes to any eligible alliance village. Routes obey Beginner Protection, vacation, account-link, war, and support-limit rules.
 
-## Alliance-scope offers
-You can toggle the Marketplace to show only offers within your alliance scope (09/08).
+## Cross-player support limits
+
+Direct sends, route deliveries, and the unequal part of an accepted offer are netted in daily and weekly windows. Food counts as half value. After a relationship has matured for 24 hours, the base daily cap is the higher of a production-based amount and a fixed amount scaled by server speed:
+
+| Relationship | Production amount | Fixed amount | Weekly cap |
+|---|---:|---:|---:|
+| Same alliance | 2 hours | 20,000 × speed | 5× daily |
+| Treaty or Defensive Pact | 1.25 hours | 12,000 × speed | 3× daily |
+| Personal pact | 1 hour | 10,000 × speed | 3× daily |
+| Trade Agreement | 0.5 hour | 5,000 × speed | 3× daily |
+| No relation | 0.25 hour | 2,500 × speed | 3× daily |
+
+Before a friendly relationship is 24 hours old, the lower rather than higher base amount applies. Sending to a larger receiver also applies a population multiplier: 1× when the receiver is no larger, then 0.5×, 0.25×, or 0.1× as the size gap grows.
+
+Fair-play-linked accounts cannot send direct resource gifts to each other. They may exchange through offers only at equal weighted value; because Food has half value, the fair Food rate is 2:1 against another resource. Combat between linked accounts does not award loot or leaderboard rewards unless the moderation link has been dismissed.
+
+While [Beginner Protection](Beginner-Protection.md) is active, cross-player direct sending and cross-player trade routes are blocked. Protected sellers cannot create storage offers, and a protected buyer below 200 population cannot accept an offer that gives them more than they pay.
+
+Food sent to Ancient Stronghold/Wonder villages is exempt from support accounting before Plan release; once the Plan phase begins, all resources sent there are exempt.
 
 ## See also
+
 - [Resources & Economy](Resources.md) · [Buildings](Buildings.md) · [Alliances & Diplomacy](Alliances-and-Diplomacy.md)

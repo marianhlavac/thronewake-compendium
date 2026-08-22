@@ -2,51 +2,59 @@
 category: "Your empire"
 weight: 350
 linkTitle: "Research"
-aiStatus: "ai-slop"
+aiStatus: "code-verified"
 ---
 
 # Research
 
-The **Research** system (added 19/07) lets each [village](Villages-Cities-and-Expansion.md) unlock bonuses and special mechanics using **Research Points (RP)**. It is one of Thronewake's biggest departures from Travian and is managed via the **[Academy](Buildings.md#academy)**.
+Research is a per-[village](Villages-Cities-and-Expansion.md) progression system managed through the [Academy](Buildings.md#academy). It contains **63 research families** and **171 purchasable rank rows** across Economy, Military, and Utility.
 
-## How research works (authoritative)
-- Research is **per village**. **Research Points are generated per day = village population × [world speed](Worlds-and-Server-Speed.md)** — more [population](Villages-Cities-and-Expansion.md#population) means more RP.
-- **RP earned in a village can only be spent in that same village** (RP is not transferable). Unlocking uses a tab in the [Academy](Buildings.md#academy); it is not instant even with enough RP.
-- There are **63 research items** in total, across **three trees/lines** (economic / military / utility). Each tree currently holds **18 minors, 9 majors, and 3 keystones**. You can invest in all three lines, but you are **capped on the total minors/majors** you can hold; **keystones** are the powerful capstones.
-- **Reset:** a button at the bottom of the tree page refunds **80%** of spent points; individual research can also be reset (24/07). A **conquered village keeps its research**. You **cannot see** what your opponents have researched.
-- **[Tasks](Villages-Cities-and-Expansion.md#tasks)** also grant some RP (25/07). Unit research/upgrade time scales with world speed (fixed 03/06).
+## Points, ranks, and capacity
+
+- A village generates RP per day equal to `population × server speed`. RP belongs to that village and cannot be transferred.
+- Task resource rewards also grant RP equal to **20%** of the reward amount.
+- The tree has three lanes with three branches each. Every branch contains three 3-rank Minor families, three 3-rank Major families, and one single-rank Keystone.
+- Rank costs are **200 / 500 / 1,300 RP** for Minor ranks, **1,400 / 4,400 / 11,000 RP** for Major ranks, and **16,000 RP** for a Keystone.
+- Base allocation across the whole tree is **18 Minor ranks, 9 Major ranks, and 3 Keystones**. RP can buy up to three extra Minor slots and three extra Major slots; Keystone capacity cannot be increased.
+- A Major's first rank requires rank II of its paired Minor. A branch Keystone requires at least three Major ranks in that branch, plus its building requirements.
+
+## Resets and conquest
+
+Individual ranks or the whole village tree can be reset. A reset refunds **80%** of the removed RP and starts a **3-day cooldown**. The game blocks a reset if removing an effect would leave invalid buildings, queues, routes, pacts, Wilder Sites, or active research actions. Purchased capacity survives a whole-tree reset. A conquered village retains its research and RP state.
 
 ## Rested Campaign
-Tied to research/[Safe Time](Safe-Time.md): during your **Safe Time** you accumulate **"Rested Campaign"** resources. When you then attack/raid **normal Ancient villages or unowned [Wilder Sites](Wilder-Sites.md)**, you gain up to **+15% loot**, paid from that bank. Track it in **Settings → Safe Time**.
 
-## Named researches
-These appear in the source with the effects described in-game. Names/effects are *player-observed*; exact tiers/values vary.
+During [Safe Time](Safe-Time.md), a village banks Rested Campaign value. Eligible attacks and raids against normal Ancient villages and unowned [Wilder Sites](Wilder-Sites.md) can add up to **15%** loot, paid out of that bank.
 
-| Research | Effect (as described) |
-|---|---|
-| **Grand Work** (keystone) | Instead of upgrading a level directly, start a *Grand Work* (max one per village). It slowly pours resources into it at **10% of your current production**, up to **50%** of the cost — so the eventual upgrade is up to **50% cheaper**. Crucially, that 10% is **added on top** — it is **NOT deducted** from your normal production. Resources are protected and refunded if you cancel. (Useful for big purchases like a [Treasury](Buildings.md#treasury) when you lack the storage; note you may still need enough [Warehouses](Buildings.md) for the remaining cost.) The related **major** research gives up to **+15%** production instead. |
-| **Diplomatic Awareness** | Raises the count needed for incoming attacks to stay hidden at the [Rally Point](Buildings.md#rally-point) (better [fake](Combat.md#fakes) detection / cheaper convincing fakes). E.g. at level 3, fakes need ~36 units to stay hidden. |
-| **Operation Plans** (keystone) | Unlocks **farm lists** (which otherwise don't exist) and raiding tech. |
-| **Bounty Board** (keystone) | Gives a raid target within ~**25% of your population range**. |
-| **Double / Twin Barracks** (keystone) | An equivalent of a **[Great Barracks/Stable](Buildings.md#great-buildings)** without using a building plot; trains at normal cost. Strengthens "hammers". |
-| **Pack Discipline** | Boosts [merchant](Marketplace-and-Trade.md) carry capacity (~+5%). |
-| **Reconstruction Crews** | Increases [rebuild](Buildings.md#rebuilding) speed of destroyed buildings (base rebuild bonus is +25%; research can reach ~+65% faster). |
-| **Emergency Muster** | Removes time from the troop **training queue** (leveled). |
-| **Industrial Expansion** | Improves resource fields. |
-| **Local Influence** | Troops travelling **toward** that village get a bonus (does not stack across villages). |
-| **Crisis Coordination** | Triggers on **enemy attacks** only (defensive bonus). |
-| **Loot Discipline** | Loot-related bonus. |
-| **Safe Time Study** | Increases RP generation during [Safe Time](Safe-Time.md) (~+2/4/6%). |
-| **Focus Production** | Focus one resource (with a cooldown). |
-| NPC-trade improvement | Improves the [Quartermaster](Marketplace-and-Trade.md) exchange from 3:1 toward **2.5:1**. |
-| Overflow auto-exchange (minor) | At tier 1, auto-converts **5%** of overflow at 3:1 into your lowest resource. |
-| Field auto-progress | Auto-completes **10%** of a resource field every 12h. |
-| Troop **merging** | Lets you merge troops from another village; merged troops take the destination's [Smithy](Buildings.md#smithy) level. |
-| Troop **forwarding** ("Transfer Orders") | Forward trained troops to your **own villages**, or **to allies** (ally forwarding is capped at a **limited number of times per day**). |
-| Attack cancellation | Cancel an attack up to **8 minutes** after sending. |
-| Siege bonus ("Siege Camp") | "Prepare" it in the [Rally Point](Buildings.md#rally-point); after 1h you get a checkbox to apply a **ram + catapult damage** bonus to one attack; reusable ~hourly. |
-| Shelter-bypass | Lets a raid partly bypass the target's [Shelter](Buildings.md#shelter). |
-| "Signal Jamming" / "Electronic Warfare" | Joke player names for real research items (exact effect not stated). |
+## Branch overview
+
+| Lane | Branch | Keystone | What it unlocks |
+|---|---|---|---|
+| Economy | Builders' Guild | Second Work Crew | Two simultaneous building/field upgrades; Embermark can run three through its split queues |
+| Economy | Industry Guild | Grand Work | Stores 10% of production as protected materials for one upgrade, up to half its cost |
+| Economy | Merchant Guild | Merchant Charter | Smart Trade Routes with minimum stocks and alliance-village destinations |
+| Military | Command & Maneuver | Operation Plans | Up to 15 saved raids that can be dispatched together |
+| Military | Siege & Armory | Heavy Bombardment | Siege mode: +25% attack, double travel time, minimum 1,000 units and one ram |
+| Military | Raiding & Fieldcraft | Bounty Board | Daily target reveal and RP bounty |
+| Utility | Logistics & Reinforcement | Consolidated Legions | Merge troops into another owned village for twice their original training cost |
+| Utility | Training & Recovery | Twin Barracks | One additional normal Barracks or Stable |
+| Utility | Frontier & Diplomacy | Frontier Command | One extra Wilder Site claim slot |
+
+## Frequently confused effects
+
+- **Loaded Caravans** raises merchant capacity by 5% / 10% / 15%. **Pack Discipline** instead raises raiding-troop carry capacity by those values.
+- **Safe Time Study** grants 10% / 20% / 30% more RP during Safe Time. **Quiet Administration** makes building upgrades and troop training 2% / 4% / 6% faster during Safe Time.
+- **Surplus Exchange** converts 10% / 20% / 30% of storage overflow at the current Quartermaster rate.
+- **Quartermaster Bargaining** improves the rate to 2.85:1 / 2.65:1 / 2.5:1.
+- **Wave Drill** raises the Wave Builder limit from 8 to 9 / 10 / 11 waves.
+- **Extended Recall** raises the normal 2-minute cancellation window to 4 / 6 / 8 minutes.
+- **Signal Fires** raises the defender's incoming troop-count reveal threshold by 5 / 10 / 15. **Masking Drills** lowers that threshold by 5 / 10 / 15 for attacks sent from the researched village.
+- **Field Medicine** raises Herbalist recovery from 40% to 45% / 50% / 55%.
+- **Pact Charters** raises the personal-pact cap from 3 to 4 / 5 / 6.
+- **Reconstruction Crews** changes the rebuild time multiplier from 0.75 to 0.65 / 0.50 / 0.35.
+
+The Academy shows every current prerequisite, tier value, activation rule, and cooldown. Because many researches create runtime state rather than a passive percentage, the in-game tree is the definitive reference for less common nodes.
 
 ## See also
+
 - [Academy](Buildings.md#academy) · [Culture Points](Culture-Points.md) · [Combat](Combat.md) · [Safe Time](Safe-Time.md)

@@ -2,41 +2,64 @@
 category: "Factions & tribes"
 weight: 250
 linkTitle: "The Ancients 🗿 (NPC)"
-aiStatus: "ai-slop"
+aiStatus: "code-verified"
 ---
 
 # The Ancients 🗿
 
-The **Ancients** are Thronewake's non-playable NPC faction — analogous to Travian's **Natars/Nataris**. They guard the map, hold special villages, defend [Wilder Sites](Wilder-Sites.md), take over abandoned player villages, and drive the [endgame](Endgame-Ancient-Monument.md).
+The Ancients are Thronewake's non-playable faction. Their profile owns unclaimed Wilder garrisons, special endgame villages, released artefacts and plans, reverted player villages, scripted retaliation armies, and—when enabled—the NPC Monument.
 
-## Where the Ancients appear
+## Units
 
-### 1. Wilder Sites
-Unclaimed [Wilder Sites](Wilder-Sites.md) are controlled by the Ancients and defended by Ancient troops that **regenerate over time**. See [Wilder Sites](Wilder-Sites.md) for spawn/respawn rules. One named Ancient unit that appears in Wilder Sites is the **Stonepike** (respawns roughly every ~12 minutes on 1×, ~4 min on 3×).
+The Ancient roster includes Stonepike, Carved Warrior, Monolith Warden, Shardwing, Slate Rider, Obsidian Knight, Gatebreaker, Obelisk Engine, the Ascendant, and an Ancient settler. Players cannot train these units.
 
-- Ancient/Wilder-Site troops are meant to be **[Smithy](Buildings.md#smithy) level 0** (a bug once briefly set them to level 20).
-- Their **troop numbers scale with the number and size of active players** on the world.
+Shardwing is an Ancient scout with special incoming-visibility behavior. Wilder Sites use only a five-unit subset of the roster; special villages and scripted attacks can use broader compositions.
 
-### 2. Ancient special villages (endgame)
-The Ancients own the special villages needed for the [endgame](Endgame-Ancient-Monument.md):
-- **Ancient Stronghold villages** and **Ancient Monument / Ancient Wonder villages** — these contain the building slot for the **[Ancient Monument](Endgame-Ancient-Monument.md)**. Alliances must conquer one to start building.
-- **Plan Sanctuary villages** — spawn later in the world and hold the **[Construction Plan artefacts](Endgame-Ancient-Monument.md#construction-plans)**. An in-game announcement is made **7 days before** they appear.
-- After you conquer an Ancient Stronghold/Monument village, the **Ancients try to take it back** after a short time (protect it by raising the Monument to at least level 1).
-- From Monument level 10 onward the Ancients **attack the Monument with siege every 5 levels** (plus at level 5 and 96/97/98/99 without siege). See [Endgame](Endgame-Ancient-Monument.md#ancient-attacks-on-the-monument).
+## Wilder Sites
 
-### 3. Abandoned / deleted player villages
-When a player is **inactive** (their profile is scheduled for deletion after 7 days of inactivity) or **deletes** their account, **all** of their villages are taken over by the Ancients (not just the capital, unlike Travian's 1/5-chance capital→Natar).
-- These villages **keep their buildings as they are** and do **not disappear** on their own; they can be catapulted to 0, at which point they disappear.
-- The Ancients will **slowly build up** some acquired villages over the course of a world, but they **do not train new troops** in them — so villages taken from players usually have **no Ancient troops** and can be farmed freely.
-- Attacking a **0-population** Ancient village yields some resources and then the village disappears.
+Unclaimed [Wilder Sites](Wilder-Sites.md) begin dormant and activate their Ancient garrison after the relevant attack or exhausted-allowance raid. Their garrison has fixed tier-based target quantities, raw-speed scaling, and per-unit respawn timers. Wilder combat disables player-population morale.
 
-### 4. Optional: the Ancients' own Monument
-On worlds where the toggle is on, the Ancients **also race to build their own [Ancient Monument](Endgame-Ancient-Monument.md)** to level 100 to end a stalling world. See [Worlds & Server Speed → infinite-server safeguard](Worlds-and-Server-Speed.md#world-length--the-infinite-server-safeguard-authoritative).
+## Endgame villages
 
-## Fighting the Ancients
-- Ancient troops are **strong**; early feedback repeatedly noted they are "troops on steroids". Their strength has been balanced over time.
-- You can attack/raid Ancient-controlled targets, but note the [Safe Time](Safe-Time.md) rules: as of update 19/07 you can **no longer** attack normal Ancient villages or unowned Wilder Sites **during your own Safe Time**; however you *can* attack an Ancient **Capital/Stronghold/Wonder** village during Safe Time (doing so drops your Safe-Time protection until the next day).
+When a server's Ancient endgame is enabled, its configured schedule can create:
+
+- an Ancient Capital;
+- inner Ancient Strongholds;
+- outer Ancient Wonder villages;
+- artefact villages; and
+- Plan Sanctuary villages.
+
+Strongholds and Wonders are the only player-conquerable village kinds that can host an [Ancient Monument](Endgame-Ancient-Monument.md). Artefact and Plan villages distribute their held relics through the artefact capture workflow.
+
+Ancient garrison strength is dynamic. It depends on the world phase, the number of established human profiles, deterministic village seeding, world age, target kind, and alliance scale. Ancient Smithy level is also deterministically selected within the current phase band.
+
+## Recapture, pressure, and retaliation
+
+The Ancients schedule up to two recapture attacks after a human takes a Stronghold or Wonder. Player Monument progress also triggers pressure attacks at the implemented milestones. Separately, attacking or raiding Ancient-owned villages can feed the Ancient rage and retaliation systems.
+
+## Reverted player villages
+
+When a server profile is deleted, each eligible village is transferred to the Ancient profile instead of simply disappearing. The reversion:
+
+- preserves ordinary fields, buildings, resources, and the village's self-stationed army;
+- cancels village-owned queues and recalls external reinforcements in follow-up work;
+- destroys capital-only buildings and caps former-capital fields to their new non-capital limit;
+- clears settlement ownership and resets loyalty; and
+- turns ordinary and former Plan villages into generic Ancient villages, while captured Strongholds and Wonders keep their special kind.
+
+Generic reverted villages receive an Ancient growth state, allowing the NPC economy to develop them over time. This is distinct from combat destruction.
+
+## Safe Time
+
+A player cannot launch any troop movement while the origin village is currently in its own [Safe Time](Safe-Time.md), except for the explicit special-target attack flow. Ancient Capitals, Strongholds, and Wonders are special targets: attacks may be launched against them during the attacker's current Safe Time, but doing so forfeits protection for that origin village until the occurrence ends. Normal Ancient villages and unowned Wilder Sites do not receive that exception.
+
+Special Ancient player-owned targets also bypass target Safe Time checks, so they remain attackable.
+
+## Optional NPC Monument
+
+The NPC Monument race is independently configurable and disabled by default. If enabled, the Ancients start only after the configured release condition and after a player Monument exists, and remain at most 10 levels ahead of the human leader.
 
 ## See also
+
 - [Wilder Sites](Wilder-Sites.md) · [Endgame: the Ancient Monument](Endgame-Ancient-Monument.md) · [Artefacts](Artefacts.md)
-- [Safe Time](Safe-Time.md) · [Villages, Cities & Expansion](Villages-Cities-and-Expansion.md)
+- [Safe Time](Safe-Time.md) · [Units](Units.md)

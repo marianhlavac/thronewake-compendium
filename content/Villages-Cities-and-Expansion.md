@@ -2,69 +2,58 @@
 category: "Your empire"
 weight: 310
 linkTitle: "Villages, Cities & Expansion"
-aiStatus: "ai-slop"
+aiStatus: "code-verified"
 ---
 
 # Villages, Cities & Expansion
 
-Your empire is a set of **villages**. This article covers founding villages, the [capital](#capital), upgrading villages to **[cities](#cities)**, **[loyalty](#loyalty--conquering)** and conquering, and the **[Tasks](#tasks)** system. Growth is gated by **[Culture Points](Culture-Points.md)** and expansion slots.
+A profile may control up to **50 villages**. Founding, conquering, and City upgrades consume account-wide Culture Point slots, while settlers and leaders also consume expansion slots from a Residence or Palace.
 
-## Founding new villages (settling)
-To found (settle) a new village you need three things:
-1. **Three [Settlers](Units.md#settlers)** — trained in a **[Residence or Palace](#residence--palace)**.
-2. A free **expansion slot** in the settling village (see below).
-3. A free **[Culture Point](Culture-Points.md) slot** (account-wide).
+## Settling
 
-**Settler cost** depends on your [tribe](Tribes.md) (Verdant settlers are cheaper). You can see costs on the **Train** tab once you have a Residence/Palace.
+Founding a village requires three settlers, 750 of each resource carried by them, a free expansion slot in their origin, an unlocked Culture Point slot, and an empty legal map tile. Sent settlers are independent of the Residence or Palace after departure.
 
-- Settlers already sent are **independent** of the Residence. **Demolishing your Residence does not cancel settlement** and does not lose the new village. A village is lost only when it reaches **0 population** or is **conquered**.
-- You can settle far away, but it's generally not advised unless you dislike your starting location.
-- **Non-capital villages can claim [Wilder Sites](Wilder-Sites.md).**
+<a id="residence--palace"></a>
 
-### Residence & Palace
-- A village can have **either a Residence or a Palace**, not both. You can have **only one Palace on your whole account**.
-- **Expansion slots** (per village, tied to that building's level):
-  - **Residence:** at level **10** and **20**.
-  - **Palace:** at level **10**, **15**, and **20** (one more than a Residence).
-- Only in a **Palace** can you **switch your capital**.
-- The Residence/Palace shows your **[Culture Point](Culture-Points.md)** production and how long until your next CP slot unlocks.
+- **Residence:** expansion slots at levels 10 and 20.
+- **Palace:** expansion slots at levels 10, 15, and 20. Only one Palace is allowed on the profile, and only it can change the capital.
 
-## Population
-**Population = the total food upkeep of the buildings and fields** you have built/upgraded in a village. It is one metric of a village's development but **not** a direct measure of military strength (a 100-population village could be all resource fields or a troop producer). Troop upkeep is tracked separately. See [Resources → population](Resources.md#production-storage--population).
+The village that spends the expansion slot owns the settlement. A non-capital village may settle and may claim Wilder Sites normally.
 
-## Capital
-Your **capital** is your central, protected village.
-- Capital resource **fields can go higher** than non-capital fields (players reached field levels 14–15 in capitals on the 3rd world).
-- You can **only switch capital in a [Palace](#residence--palace)**. When you switch, buildings that require a capital vs a non-capital are removed accordingly (e.g. a Stonemason's Lodge is capital-only; a Great Barracks is non-capital-only — switching can demolish both).
-- If a **capital is destroyed**, the capital now **moves to the player's largest remaining village**; if the player has no other village, the capital **cannot be destroyed** (update 09/08).
+## Population and capital
+
+Population is the sum of field and building population costs, not troop upkeep. It drives RP production, rankings, morale, and several eligibility checks, but does not directly measure army strength.
+
+Capital fields are not subject to the ordinary non-capital level cap. A capital cannot be conquered. If it is destroyed and another village remains, capital status moves to the largest remaining village. Capital-only and non-capital-only buildings are removed when a capital switch makes them illegal.
 
 ## Cities
-Any village can be upgraded into a **City** (via the [Town Hall](Buildings.md#town-hall)).
-- **Cost:** one **[Culture Point](Culture-Points.md) slot** (not an expansion slot) plus resources. Upgrade time: **24h on 1×/2× worlds, 12h on 3× and faster**.
-- **City benefits:**
-  - **[Watch Tower](Buildings.md#watch-tower) Guards** — hireable defensive units, adding up to **+20% defense**.
-  - **3 extra building plots.**
-  - Higher **resource-field cap** — level **13** (was briefly 14; base non-city cap is 10).
-  - **+200 loyalty** on upgrade and **+200 Culture Points/day**.
-  - A **25% passive CP bonus** from all buildings and fields (added 24/07).
-  - City buildings (Town Hall, Warehouse, Granary, Barracks, Stable, Workshop) can be upgraded to **level 22**.
-- Special villages **cannot become cities**: Ancient Stronghold/Wonder/Monument villages (see [Endgame](Endgame-Ancient-Monument.md#special-rules-of-monument-villages)).
-- **Trade-off:** a City's plots and CP-slot cost mean it competes with using a village as a pure "hammer" (offensive) village (which wants a [Great Barracks/Stable](Buildings.md#great-buildings) plus [leaders](Units.md#leaders-chiefs)). Cities are usually a **mid/late-game** investment; a fresh village is often a better early return.
 
-## Loyalty & conquering
-Villages have **loyalty**. To conquer a player's village you reduce its loyalty to 0 using **[leaders](Units.md#leaders-chiefs)** ("chiefs") and then take it.
-- A normal village and a **City** differ: a City has **200 loyalty** (near capital-level, so harder to conquer). To *reduce* a City's loyalty you need **1 free CP slot**; to actually **conquer** it you need **2 free CP slots** (update 24/07).
-- **Conquering is easier here than in Travian** *(player-reported)*: there is no residence-cut, no main-building instant-build, and no "tablets", and no hero.
-- Reliable conquest usually needs **same-second wave landing** (see [Combat → Wave Builder](Combat.md#wave-builder)); a 15-second gap can cause a failed conquest.
-- To build a **[leader/chief](Units.md#leaders-chiefs)** you need **Residence/Palace and [Academy](Buildings.md#academy) at level 20**, the relevant research, plus a free expansion slot and CP slots.
-- **Friendly attacks:** a defender can enable "allow friendly attacks in this village" so alliance/pact members can attack them (no raids/scouts, no loot). This is used to **chief an ally's villages** (e.g. redistributing villages when a member leaves/deletes) or as an alternate way to move [artefacts](Artefacts.md). **Chiefing an ally's village is no different from a normal conquest:** its **Residence/Palace must be removed** (the ally can just **manually demolish it instantly**) and its **loyalty must be reduced to 0** with [leaders](Units.md#leaders-chiefs) as usual.
+A normal village can become a City when it has **Town Hall 20**, **Academy 10**, one free Culture Point slot, and **7,500 of each resource**. The upgrade takes 24 hours on 1×/2×, 12 hours on 3×/5×, or 6 hours on 10×.
+
+City benefits are:
+
+- three additional building plots;
+- non-capital resource fields up to level 13;
+- Town Hall, Warehouse, Granary, Barracks, Stable, and Workshop up to level 22;
+- loyalty cap of 200;
+- 200 additional base Culture Points per day;
+- a 1.25× multiplier to passive CP from buildings and fields;
+- up to 20 Watch Tower Guards, each adding 1% defense and 1 population.
+
+A City consumes one CP slot but no Residence/Palace expansion slot. Ancient Strongholds and Ancient Wonders cannot become Cities.
+
+## Loyalty and conquest
+
+Normal loyalty starts at 100 and regenerates through the Residence or Palace. Leaders surviving an attack reduce it; at zero, a legal non-capital village transfers to the attacker. Residence/Palace, expansion-slot, and Culture Point rules still apply.
+
+A City requires enough CP capacity for its two-slot state before conquest can complete. If the attacker cannot support the City, loyalty is held at 1 rather than allowing capture.
+
+Friendly-attack permission permits alliance or pact attacks against a chosen village. It does not turn raids or scouts friendly, grant loot/rewards, or bypass the ordinary conquest requirements.
 
 ## Tasks
-A **Tasks** list (target icon) gives resources — and, since update 25/07, some **[Research Points](Research.md)** — for completing early goals. It exists to speed up the early economy when you have few resource fields.
-- **Village tasks** are per-village (claim in that village); **account tasks** are claimed in your currently active village.
-- Reaching **500 population** grants **2250 of each resource**.
-- **Task rewards do NOT scale with [world speed](Worlds-and-Server-Speed.md)** — the reward is roughly proportional to what the task cost (e.g. ~600 res reward for a ~400 res task). On a faster world you simply complete tasks sooner.
+
+Village tasks are claimed for their village; account tasks award the currently selected village. Resource rewards do not multiply with server speed. Every resource task reward also grants Research Points equal to **20%** of the resource amount. The 500-population milestone awards 2,250 of each resource.
 
 ## See also
-- [Culture Points](Culture-Points.md) · [Units → Settlers & Leaders](Units.md) · [Buildings](Buildings.md)
-- [Wilder Sites](Wilder-Sites.md) · [Combat](Combat.md) · [The Ancients](The-Ancients.md)
+
+- [Culture Points](Culture-Points.md) · [Units](Units.md) · [Buildings](Buildings.md) · [Combat](Combat.md)

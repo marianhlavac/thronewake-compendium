@@ -2,82 +2,71 @@
 category: "Your empire"
 weight: 340
 linkTitle: "Buildings"
-aiStatus: "ai-slop"
+aiStatus: "code-verified"
 ---
 
 # Buildings
 
-Buildings occupy plots in a [village](Villages-Cities-and-Expansion.md). This is an index of the buildings named in the source, grouped by role. Some have their own dedicated articles; complex ones are detailed inline here.
+Buildings occupy village-center plots; resource fields use separate fixed positions. The in-game level overview beside an upgrade button is the definitive source for per-level costs, population, Culture Points, duration, and effects.
 
-> [!NOTE]
-> **Where to see costs/effects in-game:** next to a building's Build/Upgrade button there is a **"sparkle" (star) icon** that opens an overview of all levels with their effects and upgrade costs, and the food-cost/population change. **Demolishing** a building requires **[Town Hall](#town-hall) level 10** and can be done one level at a time; manual demolition refunds **one-third** of the total resources spent to reach the current level. You can pre-queue a building whose prerequisite is still upgrading.
+Manual demolition requires Town Hall level 10. It removes one level and normally refunds one-third of the resources spent on that level; Material Salvage research raises the refund to 35% / 40% / 45%.
 
-## Resource buildings
-The mandatory resource fields and their boosters — see [Resources](Resources.md):
-- **Woodcutter** (Lumber), **Quarry** (Stone), **metal mine** (Metal), **Farm** (Food).
-- **Sawmill** — boosts Lumber. **Mill** and **Bakery** — boost Food. (Food fields, Mill, and Bakery can always be upgraded even under [food lock](Resources.md#food-locking-authoritative).)
+## Resource and storage buildings
 
-## Core / storage
-### Town Hall
-The central building (renamed from **"Main Hall"** in update 15/05).
-- Its **level determines how many building-queue slots** you have; you gain an extra slot at levels **5, 10, 15, 20**.
-- Restricts the **[research](Research.md)/upgrade queue** for army units.
-- Used to **upgrade a village into a [City](Villages-Cities-and-Expansion.md#cities)** and to **demolish** buildings (level 10 required).
-- Has a **Resources** tab showing a production breakdown (added 30/07).
+- **Lumberyard, Quarry, Foundry, Farm:** the four resource fields.
+- **Sawmill, Brickyard, Forge, Mill, Bakery:** percentage production enhancers. Industrial Expansion can raise their level cap from 5 to 6 / 7 / 8.
+- **Warehouse and Granary:** a level-20 building stores 80,000 of each applicable resource. Cities may raise them to level 22.
+- **Great Warehouse and Great Granary:** level-20 capacity is 240,000. A normal village needs an active Great Storage Plan; an Ancient Stronghold or Ancient Wonder village has access without that artefact. Losing access blocks further upgrades but does not remove the building.
 
-### Warehouse & Granary
-Store Lumber/Stone/Metal (Warehouse) and Food (Granary). **Storage capacity does not scale with [world speed](Worlds-and-Server-Speed.md)** — a **level-20 Warehouse holds 80,000** at any speed.
+## Town Hall
 
-### Great Buildings
-Larger versions with **3× the storage**, used mainly to store the ~1,000,000 of each resource needed for the [endgame](Endgame-Ancient-Monument.md):
-- **Great Warehouse** / **Great Granary** — require the **[Great Storage Plan](Artefacts.md) artefact** to build *and* to keep upgrading (the artefact is needed for every level; lose it and you can't level up further, and a queued upgrade is cancelled). In [Ancient Monument villages](Endgame-Ancient-Monument.md) they have **3× more** capacity again.
-- **Great Barracks** / **Great Stable** ("GB/GS") — a second, non-capital barracks/stable for building large "hammer" armies. (A [research](Research.md) keystone gives an equivalent "twin barracks" without using a plot.)
+The Town Hall speeds construction and controls the shared upgrade/pre-queue capacity. Queue capacity is 3 at levels 0–4, then 4 at level 5, 5 at level 10, and 6 at level 15; level 20 remains at 6. Queue Planning research can add three more slots.
 
-## Military
-- **Barracks** — trains infantry. (**Stormfang** can also train **scouts** here.)
-- **Stable** — trains cavalry (and scouts for other tribes).
-- **Workshop** — builds siege ([rams](Combat.md#rams) and [catapults](Combat.md#catapults)).
-- <a id="smithy"></a>**Smithy** — **upgrades unit levels**. Each level = **+1.5% unit strength** (level 20 ≈ +30%); Smithy upgrades also increase **ram and catapult damage to buildings**. The Smithy shows your own researched units' stats per level. A level-20 catapult upgrade takes ~18 hours. You cannot refund/downgrade a Smithy upgrade past level 20.
-- <a id="academy"></a>**Academy** — the **[research](Research.md) building** for units and the tech tree (max level 20). Also gives good [CP](Culture-Points.md). Destroying it does **not** un-research anything (units stay researched forever). Needed at **level 15** to build the [Herbalist](#herbalist), and at **level 20** (with Residence/Palace 20) to build [leaders/chiefs](Units.md#leaders-chiefs).
-- <a id="watch-tower"></a>**Watch Tower** — the game's **wall / defensive building** (under the military tab). Adds flat defense and a percentage defense bonus, with **per-[tribe](Tribes.md) stats**:
+Embermark splits active work between building and field queues. Second Work Crew allows two active upgrades for other tribes and three for Embermark through the split queues.
 
-  | Tribe | Durability | Flat defense | Def bonus @ lvl 20 |
-  |---|---|---|---|
-  | [Embermark](Embermark-Dominion.md) | 1× | +200 | +80.6% |
-  | [Verdant](Verdant-Wardens.md) | 2× | +160 | +63.9% |
-  | [Stormfang](Stormfang-Clans.md) | 5× | +120 | +48.6% |
+Town Hall level 10 enables demolition. A [City](Villages-Cities-and-Expansion.md#cities) requires Town Hall 20 and Academy 10.
 
-  You can **queue and hire multiple Guards** in the Watch Tower at once. In a **[City](Villages-Cities-and-Expansion.md#cities)**, Watch Tower **Guards** add up to **+20% defense**. The Watch Tower does **NOT reveal incoming units** (only [Rally Point](#rally-point) level does that). Ancient Stronghold/Monument villages **cannot build a Watch Tower**.
-- **Rally Point** — see below.
-- <a id="herbalist"></a>**Herbalist** ("hospital") — heals fallen troops. See [Combat → Herbalist](Combat.md#herbalist-healing). In short: heals up to **40%** of fallen units; **siege, leaders, and settlers cannot be healed**; healing costs **half** the resources and time of re-training in a Barracks/Stable of the same level as the Herbalist; requires **Academy level 15**.
-- **Bannerfield** — increases troop travel speed for the part of a journey **beyond 20 tiles** (added 03/06).
+## Military buildings
+
+- **Barracks, Stable, Workshop:** train infantry, cavalry, and siege. Stormfang's scout is trained in the Barracks.
+- **Great Barracks and Great Stable:** non-capital secondary training buildings. Twin Barracks research instead permits one additional normal Barracks or Stable.
+- <a id="smithy"></a>**Smithy:** buys per-unit attack and defense ranks. The effect is non-linear and depends on the unit's base statistic and upkeep; it is not a flat 1.5% per level. Siege upgrade damage uses a separate 1.0205-per-rank multiplier. Advanced Smithy raises unit-rank caps to 21 / 22 / 23 while the building stays capped at 20.
+- <a id="academy"></a>**Academy:** researches units and opens the village research tree. Destroying it does not revoke completed research. Academy 15 is required for an Herbalist, Academy 20 for leader training, and Academy 10 for a City upgrade.
+- <a id="watch-tower"></a>**Watch Tower:** provides flat defense, a multiplicative troop-defense bonus, and tribe-specific ram durability. At level 20: Embermark has +200 flat and 1.03²⁰ defense with 1× durability; Verdant +160 and 1.025²⁰ with 2× durability; Stormfang +120 and 1.02²⁰ with 5× durability.
+- <a id="herbalist"></a>**Herbalist:** stores and heals eligible wounded infantry/cavalry. Base recovery is 40%; Field Medicine raises it to 45% / 50% / 55%. Siege, settlers, and leaders are not recoverable.
+- **Bannerfield:** speeds only the portion of troop travel beyond 20 tiles.
 
 ### Rally Point
-Controls sending and receiving troops.
-- Its **level limits the number of concurrent attacks/raids** you can have in flight, and it determines **incoming-attack visibility**: you see the count and type of incoming attacks only if the **number of incoming attacks is ≤ your Rally Point level** (this is the [fake](Combat.md#fakes) system; research can raise the threshold). See [Combat](Combat.md).
-- Home to the **[Wave Builder](Combat.md#wave-builder)**, **[Combat Simulator](Combat.md#combat-simulator)** access, catapult targeting, [map presets](Reports-and-Map.md), and troop-movement filters.
 
-## Expansion & utility
-- **[Residence / Palace](Villages-Cities-and-Expansion.md#residence--palace)** — trains [Settlers](Units.md#settlers) and [leaders](Units.md#leaders-chiefs); gives **expansion slots**; shows [CP](Culture-Points.md). Only a Palace can **switch the capital**.
-- <a id="embassy"></a>**Embassy** — join/create [alliances](Alliances-and-Diplomacy.md) and make **personal pacts**. Cheap and **high-CP**, so often leveled for faster expansion.
-- **[Marketplace](Marketplace-and-Trade.md)** — trade resources, set **trade routes**, and use the **Quartermaster** 3:1 exchange. **Trade Office** — increases [merchant](Marketplace-and-Trade.md) carry capacity (percentage-based; **doubled** for [Embermark](Embermark-Dominion.md)).
-- **[Festival Grounds](Celebrations.md)** — hosts **celebrations** (Tea Party / Grand Ball) for **[Culture Points](Culture-Points.md)**.
-- **[Expedition Camp](Wilder-Sites.md#expedition-camp)** — required to claim/manage **[Wilder Sites](Wilder-Sites.md)**; claim slots unlock at levels **5, 10, 15** (was 10/15/20 before 24/07). Cannot be demolished while the village owns active Wilder Sites; if catapulted to destruction you lose those Wilder Sites.
-- <a id="treasury"></a>**Treasury** — holds an **[artefact](Artefacts.md)**. A **level-10** Treasury holds a **Small** artefact; a **level-20** Treasury holds a **Large or Unique** artefact. A village can hold exactly one artefact.
-- <a id="shelter"></a>**Shelter** (cranny) — **hides resources** from raids. Hidden amount is shown as a **total** (not per resource). **[Verdant](Verdant-Wardens.md)** shelters hide **+50%**. Multiple Shelters combine (you can see the combined hidden total). The **[Shadow Veil](Artefacts.md) artefact** greatly boosts Shelter capacity. *(To build multiple copies of the same building — e.g. Shelters — only **one** previous copy needs to be max level, per update 06/06.)*
-- **Stonemason's Lodge** — a **capital-only** building (removed if you move your capital away).
+The Rally Point controls dispatch, incoming visibility, Wave Builder, Operation Plans, combat simulation, siege targeting, troop routes, and movement views. Its level supplies the base concurrent hostile-mission limit. Campaign Orders adds 2 / 4 / 6.
 
-## Tribe-unique buildings
-Each is buildable by only one [tribe](Tribes.md) (but visible to all):
-- **[Rider's Wells](Embermark-Dominion.md#unique-building-riders-wells)** (Embermark) — cheaper food & faster training for its cavalry.
-- **[Thornsnare Grove](Verdant-Wardens.md#unique-building-thornsnare-grove)** (Verdant) — **traps** that capture attackers.
-- **[Stormbrew Works](Stormfang-Clans.md#unique-building-stormbrew-works)** (Stormfang) — attack bonus during a celebration.
+Incoming troop composition is revealed when the incoming count is within the effective threshold. Signal Fires raises the defender threshold; Masking Drills lowers it for missions from the researched attacker village.
 
-## Endgame
-- **[Ancient Monument](Endgame-Ancient-Monument.md)** — built only in special Ancient villages; raising it to **level 100** wins the world.
+## Expansion, trade, and utility
+
+- **Residence / Palace:** provide expansion slots, loyalty regeneration, settlers, and leaders. Only one Palace is allowed per profile and it can change the capital.
+- <a id="embassy"></a>**Embassy:** level 3 supplies the six-member alliance base capacity and manages personal pacts.
+- **Marketplace / Trade Office:** merchants, offers, routes, Quartermaster, and carry-capacity upgrades.
+- **Festival Grounds:** Tea Parties and Grand Balls for Culture Points.
+- **Expedition Camp:** Wilder Site slots at levels 5 / 10 / 15; Frontier Command adds one.
+- <a id="treasury"></a>**Treasury:** one artefact per village. Small artefacts require level 10, Large level 15, and Unique level 20.
+- <a id="shelter"></a>**Shelter:** hides resources from attacks and raids. Verdant capacity is 50% higher. Shield Cracker research can steal 10% / 20% / 30% of otherwise protected resources on a successful raid.
+- **Stonemason's Lodge:** capital-only building durability.
+
+## Tribe buildings
+
+- **Rider's Wells:** 1% faster cavalry training per level; removes one Food upkeep from Sentinel at 10, Sun Rider at 15, and Crimson Lancer at 20.
+- **Thornsnare Grove:** trains traps and permanently speeds outgoing reinforcements as lifetime captures reach speed-scaled thresholds.
+- **Stormbrew Works:** capital-only; an active Stormbrew Celebration grants 1% attack per level profile-wide, while randomizing catapult targets and halving leader persuasion.
+
+## Ancient Monument villages
+
+Ancient Strongholds and Ancient Wonders reserve a fixed Monument slot, remove seven normal plots, cannot build a Watch Tower, Residence, Palace, or Treasury, and cannot become Cities. Construction there takes half the normal time. Great storage is available without a plan, but its capacity is the normal Great-storage capacity.
 
 ## Rebuilding
-When a building is destroyed you can **rebuild** it with a building-speed bonus up to its previous level (base **+25%**, higher with the [Reconstruction Crews](Research.md) research). A siege-destroyed level-0 building/field leaves **"rubble"** worth ~10% of its build cost, collectable by the defender.
+
+Catapult-damaged levels can be rebuilt at a base time multiplier of 0.75 (25% faster) up to the remembered level. Reconstruction Crews improves this to 0.65 / 0.50 / 0.35. A fully destroyed building or field leaves rubble worth 10% of the destroyed investment; Material Salvage raises this to 15% / 20% / 25%.
 
 ## See also
+
 - [Resources](Resources.md) · [Culture Points](Culture-Points.md) · [Research](Research.md) · [Combat](Combat.md)

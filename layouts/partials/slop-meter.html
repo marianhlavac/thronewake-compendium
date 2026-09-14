@@ -1,13 +1,13 @@
 {{- $pages := site.RegularPages -}}
 {{- $total := len $pages -}}
-{{- $reviewed := 0 -}}
+{{- $verified := 0 -}}
 {{- range $pages -}}
   {{- $st := .Params.aiStatus -}}
-  {{- if or (eq $st "human-fixed") (eq $st "human-written") -}}
-    {{- $reviewed = add $reviewed 1 -}}
+  {{- if in (slice "code-verified" "human-fixed" "human-written") $st -}}
+    {{- $verified = add $verified 1 -}}
   {{- end -}}
 {{- end -}}
-{{- $slop := sub $total $reviewed -}}
+{{- $slop := sub $total $verified -}}
 {{- $pct := 0.0 -}}
 {{- if gt $total 0 }}{{ $pct = math.Round (div (mul $slop 100.0) $total) }}{{ end -}}
 {{- $color := "verdant" -}}
@@ -22,7 +22,7 @@
     {{ partial "icon.html" (dict "name" "bot" "class" "size-3.5") }}AI-Slopiness Meter
   </div>
   <div class="flex items-center gap-4 my-4" data-color="{{ $color }}">
-    <svg viewBox="0 0 200 120" class="block w-24 shrink-0 sm:w-28" role="img" aria-label="{{ printf `%.0f` $pct }} percent of wiki pages are still unreviewed AI drafts">
+    <svg viewBox="0 0 200 120" class="block w-24 shrink-0 sm:w-28" role="img" aria-label="{{ printf `%.0f` $pct }} percent of wiki pages are still unverified AI drafts">
       <path d="M20,100 A80,80 0 0 1 180,100" fill="none" stroke="var(--border)" stroke-width="16" stroke-linecap="round" />
       <path d="M20,100 A80,80 0 0 1 180,100" fill="none" stroke="var(--gauge)" stroke-width="16" stroke-linecap="round"
         stroke-dasharray="{{ $circ }}" stroke-dashoffset="{{ $offset }}" />
@@ -30,8 +30,8 @@
     </svg>
     <div class="min-w-0">
       <p class="mt-1.5 text-xs text-muted-foreground">
-        <strong style="color: var(--gauge);">{{ printf `%.0f` $pct }}%</strong> of wiki pages are still unreviewed AI drafts. <br />
-        <a href="https://github.com/marianhlavac/thronewake-compendium/blob/master/CONTRIBUTING.md#the-ai-status-tag" target="_blank" rel="noopener noreferrer" class="underline hover:text-gold">Help review one</a>?
+        <strong style="color: var(--gauge);">{{ printf `%.0f` $pct }}%</strong> of wiki pages are still unverified AI drafts. Code-Verified pages have been checked against the implementation but can still benefit from independent human review. <br />
+        <a href="https://github.com/marianhlavac/thronewake-compendium/blob/master/CONTRIBUTING.md#the-ai-status-tag" target="_blank" rel="noopener noreferrer" class="underline hover:text-gold">Learn about the verification states</a>.
       </p>
     </div>
   </div>

@@ -2,48 +2,46 @@
 category: "Your empire"
 weight: 330
 linkTitle: "Resources & Economy"
-aiStatus: "ai-slop"
+aiStatus: "code-verified"
 ---
 
 # Resources & Economy
 
-Thronewake has **four resources**, produced by resource fields in each [village](Villages-Cities-and-Expansion.md):
+Each village produces four resources:
 
-| Resource | Field / building | Travian equivalent |
+| Resource | Resource field | Production enhancer |
 |---|---|---|
-| **Lumber** | Woodcutter | Wood |
-| **Stone** | Quarry | Clay |
-| **Metal** | (metal mine) | Iron |
-| **Food** | Farm | Crop |
+| Lumber | Lumberyard | Sawmill |
+| Stone | Quarry | Brickyard |
+| Metal | Foundry | Forge |
+| Food | Farm | Mill and Bakery |
 
-> [!NOTE]
-> The in-game building text has some naming inconsistency (a "Quarry produces stone" description that mentions "clay pits"). Function is the standard Travian layout: four field types plus a fifth (Food).
+Field production is multiplied by server speed. Storage capacity is not: a level-20 Warehouse stores **80,000 Lumber, 80,000 Stone, and 80,000 Metal**, while a level-20 Granary stores 80,000 Food. Great storage holds three times the normal amount at the same level.
 
-Boost buildings raise production of a resource, Travian-style: the **Sawmill** boosts Lumber; the **Mill** and **Bakery** boost Food. These sit alongside the mandatory resource fields.
+## Population and Food
 
-## Production, storage & population
-- **Production per hour scales with [world speed](Worlds-and-Server-Speed.md)**; **storage capacity does not**. A level-20 [Warehouse](Buildings.md) holds **80,000** on any speed.
-- Resource-field production was increased by **~25%** in an update (03/06). A separate **+25% food** production bonus was later **removed** (19/07), making food noticeably tighter on the current world (see below).
-- **[Population](Villages-Cities-and-Expansion.md#population)** equals the total **food upkeep** of the buildings and fields you have built/upgraded. Each level you build adds food upkeep and +1 population. Troop upkeep is separate.
+Village population is the sum of the cumulative population costs defined for every field and building level. It is also deducted from Food production. The amount added by an upgrade varies; it is not always one population per level. Troop upkeep is calculated separately.
 
-## The food economy (important)
-Food is the game's constraining resource by design — it limits army size and adds a logistics layer.
-- Early on food feels abundant (you start with **6 farms** and no army to feed), but it becomes valuable as your army grows.
-- The **current ([Fourth Awakening](Worlds-and-Server-Speed.md))** world has a **~25% food nerf** versus the previous world (the old +25% food bonus was removed) — *player-reported for this world*.
-- Because there is **no 1:1 NPC trade** (see [Marketplace](Marketplace-and-Trade.md)), dedicated **cropper villages** (9c / 15c — villages with 9 or 15 Food fields) are harder to run than in Travian and are a real strategic choice rather than a default. Cities help (their fields can reach level 13; see [Villages, Cities & Expansion](Villages-Cities-and-Expansion.md#cities)).
+If Food production is too low, most upgrades are blocked before they could reduce the village's base Food balance to 2 or less. Farms, the Mill, and the Bakery remain available so the village can recover. Troop upkeep does not participate in this construction check, so armies can still create negative net Food.
 
-### Food locking (authoritative)
-If a village's **[population](Villages-Cities-and-Expansion.md#population) exceeds its food production**, you **cannot start most builds** — the exceptions are **Food fields, the Mill, and the Bakery**, which you can always upgrade regardless of food. Specifically, you cannot start a build if it would drop the village's **base food production to 2 or less**. **Troop upkeep is excluded from this check**, so troops can push you into negative food while buildings/fields cannot. On slow (1×) worlds a village can become effectively **permanently food-locked**; on 3× you can usually upgrade fields to recover.
+When stored Food is exhausted while net production is negative, troops starve. Foreign reinforcements are processed before the village owner's troops.
 
-## Trading & moving resources
-- **[Marketplace](Marketplace-and-Trade.md)** — send resources to your own villages, alliance members, and eligible players (with limits), set up **trade routes**, and use the **Quartermaster** NPC exchange at **3:1** (improvable to 2.5:1 by [research](Research.md)).
-- **[Wilder Sites](Wilder-Sites.md)** — a significant source of raided resources, especially early. Each site's fixed hourly production is weighted toward one resource type (a stone site yields more stone, etc.), so its raid loot is weighted the same way.
-- **Raiding** other players and Ancient/abandoned villages. See [Combat](Combat.md).
+## Production modifiers
 
-## Starting gift
-New players receive a starting **"gift"** from the Ancients — a merchant delivery of resources (around 800 of each *(player-reported)*) that arrives shortly after starting.
+- A [City](Villages-Cities-and-Expansion.md#cities) raises non-capital field caps to level 13.
+- Claimed [Wilder Sites](Wilder-Sites.md) add their listed percentage to the linked village's base resource production.
+- Industry Guild research can focus one resource, raise production-enhancer level caps, increase storage, protect part of storage, or convert overflow.
+- A Defensive Pact reduces production by 10% per active pact.
+- [Vacation Mode](Vacation-Mode.md) pauses Lumber, Stone, and Metal but leaves Food running; its recovery boost later doubles those three resources for the vacation's duration.
+
+## Trading and raiding
+
+The [Marketplace](Marketplace-and-Trade.md) sends resources, hosts player offers and trade routes, and provides the Quartermaster exchange. Attacks and raids can loot villages; unclaimed Wilder Sites hold their own production, while claimed sites expose a recovering percentage of their owner's village resources.
+
+## Starting delivery
+
+A new profile receives an Ancient merchant delivery of exactly **800 of each resource**, scheduled **24 hours after the starter village is created**.
 
 ## See also
-- [Buildings](Buildings.md) · [Marketplace & Trade](Marketplace-and-Trade.md)
-- [Villages, Cities & Expansion](Villages-Cities-and-Expansion.md) · [Wilder Sites](Wilder-Sites.md)
-- [Worlds & Server Speed](Worlds-and-Server-Speed.md)
+
+- [Buildings](Buildings.md) · [Marketplace & Trade](Marketplace-and-Trade.md) · [Wilder Sites](Wilder-Sites.md)

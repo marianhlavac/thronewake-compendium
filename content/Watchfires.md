@@ -2,59 +2,68 @@
 category: "Mid- and end-game"
 weight: 630
 linkTitle: "Watchfires (event)"
-aiStatus: "ai-slop"
+aiStatus: "code-verified"
 ---
 
-# Watchfires 🔥
+# Watchfires
 
-**Watchfires** are temporary map objectives that appear during special events. [Alliances](Alliances-and-Diplomacy.md) claim them, reinforce them, and fight other alliances for control. The longer your alliance holds Watchfires, the more progress you make toward **Watchfire Blessings**. Watchfires were added in update 24/07 and reworked on 10/08.
+**Watchfires** are temporary king-of-the-hill objectives. Alliance members compete as an alliance faction; players without an alliance can claim and score as a solo faction.
 
-- Watchfires recur roughly **every week** (with some randomness).
-- The event plays like **king-of-the-hill**: claim a Watchfire and keep it fueled and defended.
+The baseline cadence is a randomized **21–27 days divided by server speed**, with at least a randomized 24–48-hour cooldown after the preceding event. That is roughly every 7–9 days on a 3× server, but it is not a universal weekly schedule. The event is announced 12 hours in advance and lasts 48 hours on 1×, 36 hours on the middle speed brackets, or 24 hours on 10×. Node count and placement are server-configurable; the default is six grey-zone Watchfires.
 
-## Claiming
-- Watchfires start **neutral** and contain **no [Ancient](The-Ancients.md) troops**. The **first player to send a reinforcement or attack** to a Watchfire **claims it** for their alliance. Once claimed, any alliance member can send reinforcements to defend it.
-- After being claimed, a Watchfire needs **15 minutes to "attune"** before it starts generating points.
-- If you send a **reinforcement** to a Watchfire but **someone else claims it first**, your troops simply **return home** (they do not convert into an attack).
+## Claiming and combat
 
-## Rules Q&A (authoritative)
-Developer-confirmed mechanics:
-- **Do winning attackers capture it?** **Yes** — surviving attackers that clear all defenders become the new stationed defenders and take control.
-- **Do you still have to feed stationed troops?** **Yes** (via Food supply — see below).
-- **Can you build defensive structures at a Watchfire?** **No.**
-- **Does the [Wilder-Site defense research](Research.md) apply at Watchfires?** **No.**
-- **Can players on [Beginner Protection](Beginner-Protection.md) participate?** **Yes** — but **attacking a controlled Watchfire ends your BP**.
+- A neutral Watchfire has no Ancient garrison. The first valid attack or reinforcement claims it for the sender's alliance or solo faction.
+- A new controller must wait through a **15-minute attunement** before scoring starts.
+- If attackers clear the defenders, the surviving attackers remain as the new garrison and control changes immediately.
+- A Watchfire with no troops becomes neutral.
+- Only **Attack**, **Resource Scout**, and **Reinforcement** missions are accepted. Raids and defense scouts are not.
+- Rams, catapults, leaders, and settlers are prohibited. Cargo can be attached only to attacks and reinforcements.
+- Only the controlling faction may reinforce a controlled Watchfire; that faction cannot attack or scout its own node.
+- A reinforcement that loses the race to a different faction returns home.
+- [Beginner Protection](Beginner-Protection.md) players may participate, but a hostile attack on a controlled Watchfire ends BP when it arrives.
 
-## Capturing an enemy Watchfire
-- Enemy-controlled Watchfires can be **attacked normally**. If **all defenders are defeated**, the surviving attackers **take control** and remain there, and a new **15-minute attunement** begins.
-- A Watchfire left **without any troops** becomes **neutral** again.
+## Supplies
 
-## Supplying Watchfires
-Stationed troops need supplies. **Every attack or reinforcement can carry one resource type** (Food, Lumber, Stone, or Metal). The amount a mission can carry, and the amount a Watchfire can store, equals **6× the upkeep of the troops**. Each resource has a purpose:
-- **Food** — keeps troops stationed. If Food runs out, **all troops return home and the Watchfire goes neutral**.
-- **Lumber** — keeps the Watchfire burning. Without Lumber it stays controlled but **stops generating points**.
-- **Stone** — supports the Watchfire's **infantry** defenses.
-- **Metal** — supports the Watchfire's **cavalry** defenses.
+Every resource is consumed at the garrison's base Food upkeep per hour. Storage and mission cargo capacity for **each** resource equal six hours of that army's base upkeep.
 
-All four are continuously consumed based on the size of the defending army, so **larger armies are stronger but much harder to maintain**. Supplies left behind are **captured** along with the Watchfire if another alliance takes it.
+- **Food** keeps troops stationed. When it reaches zero, all troops return and the Watchfire becomes neutral.
+- **Lumber** keeps scoring active. At zero Lumber, control remains but scoring stops.
+- **Stone** maintains full infantry defense. Without it, the infantry defense multiplier falls from 1.0 to 0.9.
+- **Metal** maintains full cavalry defense. Without it, the cavalry defense multiplier falls from 1.0 to 0.9.
 
-## Watchfire Points & reward chests
-Once attuned and fueled with Lumber, a Watchfire continuously generates **points** for the controlling alliance. Your alliance's **total Watchfire points** determine which **reward chest** you unlock; higher-tier chests contain stronger **Watchfire Blessings**.
+Supplies remaining at a captured Watchfire transfer to the new controller.
 
-## Watchfire Blessings
-Blessings are **one-use** rewards you can **store** and activate whenever you choose. Access them via the **"Inventory"** button (top-left of the screen). Blessings **cannot be stacked** for a double effect. **Each player individually chooses their own reward** from the chest (it is not the same reward for the whole alliance). They are not permanent: a **chest expires after 7 days**, and a **blessing itself expires after 14 days** *(values as of early August; the developer has tuned blessing values since)*. Examples:
-- Reduce the cost or construction time of an upgrade.
-- Increase [Culture Points](Culture-Points.md) from a [celebration](Celebrations.md).
-- Refund part of the [Research Points](Research.md) spent on research.
-- Perform an improved [Quartermaster](Marketplace-and-Trade.md) exchange.
-- Boost construction in your next new [village](Villages-Cities-and-Expansion.md).
-- Temporarily reduce troop upkeep in one village.
+## Scoring and chests
 
-## Combat & casualty refunds
-Fighting at Watchfires reduces the cost of participating: after the event, participants get **20% of the resource cost of troops lost in Watchfire battles** back. Your alliance increases this through two separate rankings — the **Watchfire points ranking** and the **Combat ranking**:
-- **#3:** +5% · **#2:** +10% · **#1:** +15%
+After attunement, each continuously held, fueled Watchfire scores at these rates:
 
-These apply **separately** to each ranking, for a **maximum 50% refund**. So both **holding** the objectives and **actively fighting** over them matter.
+| Continuous control | Score rate |
+|---|---|
+| First 4 hours | 1 point per minute |
+| From 4 to 16 hours | 2 points per minute |
+| After 16 hours | 3 points per minute |
+
+Faction score unlocks chest tiers at **720 / 1,440 / 2,880 / 5,760 points**, equivalent to 12 / 24 / 48 / 96 hours of base-rate scoring. A qualifying participant receives one chest at the faction's earned tier. Claiming or winning an attack qualifies immediately; a reinforcement must remain for 30 minutes; supply-only participation requires three deliveries.
+
+Chests expire after **7 days** and the selected blessing expires after **14 days**. A player chooses one of these one-use blessings, with the value determined by chest tier:
+
+| Blessing | Tier values |
+|---|---|
+| Ancient Commission | Next building/field upgrade costs 10% / 20% / 30% less |
+| Master Builder's Insight | Next building/field upgrade takes 10% / 20% / 30% less time |
+| Festival Fervor | Next celebration gives 10% / 20% / 30% more CP |
+| Research Breakthrough | Refunds 10% / 15% / 20% of the next research purchase |
+| Quartermaster's Token | 2 / 4 / 6 exchanges at 1:1 |
+| Founder's Momentum | Next founded village builds 20% faster for 12 / 24 / 36 hours |
+| Ancient Rations | One village uses 5% / 10% / 15% less troop upkeep for 24 hours |
+
+## Casualty restitution
+
+After the event, each qualifying participant receives resources for permanent Watchfire losses. The base restitution is **20%** of troop training cost; units eligible as Herbalist wounded are excluded because they are not permanent losses. The control-score podium and PvP-score podium independently add 15% / 10% / 5% for ranks 1 / 2 / 3, so the maximum is **50%**.
+
+Restitution travels to each affected village from the Ancient Capital at 30 tiles per hour, adjusted by the server's movement-speed bracket.
 
 ## See also
-- [Alliances & Diplomacy](Alliances-and-Diplomacy.md) · [The Map, Reports & UI](Reports-and-Map.md) · [Leaderboards, Medals & Store](Leaderboards-Medals-and-Store.md)
+
+- [Alliances & Diplomacy](Alliances-and-Diplomacy.md) · [Combat](Combat.md) · [The Map, Reports & UI](Reports-and-Map.md)

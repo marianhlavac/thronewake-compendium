@@ -2,40 +2,41 @@
 category: "Factions & tribes"
 weight: 220
 linkTitle: "Embermark Dominion 🔥"
-aiStatus: "ai-slop"
+aiStatus: "code-verified"
 ---
 
 # Embermark Dominion 🔥
 
-One of the three playable [tribes](Tribes.md). The Embermark Dominion is the **balanced, heavy-hitting** tribe: it has the **strongest individual units** in the game, but they are more expensive and **train slowly** (especially infantry). (Note the distinction — stronger *units*, not necessarily a stronger *army* overall, since the higher cost and slow training mean you field fewer of them.) It has the best **attack-per-crop** efficiency of the three tribes, and in practice **most of its attack comes from cavalry** rather than infantry.
+The Embermark Dominion is the balanced, high-cost tribe. Its roster combines sturdy infantry, fast scouts, and powerful cavalry with comparatively expensive training.
 
-## Strengths & weaknesses
-- Has the **strongest individual units** in the game, but they **train slowly** (especially **infantry**) and are **more expensive** — so this does not automatically mean a stronger army overall.
-- Best **attack per crop** (attack × crop × unit efficiency) of the three tribes — you get the most offensive power per point of upkeep.
-- **Most of Embermark's attack comes from cavalry (horses)** rather than infantry.
-- Has **some of the most powerful infantry** in the game.
-- Can **queue a building and a resource field at the same time** (its version of extra build throughput — see below).
+## Construction lanes
 
-## The simultaneous-queue perk
-Originally Embermark simply had an extra queue slot. That was changed: Embermark players can **build a building and a resource field simultaneously** (they no longer have a generic extra queue slot). A [research](Research.md) **keystone** further lets them run **2 + 1** — two of one type plus one of the other (e.g. two resource fields and one building) at once. If two buildings are queued and you start a field, the field runs alongside them.
+Embermark villages have separate active lanes for one building and one resource-field upgrade. This is not an extra prequeue slot: it controls which paid upgrades can run simultaneously. The **Second Work Crew** research adds a flexible third lane, so an Embermark village can run three upgrades at once while respecting the building/field lane rules.
 
-> [!NOTE]
-> There is no in-game control over *which* of the parallel items runs when multiple are queued (players requested one); the shortest-time item tends to be picked. This is a known rough edge.
+## Merchants and Watch Tower
 
-## Merchants & Watch Tower (authoritative)
-- **[Merchants](Marketplace-and-Trade.md):** carry **500**, speed **16**. **Trade Office bonus is doubled** to compensate for the small base capacity, so a high-level Trade Office brings Embermark merchants in line with other tribes.
-- **[Watch Tower](Buildings.md#watch-tower):** durability **1×** (no extra rams needed to destroy it), flat defense **+200**, defense bonus **+80.6% at level 20** — the highest flat defense and % bonus of the three tribes, but the least durable wall.
+- Merchants carry **500** resources at base speed **16**.
+- The Trade Office adds 40 percentage points of capacity per level for Embermark instead of the normal 20, compensating for the smaller base cart.
+- The Watch Tower adds **10 flat defense per level**, uses a defense base of **1.03 per level**, and has baseline **1× durability**.
+- At level 20, that is 200 flat defense and approximately an 80.6% defense bonus.
 
 ## Unique building: Rider's Wells
-The **Rider's Wells** can only be built by the Embermark Dominion.
-- **Reduces food consumption** for Embermark cavalry (cavalry in that village consume **1 food less per hour** *(player-reported figure)*).
-- **Reduces cavalry training time** in that village.
-- The food-reduction applies to that village's cavalry even while they are **out in combat** (this was fixed in an update).
-- Also reduces cavalry heal time at the [Herbalist](Buildings.md#herbalist) in the same village.
+
+The Rider's Wells requires **Stable level 20** and **Rally Point level 10**. It may be built in any qualifying Embermark village.
+
+- Cavalry training time falls by **1% per building level**, reaching 20% faster at level 20.
+- At level 10, Sentinels from that village consume 1 less Food per hour.
+- At level 15, Sun Riders from that village consume 1 less Food per hour.
+- At level 20, Crimson Lancers from that village consume 1 less Food per hour.
+- The training multiplier also applies when eligible cavalry are healed in that village's Herbalist.
+
+The upkeep reduction belongs to the units' origin village and continues to apply while those units are away.
 
 ## Units
-See [Units → Embermark Dominion](Units.md#embermark-dominion) for the full roster with verified stats, costs, and training times.
+
+See [Units → Embermark Dominion](Units.md#embermark-dominion) for the implemented roster, costs, attributes, and level-20 training times.
 
 ## See also
-- [Tribes overview & comparison](Tribes.md) · [Verdant Wardens](Verdant-Wardens.md) · [Stormfang Clans](Stormfang-Clans.md)
-- [Units](Units.md) · [Buildings](Buildings.md) · [Research](Research.md)
+
+- [Tribes](Tribes.md) · [Verdant Wardens](Verdant-Wardens.md) · [Stormfang Clans](Stormfang-Clans.md)
+- [Research](Research.md) · [Buildings](Buildings.md)

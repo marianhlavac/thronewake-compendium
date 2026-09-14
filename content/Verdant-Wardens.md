@@ -2,39 +2,45 @@
 category: "Factions & tribes"
 weight: 230
 linkTitle: "Verdant Wardens 🌿"
-aiStatus: "ai-slop"
+aiStatus: "code-verified"
 ---
 
 # Verdant Wardens 🌿
 
-One of the three playable [tribes](Tribes.md). The Verdant Wardens are the **fast, mobile, defensive/utility** tribe — excellent for quick [raids](Combat.md), fast support, and map control.
+The Verdant Wardens are the mobility and defense-focused tribe. Their roster includes the fastest playable scouts and cavalry, strong defensive cavalry, and comparatively inexpensive settlers.
 
-## Strengths & weaknesses
-- **Fastest tribe overall.**
-- Great for **quick raids, fast support, and map control**.
-- **[Shelters](Buildings.md#shelter) protect 50% more resources** than normal — strong protection against being farmed.
-- *(Community)* Has the **best defensive cavalry in the game**, and **cheaper [settlers](Villages-Cities-and-Expansion.md)**.
-- *(Community)* Its unique building is considered strongest **early/mid game** and weakest in the very late game.
+## Merchants, Shelters, and Watch Tower
 
-## Merchants & Watch Tower (authoritative)
-- **[Merchants](Marketplace-and-Trade.md):** carry **750**, speed **24** — the fastest merchants and largest per-trip capacity of the three tribes.
-- **[Watch Tower](Buildings.md#watch-tower):** durability **2×** (needs twice as many rams to destroy), flat defense **+160**, defense bonus **+63.9% at level 20**.
+- Merchants carry **750** resources at base speed **24**, the fastest merchant speed of the three tribes. Stormfang, not Verdant, has the largest cart.
+- Shelters protect **1.5 times** their normal capacity.
+- The Watch Tower adds **8 flat defense per level**, uses a defense base of **1.025 per level**, and has **2× durability**.
+- At Watch Tower level 20, that is 160 flat defense and approximately a 63.9% defense bonus.
 
 ## Unique building: Thornsnare Grove
-The **Thornsnare Grove** can only be built by the Verdant Wardens. It builds **traps** that capture incoming attacking units. See [Combat → Traps](Combat.md#traps-thornsnare-grove) for the full mechanics; in summary:
-- Each trap has a **capacity**; incoming attackers up to the total trap capacity are captured (attack with 50 vs 50 capacity → the whole attack is trapped). The Grove's trap capacity **cannot be seen by scouting**.
-- **Scouts cannot be trapped (if scouting, not attacking).** (*player-reported*)[^1] A scout sent as part of an attack can still be trapped. Traps only trigger on **enemy** units (a valid hostile target / at war), never allies. 
-- **Trapped troops** are freed either when their **owner attacks** (a successful attack frees them, but ~**25%** die when freed — Travian-style) or when the **trap's owner releases** them (released troops do not die). Otherwise trapped troops die only by **starvation** (if the owner stops feeding them).
-- Triggered traps must be **rebuilt** (the building remains); they rebuild automatically for free but take the normal build time.
-- **Trap count scales with world speed.**
-- **New buff (update 24/07):** reinforcements sent *from* the Thornsnare Grove village travel faster, based on the **total units ever trapped** there. On a 3× world: 300 trapped → +5%, 600 → +10%, 1200 → +15%, 2400 → +20% reinforcement travel speed. This is a permanent, per-village bonus.
-- You **cannot demolish** the Thornsnare Grove while it has active traps.
+
+The Thornsnare Grove trains traps for **35 Lumber, 30 Stone, 10 Metal, and 20 Food each**. Base trap-training time is 60 seconds. Capacity grows from 10 at level 1 to 400 at level 20, then multiplies by raw server speed. Once a Grove reaches level 20, the village may construct additional Groves; their capacity is combined.
+
+Traps capture eligible hostile attack units up to the remaining capacity. Scouts sent on scout missions are not trapped, and captured troops continue consuming Food from their origin village.
+
+- If the trapped army's owner wins an attack on the village, its prisoners are freed and 25% of each trapped unit group, rounded down, dies.
+- If the trap owner releases the prisoners, they return without that casualty.
+- A successful hostile attack consumes used traps. Free replacement traps are queued for the destroyed amount.
+- The Grove cannot be demolished while prisoners remain.
+
+Lifetime captures permanently speed up reinforcements sent from that village:
+
+| Lifetime captures | Reinforcement speed |
+|---:|---:|
+| 100 × raw speed | 5% faster |
+| 200 × raw speed | 10% faster |
+| 400 × raw speed | 15% faster |
+| 800 × raw speed | 20% faster |
 
 ## Units
-See [Units → Verdant Wardens](Units.md#verdant-wardens) for the full roster with verified stats, costs, and training times.
+
+See [Units → Verdant Wardens](Units.md#verdant-wardens) for the implemented roster, costs, attributes, and level-20 training times.
 
 ## See also
-- [Tribes overview & comparison](Tribes.md) · [Embermark Dominion](Embermark-Dominion.md) · [Stormfang Clans](Stormfang-Clans.md)
-- [Combat → Traps](Combat.md#traps-thornsnare-grove) · [Units](Units.md) · [Buildings](Buildings.md)
 
-[^1]: [Discord, 18 Aug 2026](https://discord.com/channels/1495741450439102534/1495742085737877514/1539059388994818068)
+- [Tribes](Tribes.md) · [Embermark Dominion](Embermark-Dominion.md) · [Stormfang Clans](Stormfang-Clans.md)
+- [Combat → Traps](Combat.md#traps) · [Buildings](Buildings.md)

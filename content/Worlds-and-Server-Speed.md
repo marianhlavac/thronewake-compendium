@@ -2,59 +2,80 @@
 category: "Start here"
 weight: 120
 linkTitle: "Worlds & Server Speed"
-aiStatus: "ai-slop"
+aiStatus: "code-verified"
 ---
 
 # Worlds & Server Speed
 
-A **world** (also called a **server** or an **"Awakening"**) is a single game round. Each world runs until it is **won** (see [Endgame](Endgame-Ancient-Monument.md)), then a new one opens. Only **one active world runs at a time** so far; the developer prefers one full world over two half-empty ones, though multiple simultaneous worlds are a future possibility. New worlds open roughly **monthly**.
+A world is an isolated game round with its own map, profiles, speed, start time, capacity, Beginner Protection settings, Safe Time rules, leaderboard week boundary, Ancient endgame configuration, and lifecycle state. Historical and currently active worlds are deployment data, not constants in the game client, so this page documents the implemented rules rather than maintaining a potentially stale world list.
 
-## World history
+## Speed brackets
 
-| World | Opened | Speed | Notes |
-|---|---|---|---|
-| First world (test) | early 2026 | — | Long-running early test; reached only Monument lvl 24 after 79 days. Kept online as a "feel the game" sandbox. |
-| The Second Awakening | 22 April 2026 | 10× | Feature/endgame testing. Won by **Blackstar** of alliance **NWO**. |
-| The Third Awakening | 23 May 2026 | 3× | Map 75×75. Won by **PC** (main builder **Rixso**), allied with **TEAM** and **MM**, against **LoC**/**KAP** (**REX** switched sides). |
-| **The Fourth Awakening** *(current)* | **29 July 2026** | 3× *(player-reported)* | Map **100×100**. |
+Configured speed is normalized into one of five brackets: **1, 2, 3, 5, or 10**. Different mechanics intentionally consume either raw speed or the bracket; world speed is not a universal multiplier.
 
-> [!NOTE]
-> The **current world is the Fourth Awakening (started 29 July 2026)**. Anything in this wiki drawn from before that date may be outdated. The current world's speed is widely referred to by players as **3×** but was not explicitly restated by the developer for this specific world; treat "3×" as very likely but *player-reported*.
+### Movement
 
-## How world speed works (authoritative)
-A speed multiplier (e.g. 3×, 10×) **only** affects things that happen over time:
-- **Production per hour** (resource fields, etc.) is multiplied.
-- **Troop and merchant movement/travel speed** is multiplied.
-- **Queue times** — building, research, and troop-training times — are divided by the speed.
+Troops, merchants, and moving artefacts use this movement multiplier:
 
-A speed multiplier does **NOT** change:
-- **Costs** of buildings, troops, upgrades.
-- **Rewards** from [Tasks](Villages-Cities-and-Expansion.md#tasks) (same on every speed).
-- **Capacities** — [Warehouse/Granary](Buildings.md) storage, [Shelter](Buildings.md#shelter) capacity, and **[merchant](Marketplace-and-Trade.md) carry capacity** are the **same at every speed**. For example, a level-20 Warehouse holds **80,000** on a 3× world exactly as on a 1× world. Merchants simply travel faster on a speed world; they do not carry more.
+| Speed bracket | Movement multiplier |
+|---:|---:|
+| 1× | 1× |
+| 2×, 3×, or 5× | 2× |
+| 10× | 4× |
 
-Because production scales but costs and capacities don't, faster worlds feel "cheaper" and reach the [endgame](Endgame-Ancient-Monument.md) sooner, which is why the developer used a **10×** world to stress-test the endgame.
+For example, a base-speed-3 catapult travels at 6 tiles per hour on a 3× or 5× world and at 12 on a 10× world.
 
-## Endgame timing per world speed
-On a **3× world** (authoritative):
-- **[Artefacts](Artefacts.md)** release on **day 30**.
-- **[Ancient Monument Construction Plans](Endgame-Ancient-Monument.md)** release on **day 60**.
+### Raw-speed systems
 
-(The Third Awakening used artefacts day 30 / plans day 50 and lasted ~55–57 days. Players estimate a typical world at ~75 days: plans around day 60, then ~1–2 weeks to finish the Monument — *player estimate*.)
+These systems use raw configured speed directly:
 
-## World length & the "infinite server" safeguard (authoritative)
-There is **no fixed world length**. A world ends when an alliance completes an [Ancient Monument](Endgame-Ancient-Monument.md) to level 100. To prevent a world from stalling forever, the world can be configured so that **the Ancients also build their own Monument** and win if they reach level 100 first:
-- This is a **per-world toggle**, and was **off** in early worlds (giving players unlimited time).
-- When on (on a 3× world), the Ancients would take about **12–20 days** (random, with breaks) but can never get more than **10 levels ahead** of the leading player Monument.
-- There is also an option to **lower the required winning level** (e.g. to 50).
+- resource-field and Wilder Site production;
+- Research Point production;
+- many construction, training, research, respawn, release, and cooldown durations;
+- Wilder Site resources, free-raid allowance, and Ancient garrison quantities;
+- Thornsnare trap capacity and capture thresholds; and
+- Ancient endgame milestone timing.
 
-Without this safeguard, worlds can stall badly: the First Awakening reached only Monument level 24 in 79 days, and the Second Awakening's Monument sat around level 19 and was hard to finish.
+### Bracketed or custom systems
 
-## Joining a world & spawning
-- When a world hasn't started yet you can reserve a spot and edit your details.
-- On join you pick a **[tribe](Tribes.md)** (permanent for that world — you'd have to delete and restart to change it within the first 3 days) and can influence your **spawn**: pick a **map quadrant**, or request to **spawn near a specific player** (that player receives a spawn request they can allow/deny; more than two players can group up this way).
-- Everyone spawns in the same **"ring"** — roughly equal distance from the central **grey zone** (around 0|0) and the outer edge of the map — and within **3 tiles of 2–3 [Wilder Sites](Wilder-Sites.md)** (either three single sites, or a single plus a double). "Random" spawn placement targets the least-populated areas.
+Several mechanics use their own tables:
+
+- starting Culture Points are 500 divided by the speed bracket, rounded up;
+- small and large celebration CP caps use divisors 1, 2, or 4;
+- celebration duration groups 1×/2×, 3×/5×, and 10× differently;
+- Stormbrew duration uses its own raw-speed bracket rule;
+- Watchfire cadence and duration use dedicated speed rules; and
+- artefact activation uses 24, 16, 12, 8, or 4 hours.
+
+Costs generally do not scale with speed. Normal Warehouse, Granary, Shelter, and merchant capacities also stay fixed, but this is not true of every capacity: Wilder storage, Thornsnare traps, and some other systems explicitly scale.
+
+## Default Ancient endgame timing
+
+When the endgame is enabled and its defaults are unchanged, the configured server-day milestones divide by raw speed:
+
+| Milestone | 1× | 2× | 3× | 5× | 10× |
+|---|---:|---:|---:|---:|---:|
+| Regular artefacts | Day 90 | Day 45 | Day 30 | Day 18 | Day 9 |
+| Outer Wonder villages | Day 120 | Day 60 | Day 40 | Day 24 | Day 12 |
+| Construction Plans | Day 150 | Day 75 | Day 50 | Day 30 | Day 15 |
+
+Servers may override these milestones and the endgame defaults to disabled. See [Endgame](Endgame-Ancient-Monument.md#default-release-schedule).
+
+## Joining and starter placement
+
+Joining a world creates a separate server profile and starter village. The player chooses a permanent tribe for that profile and may request a quadrant, a random region, or placement near another player through the starter-village spawn-request flow.
+
+Maps using the current starter-ring generator place starter villages in a ring between the protected center and the map edge. The generator targets a nearby Wilder support score of 3: a common site counts as 1, while a mixed or rich site counts as 2. This normally yields either three common sites or one common plus one higher-tier site within reach.
+
+World dimensions and the enabled map-generation version are server data. Travel distance uses Euclidean map distance, while Wilder claim reach uses Chebyshev distance 3.
+
+## Lifecycle and pauses
+
+Worlds can be scheduled, started, inactive, paused, and finished. A game pause freezes the game clock and shifts affected timers when play resumes. A world finishes when its configured victory condition is recorded; the default Ancient Monument target is level 100.
+
+The optional Ancient NPC Monument race is disabled by default. When enabled, it follows server configuration and remains no more than 10 Monument levels ahead of the leading player.
 
 ## See also
-- [Endgame: the Ancient Monument](Endgame-Ancient-Monument.md)
-- [Beginner Protection](Beginner-Protection.md) · [Safe Time](Safe-Time.md)
-- [The Map, Reports & UI](Reports-and-Map.md)
+
+- [Endgame: the Ancient Monument](Endgame-Ancient-Monument.md) · [Artefacts](Artefacts.md)
+- [Beginner Protection](Beginner-Protection.md) · [Safe Time](Safe-Time.md) · [Wilder Sites](Wilder-Sites.md)

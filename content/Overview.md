@@ -17,7 +17,7 @@ authors:
 - **Slogan factions:** [Embermark Dominion](Embermark-Dominion.md) 🌋, [Stormfang Clans](Stormfang-Clans.md) 🌩️, [Verdant Wardens](Verdant-Wardens.md) 🌿, and the return of [the Ancients](The-Ancients.md) 🗿
 
 ## Development
-Thronewake is made by a solo developer, **Wynfir**. Development began roughly two years before mid-2026; public play-testing started around **April 2026** (about four months before the current world). The game is **not open source** as of August 2026, though the developer is open to it in the future.
+Thronewake is made by a solo developer, **Wynfir**. Development began roughly two years before mid-2026, and public play-testing started around **April 2026**. The game was not open source as of August 2026, though the developer was open to it in the future.
 
 The game is under **active development**, and new features are added *during* a running world, not only between worlds. Because of this, this wiki can contain information that may be outdated.
 
@@ -26,8 +26,8 @@ A core design goal is to be **like Travian but without the pay-to-win**. A **[St
 
 ## How it differs from Travian
 - **No hero system** at all (a deliberate difference). No hero resources, hero XP, or hero adventures.
-- A personal **[Safe Time](Safe-Time.md)** — a daily window (up to 6 hours) during which you can neither be attacked nor attack.
-- A per-village **[Research](Research.md)** tree (63 items across three lines).
+- A personal **[Safe Time](Safe-Time.md)** — a daily window of up to 6 hours that blocks normal hostile arrivals and troop departures, with explicit self-target and Ancient-special-target exceptions.
+- A per-village **[Research](Research.md)** tree with 63 research families and 171 purchasable rank rows across three lanes.
 - **[Wilder Sites](Wilder-Sites.md)** — the game's take on Travian oases.
 - **[Watchfires](Watchfires.md)** — a recurring alliance PvP event.
 - No **1:1 NPC trade**: the [Quartermaster](Marketplace-and-Trade.md) NPC exchanges resources at **3:1** (improvable to 2.5:1 by research), which reshapes the economy (see [Resources](Resources.md)).
@@ -39,7 +39,7 @@ A core design goal is to be **like Travian but without the pay-to-win**. A **[St
 - **The Ancients** are the endgame NPC faction, analogous to Travian's Natars. See [The Ancients](The-Ancients.md).
 
 ## Platform
-Thronewake runs in the browser on desktop and mobile. There is **no native app** yet, but you can "Add to Home Screen" to install it as a PWA that behaves like an app. [Check this page](https://web.dev/learn/pwa/installation#ios_and_ipados_installation) to learn how to install it on your phone. Push notifications are available via **Settings → Alerts**. A guest account can be created without an email, but it is only valid during the initial [Beginner Protection](Beginner-Protection.md) period.
+Thronewake runs in the browser on desktop and mobile and can be installed as a PWA. The implementation also contains Capacitor Android and iOS shells, native routing, native push notifications, and native file/share support; repository support does not by itself confirm public app-store distribution. Push notifications are managed through **Settings → Alerts**. A guest account can be created without an email, but gameplay is locked at the end of the initial [Beginner Protection](Beginner-Protection.md) period until the account is secured.
 
 ## See also
 - [Worlds & Server Speed](Worlds-and-Server-Speed.md)

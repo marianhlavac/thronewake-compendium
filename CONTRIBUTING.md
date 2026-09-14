@@ -9,7 +9,7 @@ There are two guides below. Pick whichever matches you:
 
 ## Ways to contribute
 
-- **Review AI-generated content.** Most pages here started as AI drafts and haven't been checked by a human yet — look for the "AI-Generated" badge in the top-right of a page. Verify its claims against a real source, fix whatever's wrong, and mark the page reviewed (see [The AI-status tag](#the-ai-status-tag) below). This is currently the single most valuable thing you can do for this wiki.
+- **Review AI-generated content.** Many pages here started as AI drafts. The badge in the top-right distinguishes unverified drafts from pages checked against the game implementation or independently reviewed by a human. Verify claims against a primary source, fix whatever is wrong, and record the appropriate state (see [The AI-status tag](#the-ai-status-tag) below).
 - Corrections to numbers, timings or mechanics that are wrong or out of date.
 - New sourced information — dev posts, changelog entries, or well-corroborated player reports.
 - Clarity fixes: better wording, missing context, broken links.
@@ -49,17 +49,19 @@ Every page carries an `aiStatus` field in its front matter, rendered as a small 
 
 | `aiStatus` value | Badge shown | Meaning |
 |---|---|---|
-| `ai-slop` | AI-Generated | Fully AI-written, not yet checked by a human. |
+| `ai-slop` | AI-Generated | AI-written and not yet verified against a primary source. |
+| `code-verified` | Code-Verified | AI-assisted, then systematically checked and corrected against the current game source code. Not necessarily independently reviewed by a human. |
 | `human-fixed` | Human-Reviewed | Started as an AI draft, then a human checked it against real sources and corrected what was wrong. |
 | `human-written` | Human-Written | Written and verified by a human from primary sources. The highest trust level. |
 | *(unset / anything else)* | Unverified | No status recorded — treat the same as `ai-slop`. |
 
 If you review a page and correct it, update its `aiStatus` to match what you actually did:
 
+- Used AI to audit the whole page against the current game source code and corrected every discrepancy → `code-verified`.
 - Checked the page's claims against sources and fixed the errors → `human-fixed`.
 - Wrote the page yourself from scratch → `human-written`.
 
-Only set `human-fixed` or `human-written` if you've genuinely verified the whole page — the badge is only useful to the next reader if it's honest. Fixing one paragraph of a long AI-drafted page doesn't earn it `human-fixed`; keep it `ai-slop`.
+Only set a verified state if the whole page received that level of scrutiny — the badge is only useful to the next reader if it is honest. Fixing one paragraph of a long AI-drafted page does not earn it `code-verified` or `human-fixed`; keep it `ai-slop`. Code verification describes factual comparison with the implementation, not independent human authorship, and should be repeated when relevant game code changes.
 
 ## For developers
 
@@ -73,7 +75,7 @@ Only set `human-fixed` or `human-written` if you've genuinely verified the whole
    aiStatus: "ai-slop"
    ---
    ```
-   `category` and `weight` place the page in the sidebar; there's no separate nav config to touch. See any existing file in `content/` for the pattern. If you're reviewing/correcting the page rather than just editing it, update `aiStatus` too — see [The AI-status tag](#the-ai-status-tag).
+   `category` and `weight` place the page in the sidebar; there's no separate nav config to touch. See any existing file in `content/` for the pattern. If you're reviewing/correcting the page rather than just editing it, update `aiStatus` to the kind of verification actually performed — see [The AI-status tag](#the-ai-status-tag).
 3. Don't hard-wrap Markdown source — one paragraph per line (see `CLAUDE.md` for why).
 4. Build and verify before opening a PR:
    ```bash
